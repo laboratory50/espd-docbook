@@ -16,6 +16,7 @@
     <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/> -->
 <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl"/>
 <xsl:include href="espd/core.xsl"/>
+<xsl:include href="espd/text.xsl"/>
 <xsl:include href="espd/titles.xsl"/>
 <xsl:include href="espd/headings.xsl"/>
 <xsl:include href="espd/list.xsl"/>
@@ -41,16 +42,6 @@
     book      toc,title
 </xsl:param>
   
-<!-- Параметры абзаца: абзацный отступ и отбивка -->
-<xsl:attribute-set name="normal.para.spacing">
-  <xsl:attribute name="text-indent">
-    <xsl:value-of select="$espd.text-indent"/>
-  </xsl:attribute>
-  <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
-  <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">0mm</xsl:attribute>
-</xsl:attribute-set>
-
 <xsl:template name="initial.page.number">
   <xsl:param name="element" select="local-name(.)"/>
   <xsl:param name="master-reference" select="''"/>
