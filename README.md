@@ -6,7 +6,7 @@
 ## Лицензия
 
 Все материалы распространяются на условиях
-лицензии [Creative Commons BY-SA 4.0] http://creativecommons.org/licenses/by-sa/4.0/deed.ru
+лицензии [Creative Commons BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/deed.ru)
 
 Полный текст лиценции находится в файле COPYING.
 
@@ -27,23 +27,27 @@ XSL-FO для создания PDF документов. Помимо требо
 набор XSL-FO. Генерировать документы можно распространенными XSLT и FO
 процессорами. У нас используются xsltproc и Apache FO.
 
+Репозиторий расположен на [BitBucket](https://bitbucket.org/Lab50/espd-docbook5),
+склонируйте с помощью Git:
+    git clone git@bitbucket.org:Lab50/espd-docbook5.git
+
 Подключить стиль можно с помощью директивы *xml-stylesheet* непосредственно
 в вашем документе:
 
     <?xml version="1.0" encoding="utf-8"?>
     <?xml-model … ?>
-    <?xml-stylesheet type="text/xsl" href="~/espd-docbook/espd.xsl"?>
+    <?xml-stylesheet type="text/xsl" href="~/espd-docbook5/espd.xsl"?>
     <book>
      …
     </book>
 
 Или непосредственно в командной строке процессора.
 
-    xsltproc ~/espd-docbook/espd.xsl mybook.xml
+    xsltproc ~/espd-docbook5/espd.xsl mybook.xml
 
 или Apache FOP:
 
-    fop -xml mybook.xml -xsl ~/espd-docbook/espd.xsl -pdf mybook.pdf
+    fop -xml mybook.xml -xsl ~/espd-docbook5/espd.xsl -pdf mybook.pdf
 
 ### Стилевые параметры
 
@@ -51,8 +55,8 @@ XSL-FO для создания PDF документов. Помимо требо
 хоторых можно влиять на выходное оформление.
 
  *  *espd.decimal*
-    > Децимальный номер документа.
+    Децимальный номер документа.
 
  *  *espd.text-indent*
-    > Абзацный отступ. Помимо абзацев используется для выравнивания
-    > многих элементов (перечислений, названий разделов).
+    Абзацный отступ. Помимо абзацев используется для выравнивания
+    многих элементов (перечислений, названий разделов).
