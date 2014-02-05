@@ -15,15 +15,15 @@
     version="1.1">
     <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/> -->
 <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl"/>
-<xsl:include href="espd/core.xsl"/>
-<xsl:include href="espd/text.xsl"/>
-<xsl:include href="espd/titles.xsl"/>
-<xsl:include href="espd/headings.xsl"/>
-<xsl:include href="espd/list.xsl"/>
-<xsl:include href="espd/object.xsl"/>
-<xsl:include href="espd/l10n.xsl"/>
+<xsl:include href="core.xsl"/>
+<xsl:include href="text.xsl"/>
+<xsl:include href="titles.xsl"/>
+<xsl:include href="headings.xsl"/>
+<xsl:include href="list.xsl"/>
+<xsl:include href="object.xsl"/>
+<xsl:include href="l10n.xsl"/>
 
-<xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param>
+<!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
 <!-- Абзацный отступ -->
 <xsl:param name="espd.text-indent">1.27cm</xsl:param>
 <!-- Лист регистрации изменений -->
