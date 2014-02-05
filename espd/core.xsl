@@ -30,8 +30,5 @@
 
     <xsl:param name="body.start.indent">0pt</xsl:param>
     <xsl:param name="body.font.master">12</xsl:param>
-    <xsl:param name="body.font.family">GentiumAlt</xsl:param>
-    <xsl:param name="sans.font.family">Lato</xsl:param>
-    <xsl:param name="title.font.family">URW Gothic L</xsl:param>
 </xsl:stylesheet>
 

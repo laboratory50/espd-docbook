@@ -29,6 +29,11 @@
 <!-- Лист регистрации изменений -->
 <xsl:param name="espd.lri">1</xsl:param>
 
+<xsl:param name="body.font.family">GentiumAlt</xsl:param>
+<xsl:param name="sans.font.family">Lato</xsl:param>
+<xsl:param name="title.font.family">URW Gothic L</xsl:param>
+<xsl:param name="symbol.font.family">OpenSymbol,Symbol</xsl:param>
+
 <!-- <xsl:param name="title.margin.left">1.27cm</xsl:param> -->
   <!--
 <xsl:attribute-set name="root.properties">
