@@ -36,18 +36,18 @@ XSL-FO для создания PDF документов. Помимо требо
 
     <?xml version="1.0" encoding="utf-8"?>
     <?xml-model … ?>
-    <?xml-stylesheet type="text/xsl" href="~/espd-docbook5/espd.xsl"?>
+    <?xml-stylesheet type="text/xsl" href="~/espd-docbook5/espd/espd.xsl"?>
     <book>
      …
     </book>
 
 Или непосредственно в командной строке процессора.
 
-    xsltproc ~/espd-docbook5/espd.xsl mybook.xml
+    xsltproc ~/espd-docbook5/espd/espd.xsl mybook.xml
 
 или Apache FOP:
 
-    fop -xml mybook.xml -xsl ~/espd-docbook5/espd.xsl -pdf mybook.pdf
+    fop -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl -pdf mybook.pdf
 
 ### Стилевые параметры
 
