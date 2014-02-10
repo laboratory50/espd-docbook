@@ -27,6 +27,7 @@
 <xsl:attribute-set name="component.title.properties">
   <xsl:attribute name="font-weight">normal</xsl:attribute>
   <xsl:attribute name="text-align">center</xsl:attribute>
+  <xsl:attribute name="hyphenate">false</xsl:attribute>
   <xsl:attribute name="font-size">
     <xsl:value-of select="$body.font.master"/>
     <xsl:text>pt</xsl:text>
@@ -68,6 +69,7 @@
 <!-- Подразделы -->
 <xsl:attribute-set name="section.title.properties">
   <xsl:attribute name="font-weight">normal</xsl:attribute>
+  <xsl:attribute name="hyphenate">false</xsl:attribute>
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>

@@ -23,6 +23,7 @@
 <xsl:include href="object.xsl"/>
 <xsl:include href="l10n.xsl"/>
 
+<xsl:param name="espd.decimal"/>
 <!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
 <!-- Абзацный отступ -->
 <xsl:param name="espd.text-indent">1.27cm</xsl:param>
