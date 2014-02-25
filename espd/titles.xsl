@@ -10,6 +10,7 @@
 
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
@@ -40,6 +41,22 @@
   <xsl:attribute name="space-after.maximum">3em</xsl:attribute>
   <xsl:attribute name="space-after.precedence">2</xsl:attribute>
 </xsl:attribute-set>
+
+<!--
+  Оформления заголовка содержания аналогично заголовку раздела.
+-->
+<xsl:template name="table.of.contents.titlepage" priority="1">
+  <fo:block xsl:use-attribute-sets="component.title.properties"
+	    font-family="{$title.font.family}">
+    <xsl:call-template name="ucase">
+      <xsl:with-param name="string">
+        <xsl:call-template name="gentext">
+          <xsl:with-param name="key" select="'TableofContents'"/>
+        </xsl:call-template>
+      </xsl:with-param>
+    </xsl:call-template>
+  </fo:block>
+</xsl:template>
 
 <!--
   2.1.7. Заголовки разделов пишут прописными буквами и размещают
