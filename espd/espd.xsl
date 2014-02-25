@@ -29,6 +29,10 @@
 <xsl:param name="espd.text-indent">1.27cm</xsl:param>
 <!-- Лист регистрации изменений -->
 <xsl:param name="espd.lri">1</xsl:param>
+<!-- Шрифт колонтитулов -->
+<xsl:param name="espd.heading.font.family">
+    <xsl:value-of select="$title.font.family"/>
+</xsl:param>
 
 <xsl:param name="body.font.family">GentiumAlt</xsl:param>
 <xsl:param name="sans.font.family">Lato</xsl:param>
