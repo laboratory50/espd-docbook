@@ -78,7 +78,7 @@
 -->
 <xsl:attribute-set name="header.content.properties">
   <xsl:attribute name="font-family">
-    <xsl:value-of select="$body.font.family"/>
+    <xsl:value-of select="$espd.heading.font.family"/>
   </xsl:attribute>
   <xsl:attribute name="font-size">
     <xsl:value-of select="$body.font.master * 1.2"/>
