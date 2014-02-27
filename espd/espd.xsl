@@ -22,6 +22,7 @@
 <xsl:include href="list.xsl"/>
 <xsl:include href="object.xsl"/>
 <xsl:include href="l10n.xsl"/>
+<xsl:include href="titlepage.xsl"/>
 
 <xsl:param name="espd.decimal"/>
 <!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
