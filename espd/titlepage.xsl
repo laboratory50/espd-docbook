@@ -40,47 +40,7 @@
     </fo:block>
   </fo:block-container>
 
-  <!-- Печать -->
-  <fo:block-container reference-orientation="90"
-                      absolute-position="fixed"
-                      bottom="13"
-                      left="8mm">
-    <fo:block font-size="11pt">
-        <fo:table table-layout="fixed" width="145mm" height="12mm" border-style="solid" border-width="1mm">
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-body>
-                <fo:table-row border-style="solid" border-width="1mm">
-                    <fo:table-cell>
-                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № подп.</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Подпись и дата</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Взам. инв. №</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № дубл.</fo:block>
-                    </fo:table-cell>
-                    <fo:table-cell>
-                        <fo:block margin="0.5mm">Подпись и дата</fo:block>
-                    </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row>
-                    <fo:table-cell><fo:block padding="3mm"/></fo:table-cell>
-                    <fo:table-cell><fo:block/></fo:table-cell>
-                    <fo:table-cell><fo:block/></fo:table-cell>
-                    <fo:table-cell><fo:block/></fo:table-cell>
-                    <fo:table-cell><fo:block/></fo:table-cell>
-                </fo:table-row>
-            </fo:table-body>
-        </fo:table>
-    </fo:block>
-  </fo:block-container>
+  <xsl:call-template name="espd-stamp"/>
 
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">
@@ -160,6 +120,51 @@
   <fo:block>
     <xsl:apply-templates mode="titlepage.mode"/>
   </fo:block>
+</xsl:template>
+
+<!-- Печать -->
+<xsl:template name="espd-stamp">
+  <fo:block-container reference-orientation="90"
+                      absolute-position="fixed"
+                      bottom="10mm"
+                      left="8mm">
+      <fo:block font-size="11pt" font-family="{$sans.font.family}">
+        <fo:table table-layout="fixed" width="145mm" height="12mm" border-style="solid" border-width="0.8mm">
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
+            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
+            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
+            <fo:table-body>
+                <fo:table-row border-style="solid" border-width="0.8mm">
+                    <fo:table-cell>
+                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № подп.</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Подпись и дата</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Взам. инв. №</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № дубл.</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block margin="0.5mm">Подпись и дата</fo:block>
+                    </fo:table-cell>
+                </fo:table-row>
+                <fo:table-row>
+                    <fo:table-cell><fo:block padding="3mm"/></fo:table-cell>
+                    <fo:table-cell><fo:block/></fo:table-cell>
+                    <fo:table-cell><fo:block/></fo:table-cell>
+                    <fo:table-cell><fo:block/></fo:table-cell>
+                    <fo:table-cell><fo:block/></fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+        </fo:table>
+    </fo:block>
+  </fo:block-container>
+
 </xsl:template>
 
 </xsl:stylesheet>

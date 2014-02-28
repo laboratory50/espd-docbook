@@ -23,6 +23,7 @@
 <xsl:include href="object.xsl"/>
 <xsl:include href="l10n.xsl"/>
 <xsl:include href="titlepage.xsl"/>
+<xsl:include href="lri.xsl"/>
 
 <xsl:param name="espd.decimal"/>
 <!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
@@ -36,7 +37,7 @@
 </xsl:param>
 
 <xsl:param name="body.font.family">GentiumAlt</xsl:param>
-<xsl:param name="sans.font.family">Lato</xsl:param>
+<xsl:param name="sans.font.family">FreeSans</xsl:param>
 <xsl:param name="title.font.family">URW Gothic L</xsl:param>
 <xsl:param name="symbol.font.family">OpenSymbol,Symbol</xsl:param>
 

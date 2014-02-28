@@ -81,7 +81,7 @@
     <xsl:value-of select="$espd.heading.font.family"/>
   </xsl:attribute>
   <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.2"/>
+    <xsl:value-of select="$body.font.master"/>
     <xsl:text>pt</xsl:text>
   </xsl:attribute>
 </xsl:attribute-set>
