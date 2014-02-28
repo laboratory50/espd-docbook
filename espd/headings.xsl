@@ -31,7 +31,7 @@
     </xsl:when>
     
     <xsl:when test="$position = 'center'">
-      <fo:block>
+      <fo:block space-after="1mm">
         <fo:page-number/>
       </fo:block>
       <fo:block>
@@ -74,7 +74,7 @@
 </xsl:template>
 
 <!--
-  Шрифт: основной, размер 120% основного.
+  Шрифт: основной, размер 100% основного.
 -->
 <xsl:attribute-set name="header.content.properties">
   <xsl:attribute name="font-family">

@@ -15,20 +15,25 @@
     version="1.1">
 
 <xsl:template name="user.pagemasters">
-<fo:simple-page-master master-name="lrip"
+  <fo:simple-page-master master-name="lrip"
                          page-width="{$page.width}"
                          page-height="{$page.height}"
-                         margin-top="25mm"
+                         margin-top="{$page.margin.top}"
                          margin-bottom="25mm"
-                         margin-left="20mm"
+                         margin-left="{$page.margin.inner}"
                          margin-right="5mm">
-    <fo:region-body margin="0mm"/>
-    <fo:region-before region-name="xsl-region-before-even" extent="0mm"/>
-    <fo:region-after region-name="xsl-region-after-even" extent="0mm"/>
-    </fo:simple-page-master>
+    <fo:region-body margin-bottom="{$body.margin.bottom}"
+                    margin-top="{$body.margin.top}"/>
+    <fo:region-before region-name="xsl-region-before-even"
+                      extent="{$region.before.extent}"
+                      display-align="before"/>
+    <fo:region-after region-name="xsl-region-after-even"
+                      extent="{$region.after.extent}"
+                      display-align="after"/>
+  </fo:simple-page-master>
 
 
-   <fo:page-sequence-master master-name="lripage">
+  <fo:page-sequence-master master-name="lripage">
       <fo:repeatable-page-master-alternatives>
         <fo:conditional-page-master-reference blank-or-not-blank="blank" master-reference="lrip"/>
         <fo:conditional-page-master-reference page-position="first" master-reference="lrip"/>
@@ -55,7 +60,48 @@
 </xsl:attribute-set>
 
 <xsl:template name="lripage">
-  <fo:page-sequence master-reference="lripage">
+    <xsl:variable name="master-reference">
+      <xsl:call-template name="select.pagemaster"/>
+    </xsl:variable>
+  <fo:page-sequence master-reference="{$master-reference}">
+      <xsl:attribute name="language">
+        <xsl:call-template name="l10n.language"/>
+      </xsl:attribute>
+      <xsl:attribute name="format">
+        <xsl:call-template name="page.number.format">
+          <xsl:with-param name="master-reference" select="$master-reference"/>
+        </xsl:call-template>
+      </xsl:attribute>
+
+      <xsl:attribute name="force-page-count">
+        <xsl:call-template name="force.page.count">
+          <xsl:with-param name="master-reference" select="$master-reference"/>
+        </xsl:call-template>
+      </xsl:attribute>
+
+      <xsl:attribute name="hyphenation-character">
+        <xsl:call-template name="gentext">
+          <xsl:with-param name="key" select="'hyphenation-character'"/>
+        </xsl:call-template>
+      </xsl:attribute>
+      <xsl:attribute name="hyphenation-push-character-count">
+        <xsl:call-template name="gentext">
+          <xsl:with-param name="key" select="'hyphenation-push-character-count'"/>
+        </xsl:call-template>
+      </xsl:attribute>
+      <xsl:attribute name="hyphenation-remain-character-count">
+        <xsl:call-template name="gentext">
+          <xsl:with-param name="key" select="'hyphenation-remain-character-count'"/>
+        </xsl:call-template>
+      </xsl:attribute>
+
+      <xsl:apply-templates select="." mode="running.head.mode">
+        <xsl:with-param name="master-reference" select="$master-reference"/>
+      </xsl:apply-templates>
+      <xsl:apply-templates select="." mode="running.foot.mode">
+        <xsl:with-param name="master-reference" select="$master-reference"/>
+      </xsl:apply-templates>
+
       <fo:flow flow-name="xsl-region-body">
         <fo:block id="END-OF-DOCUMENT" break-before="page"/>
           <fo:block xsl:use-attribute-sets="espd.lri.style">
@@ -113,7 +159,6 @@
                         <fo:block>аннулированных</fo:block>
                     </fo:table-cell>
                 </fo:table-row>
-                <xsl:call-template name="lri-empty-row"/>
                 <xsl:call-template name="lri-empty-row"/>
                 <xsl:call-template name="lri-empty-row"/>
                 <xsl:call-template name="lri-empty-row"/>

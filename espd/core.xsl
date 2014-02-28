@@ -18,14 +18,14 @@
     <xsl:param name="fop1.extensions">1</xsl:param>-->
     <xsl:param name="double.sided">0</xsl:param>
     <xsl:param name="glossentry.show.acronym">primary</xsl:param> 
-    <xsl:param name="page.margin.inner">25.4mm</xsl:param>
-    <xsl:param name="page.margin.outer">25.4mm</xsl:param>
-    <xsl:param name="page.margin.top">20mm</xsl:param>
-    <xsl:param name="region.before.extent">15mm</xsl:param>
+    <xsl:param name="page.margin.inner">20mm</xsl:param>
+    <xsl:param name="page.margin.outer">10mm</xsl:param>
+    <xsl:param name="page.margin.top">10mm</xsl:param>
+    <xsl:param name="region.before.extent">14mm</xsl:param>
     <xsl:param name="body.margin.top">20mm</xsl:param>
-    <xsl:param name="region.after.extent">0.35in</xsl:param>
-    <!-- <xsl:param name="page.margin.bottom">0.50in</xsl:param>
-    <xsl:param name="body.margin.bottom">0.65in</xsl:param>-->
+    <xsl:param name="region.after.extent">5mm</xsl:param>
+    <xsl:param name="page.margin.bottom">5mm</xsl:param>
+    <xsl:param name="body.margin.bottom">5mm</xsl:param>
     <xsl:param name="xref.with.number.and.title" select="0"></xsl:param>
 
     <xsl:param name="body.start.indent">0pt</xsl:param>
