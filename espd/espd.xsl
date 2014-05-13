@@ -24,6 +24,7 @@
 <xsl:include href="l10n.xsl"/>
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="lri.xsl"/>
+<xsl:include href="verbatim.xsl"/>
 
 <xsl:param name="espd.decimal"/>
 <!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
@@ -35,6 +36,8 @@
 <xsl:param name="espd.heading.font.family">
     <xsl:value-of select="$title.font.family"/>
 </xsl:param>
+<!-- Размер шрифта машинного текста-->
+<xsl:param name="espd.verbatim.font.size">0.9em</xsl:param>
 
 <xsl:param name="body.font.family">GentiumAlt</xsl:param>
 <xsl:param name="sans.font.family">FreeSans</xsl:param>
