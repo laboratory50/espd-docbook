@@ -38,7 +38,7 @@
   <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0mm</xsl:attribute>
-  <xsl:attribute name="text-indent">0cm</xsl:attribute>
+  <!--  <xsl:attribute name="text-indent">0cm</xsl:attribute> -->
   <xsl:attribute name="margin-left">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
