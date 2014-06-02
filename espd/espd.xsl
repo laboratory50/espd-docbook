@@ -15,6 +15,7 @@
     version="1.1">
     <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/> -->
 <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl"/>
+
 <xsl:include href="core.xsl"/>
 <xsl:include href="text.xsl"/>
 <xsl:include href="titles.xsl"/>

@@ -26,7 +26,7 @@
     <xsl:param name="region.after.extent">5mm</xsl:param>
     <xsl:param name="page.margin.bottom">5mm</xsl:param>
     <xsl:param name="body.margin.bottom">5mm</xsl:param>
-    <xsl:param name="xref.with.number.and.title" select="0"></xsl:param>
+    <xsl:param name="xref.with.number.and.title">0</xsl:param>
 
     <xsl:param name="body.start.indent">0pt</xsl:param>
     <xsl:param name="body.font.master">12</xsl:param>

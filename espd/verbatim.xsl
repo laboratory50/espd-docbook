@@ -30,4 +30,8 @@
   <xsl:attribute name="background-color">#e0e0e0</xsl:attribute>
 </xsl:attribute-set>
 
+<xsl:attribute-set name="verbatim.properties">
+  <xsl:attribute name="text-indent">0mm</xsl:attribute>
+</xsl:attribute-set>
+
 </xsl:stylesheet>

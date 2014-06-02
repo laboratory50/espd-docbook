@@ -19,6 +19,10 @@
   <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0mm</xsl:attribute>
+  <xsl:attribute name="text-indent">0mm</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Параметры абзаца: абзацный отступ -->
@@ -29,9 +33,12 @@
   </xsl:attribute>
 </xsl:attribute-set>
 
-<xsl:template match="d:para|d:simpara">
-  <xsl:choose>
-    <xsl:when test="parent::d:simplesect
+<!-- Абзацный отступ -->
+<xsl:attribute-set name="para.properties"
+     xsl:use-attribute-sets="normal.para.spacing">
+  <xsl:attribute name="text-indent">
+    <xsl:choose>
+      <xsl:when test="parent::d:simplesect
                    |parent::d:section
                    |parent::d:sect1
                    |parent::d:sect2
@@ -42,35 +49,13 @@
                    |parent::d:preface
                    |parent::d:appendix
                    |parent::d:chapter">
-      <fo:block xsl:use-attribute-sets="indent.para.spacing">
-        <xsl:call-template name="anchor"/>
-        <xsl:apply-templates/>
-      </fo:block>
-    </xsl:when>
-    <xsl:otherwise>
-      <xsl:apply-templates/>
-    </xsl:otherwise>
-  </xsl:choose>
-</xsl:template>
-
-<xsl:attribute-set name="noindent.para.spacing"
-    use-attribute-sets="normal.para.spacing">
-  <xsl:attribute name="text-indent">0mm</xsl:attribute>
+        <xsl:value-of select="$espd.text-indent"/>
+      </xsl:when>
+      <xsl:otherwise>
+       0mm
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
-
-<!--
-<xsl:template match="d:entry/d:para">
-  <fo:block xsl:use-attribute-sets="noindent.para.spacing">
-    <xsl:call-template name="anchor"/>
-    <xsl:apply-templates/>
-  </fo:block>
-</xsl:template>
--->
-
-<xsl:template match="d:para/*">
-  <fo:wrapper xsl:use-attribute-sets="noindent.para.spacing">
-    <xsl:apply-imports/>
-  </fo:wrapper>
-</xsl:template>
 
 </xsl:stylesheet>
