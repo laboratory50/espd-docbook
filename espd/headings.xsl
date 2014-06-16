@@ -27,39 +27,22 @@
   <xsl:param name="gentext-key" select="''"/>
   <fo:block>
     <xsl:choose>
-    <xsl:when test="$sequence = 'odd' and $position = 'left'">
-    </xsl:when>
-    
-    <xsl:when test="$position = 'center'">
-      <fo:block space-after="1mm">
-        <fo:page-number/>
-      </fo:block>
-      <fo:block>
+      <xsl:when test="$pageclass = 'titlepage'"/>
+
+      <xsl:when test="$position = 'center'">
+        <fo:block space-after="1mm">
+          <fo:page-number/>
+        </fo:block>
+        <fo:block>
           <xsl:value-of select="$espd.decimal"/>
-      </fo:block>
-    </xsl:when>
+        </fo:block>
+      </xsl:when>
     
-    <xsl:when test="$sequence = 'odd' and $position = 'right'">
-    </xsl:when>
-    
-    <xsl:when test="$sequence = 'even' and $position = 'left'">  
-    </xsl:when>
-    
-    <xsl:when test="$sequence = 'even' and $position = 'right'">
-    </xsl:when>
-    
-    <xsl:when test="$sequence = 'first' and $position = 'left'">
-    </xsl:when>
-    
-    <xsl:when test="$sequence = 'first' and $position = 'right'">  
-    </xsl:when>
+      <xsl:when test="$sequence = 'blank' and $position = 'left'">
+        <fo:page-number/>
+      </xsl:when>
 
-    <xsl:when test="$sequence = 'blank' and $position = 'left'">
-      <fo:page-number/>
-    </xsl:when>
-
-    <xsl:when test="$sequence = 'blank' and $position = 'right'">
-    </xsl:when>
+      <xsl:otherwise/>
     
     </xsl:choose>
   </fo:block>
