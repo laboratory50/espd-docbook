@@ -55,20 +55,4 @@
     book      toc,title
 </xsl:param>
   
-<xsl:template name="initial.page.number">
-  <xsl:param name="element" select="local-name(.)"/>
-  <xsl:param name="master-reference" select="''"/>
-
-    <xsl:choose>
-      <xsl:when test="$element = 'toc'">auto</xsl:when>
-      <xsl:when test="$element = 'book'">1</xsl:when>
-      <xsl:otherwise>auto</xsl:otherwise>
-      <!-- <xsl:when test="$element = 'part' and not(preceding::chapter)  
-                        and not(preceding::part)">1</xsl:when>-->
-    </xsl:choose>
-</xsl:template>
-  
-<!-- <xsl:template name="initial.page.number">auto-odd</xsl:template> -->
-<xsl:template name="page.number.format">1</xsl:template>
-  
 </xsl:stylesheet>

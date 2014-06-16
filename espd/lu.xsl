@@ -116,7 +116,7 @@
 
 <xsl:template name="espd.title.approvement.approve">
   <fo:block-container absolute-position="absolute"
-                      top="-1cm"
+                      top="0cm"
                       right="0cm"
                       width="30%"
                       xsl:use-attribute-sets="book.titlepage.recto.style">

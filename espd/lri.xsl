@@ -32,7 +32,6 @@
                       display-align="after"/>
   </fo:simple-page-master>
 
-
   <fo:page-sequence-master master-name="lripage">
       <fo:repeatable-page-master-alternatives>
         <fo:conditional-page-master-reference blank-or-not-blank="blank" master-reference="lrip"/>
@@ -41,7 +40,6 @@
         <fo:conditional-page-master-reference odd-or-even="even" master-reference="lrip"/>
       </fo:repeatable-page-master-alternatives>
     </fo:page-sequence-master>
-
 </xsl:template>
 
 <xsl:template match="d:book">
@@ -60,9 +58,9 @@
 </xsl:attribute-set>
 
 <xsl:template name="lripage">
-    <xsl:variable name="master-reference">
-      <xsl:call-template name="select.pagemaster"/>
-    </xsl:variable>
+  <xsl:variable name="master-reference">
+    <xsl:call-template name="select.pagemaster"/>
+  </xsl:variable>
   <fo:page-sequence master-reference="{$master-reference}">
       <xsl:attribute name="language">
         <xsl:call-template name="l10n.language"/>
