@@ -6,7 +6,7 @@
 ## Лицензия
 
 Все материалы распространяются на условиях
-лицензии [Creative Commons BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/deed.ru)
+стандартной общественной лицензии [GNU (GPL)](http://www.gnu.org/copyleft/gpl.html)
 
 Полный текст лиценции находится в файле COPYING.
 
@@ -70,3 +70,58 @@ XSL-FO для создания PDF документов. Помимо требо
  *  *espd.verbatim.font.size* 
     Размер шрифта для блоков машинного текста (programlisting и т.п.).
     Стандартное значение 0,9em.
+
+### Лист утверждения и титульный лист
+
+В версии 0.3 появилась возможность создания листа утверждения по требованиям ЕСПД.
+В терминах DocBook лист утверждения является титульным листом *recto*, а
+настоящий титульный лист — *verso*. Для отключения листа утверждения
+можно просто отключить `book.titlepage.recto` в вашем стилевом файле:
+
+    <xsl:template name="book.titlepage.recto"/>
+    <xsl:template name="book.titlepage.before.recto"/>
+
+Для всех титульных страниц оформление устанавливается набором `espd.titlepage.style`.
+
+Набор из автора, нормоконтроллера, утверждающего и пр. определяется элементами в
+`<authorgroup>`. В шапку утверждающим выносится `<editor>`, также должен присутствовать
+элемент `<author>`. Любые иные уважаемые персоны (в любом количестве) должны
+определяться элементами `<othercredit>`.
+
+Каждый обозначенный элемент должен содержать `<personname>`, включая
+`<firstname>`, `<surname>`, `<othername>`, а также элемент `<personblurb>`, описывающий
+должность персонажа.
+
+Примерчик:
+
+    <authorgroup>
+        <author>
+            <personname>
+                <firstname>Василий</firstname>
+                <surname>Шлыков</surname>
+                <othername>Александрович</othername>
+            </personname>
+            <personblurb><para>Исполнитель</para></personblurb>
+        </author>
+        <editor>
+            <personname>
+                <firstname>Иоанн</firstname>
+                <surname>Грозный</surname>
+                <othername>Васильевич</othername>
+            </personname>
+            <personblurb><para>Царь</para></personblurb>
+        </editor>
+        <othercredit>
+            <personname>
+                <firstname>Лев</firstname>
+                <surname>Мышкин</surname>
+                <othername>Николаевич</othername>
+            </personname>
+            <personblurb><para>Начальник «Лаборатории 50», князь</para></personblurb>
+        </othercredit>
+    </authorgroup>
+
+Для того, чтобы внизу страницы печатался год, необходимо добавить элемент `<pubdate>`,
+например:
+
+    <pubdate><?dbtimestamp format="Y"?></pubdate>

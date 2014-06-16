@@ -4,7 +4,7 @@
 
      © Лаборатория 50, 2013-2014.
 
-     Распространяется на условиях лицензии Creative Commons BY-SA 4.0.
+     Распространяется на условиях лицензии GPL 3.
 
      http://lab50.net
 -->
@@ -24,6 +24,7 @@
 <xsl:include href="object.xsl"/>
 <xsl:include href="l10n.xsl"/>
 <xsl:include href="titlepage.xsl"/>
+<xsl:include href="lu.xsl"/>
 <xsl:include href="lri.xsl"/>
 <xsl:include href="verbatim.xsl"/>
 
@@ -45,14 +46,10 @@
 <xsl:param name="title.font.family">URW Gothic L</xsl:param>
 <xsl:param name="symbol.font.family">OpenSymbol,Symbol</xsl:param>
 
-<!-- <xsl:param name="title.margin.left">1.27cm</xsl:param> -->
-  <!--
-<xsl:attribute-set name="root.properties">
-  <xsl:attribute name="font-family">'Linux Libertine O'</xsl:attribute>
-</xsl:attribute-set>-->
-
-<xsl:template name="book.titlepage.verso"/>
-<xsl:template name="book.titlepage.before.verso"/>
+<!--
+<xsl:template name="book.titlepage.recto"/>
+<xsl:template name="book.titlepage.before.recto"/>
+<xsl:template name="book.titlepage.before.verso"/>-->
   
 <xsl:param name="generate.toc">
     book      toc,title
