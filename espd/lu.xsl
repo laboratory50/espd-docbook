@@ -59,7 +59,7 @@
   <!-- Децимальный -->
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style"
             space-before="1cm">
-    <xsl:value-of select="$espd.decimal"/>
+    <xsl:value-of select="$espd.decimal"/><xsl:text>-ЛУ</xsl:text>
   </fo:block>
 
   <fo:block-container keep-together="always" space-before="1cm">
