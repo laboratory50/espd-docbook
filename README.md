@@ -53,7 +53,7 @@ XSL-FO для создания PDF документов. Помимо требо
 
 или Apache FOP:
 
-    fop -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl -pdf mybook.pdf
+    fop -catalog -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl -pdf mybook.pdf
 
 ### Стилевые параметры
 
