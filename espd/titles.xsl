@@ -14,15 +14,7 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-<!-- Нумерация вида X.Y.Z -->
-<xsl:param name="section.autolabel">1</xsl:param>
-<xsl:param name="section.label.includes.component.label">1</xsl:param>
-
-<xsl:attribute-set name="formal.title.properties"
-                   use-attribute-sets="normal.para.spacing">
-  <xsl:attribute name="font-weight">normal</xsl:attribute>
-  <xsl:attribute name="hyphenate">false</xsl:attribute>
-</xsl:attribute-set>
+<xsl:include href="common/titles.xsl"/>
 
 <!-- Главы (разделы) -->
 <xsl:attribute-set name="component.title.properties">

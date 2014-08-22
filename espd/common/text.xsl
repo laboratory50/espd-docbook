@@ -21,7 +21,7 @@
   <xsl:attribute name="space-before.maximum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
   <xsl:attribute name="text-indent">0mm</xsl:attribute>
 </xsl:attribute-set>
 
@@ -48,6 +48,10 @@
                    |parent::d:part
                    |parent::d:preface
                    |parent::d:appendix
+                   |parent::d:tip
+                   |parent::d:note
+                   |parent::d:caution
+                   |parent::d:important
                    |parent::d:chapter">
         <xsl:value-of select="$espd.text-indent"/>
       </xsl:when>
