@@ -59,6 +59,14 @@
 
 <xsl:attribute-set name="computeroutput.properties">
   <xsl:attribute name="line-height">1</xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:choose>
+      <xsl:when test="processing-instruction('db-font-size')">
+        <xsl:value-of select="processing-instruction('db-font-size')"/>
+      </xsl:when>
+      <xsl:otherwise><xsl:value-of select="$espd.verbatim.font.size"/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:template match="d:computeroutput">
