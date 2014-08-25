@@ -10,6 +10,8 @@
 <!-- Оформление машинного текста. -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:d="http://docbook.org/ns/docbook"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
     version="1.1">
 
 <xsl:attribute-set name="monospace.verbatim.properties">
@@ -35,6 +37,16 @@
 </xsl:attribute-set>
 
 <xsl:attribute-set name="verbatim.properties">
+  <xsl:attribute name="line-height">1.2</xsl:attribute>
+    <!--  <xsl:attribute name="line-height">
+    <xsl:choose>
+      <xsl:when test="self::d:programlisting">1.1</xsl:when>
+      <xsl:when test="self::d:screen">1</xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$line-height"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>-->
   <xsl:attribute name="text-indent">0mm</xsl:attribute>
   <xsl:attribute name="margin">0mm</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0.1em</xsl:attribute>
@@ -44,5 +56,15 @@
   <xsl:attribute name="space-after.optimum">0.2em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">1.3em</xsl:attribute>
 </xsl:attribute-set>
+
+<xsl:attribute-set name="computeroutput.properties">
+  <xsl:attribute name="line-height">1</xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:template match="d:computeroutput">
+  <fo:block xsl:use-attribute-sets="computeroutput.properties">
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
 
 </xsl:stylesheet>
