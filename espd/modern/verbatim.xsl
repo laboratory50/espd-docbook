@@ -32,7 +32,7 @@
   <xsl:attribute name="background-color">#f5f5f5</xsl:attribute>
   <xsl:attribute name="border-width">0.5pt</xsl:attribute>
   <xsl:attribute name="border-style">dashed</xsl:attribute>
-  <xsl:attribute name="border-color">#92DBFF</xsl:attribute>
+  <xsl:attribute name="border-color">#aaaaaa</xsl:attribute>
   <xsl:attribute name="padding">2mm</xsl:attribute>
 </xsl:attribute-set>
 
