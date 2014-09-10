@@ -11,6 +11,7 @@
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
     version="1.1">
 
 <!-- Тире для ненумерованных списков. -->
@@ -100,5 +101,12 @@
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
+
+<!-- Отбивка для variablelist -->
+<xsl:attribute-set name="variablelist.term.properties">
+  <xsl:attribute name="text-indent">
+    <xsl:value-of select="$espd.text-indent"/>
+  </xsl:attribute>
+</xsl:attribute-set>
   
 </xsl:stylesheet>
