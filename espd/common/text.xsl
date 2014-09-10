@@ -52,7 +52,9 @@
                    |parent::d:note
                    |parent::d:caution
                    |parent::d:important
-                   |parent::d:chapter">
+                   |parent::d:warning
+                   |parent::d:chapter
+                   |parent::d:abstract">
         <xsl:value-of select="$espd.text-indent"/>
       </xsl:when>
       <xsl:otherwise>

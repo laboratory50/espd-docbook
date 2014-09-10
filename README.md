@@ -55,6 +55,11 @@ XSL-FO для создания PDF документов. Помимо требо
 
     fop -catalog -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl -pdf mybook.pdf
 
+Стилевые файлы располагаются по адресу http://lab50.net/xsl/espd/. Например, вы
+можете включить в ваше описание стиля:
+
+    <xsl:import href="http://lab50.net/xsl/espd/espd.xsl"/>
+
 ### Стилевые параметры
 
 Стиль <docbook>ЕСПД</docbook> содержит ряд параметров с помощью
