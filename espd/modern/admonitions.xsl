@@ -23,7 +23,7 @@
   <xsl:attribute name="margin-{$direction.align.start}">2mm</xsl:attribute>
   <xsl:attribute name="margin-{$direction.align.end}">2mm</xsl:attribute>
 </xsl:attribute-set>
-
+<!--
 <xsl:attribute-set name="admonition.properties">
   <xsl:attribute name="background-color">
     <xsl:value-of select="$espd-modern.color.bg3"/>
@@ -31,7 +31,7 @@
   <xsl:attribute name="border-width">1pt</xsl:attribute>
   <xsl:attribute name="border-before-width">0pt</xsl:attribute>
   <xsl:attribute name="border-style">solid</xsl:attribute>
-<!--
+
   <xsl:attribute name="border-color">
     <xsl:choose>
       <xsl:when test="ancestor-or-self::d:tip"      >#FFFFFF</xsl:when>
@@ -41,13 +41,13 @@
       <xsl:when test="ancestor-or-self::d:warning"  >#FFADAD</xsl:when>
       <xsl:otherwise>#000000</xsl:otherwise>
     </xsl:choose>
-  </xsl:attribute>-->
+  </xsl:attribute>
   <xsl:attribute name="border-color">
     <xsl:value-of select="$espd-modern.color.border"/>
   </xsl:attribute>
   <xsl:attribute name="padding">2mm</xsl:attribute>
-</xsl:attribute-set>
-
+</xsl:attribute-set>-->
+<!--
 <xsl:attribute-set name="admonition.title.properties">
   <xsl:attribute name="font-size">1.1em</xsl:attribute>
   <xsl:attribute name="font-weight">bold</xsl:attribute>
@@ -78,10 +78,10 @@
       <xsl:otherwise>#000000</xsl:otherwise>
     </xsl:choose>
   </xsl:attribute>
-  <!--      <xsl:attribute name="color">
+        <xsl:attribute name="color">
         <xsl:value-of select="$espd-modern.color.text"/>
-      </xsl:attribute>-->
-</xsl:attribute-set>
+      </xsl:attribute>
+  </xsl:attribute-set> -->
 
 </xsl:stylesheet>
 
