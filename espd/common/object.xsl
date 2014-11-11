@@ -31,22 +31,14 @@
   <xsl:attribute name="space-after.minimum">0.3em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0.4em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0.6em</xsl:attribute>
-</xsl:attribute-set>
-
-<!-- Рисунки -->
-
-<!-- Центрирование названия -->
-<xsl:attribute-set name="figure.properties"
-                   use-attribute-sets="formal.object.properties">
-  <xsl:attribute name="text-align">center</xsl:attribute>
-</xsl:attribute-set>
-
-<!-- Таблицы -->
-
-<!-- Центрирование названия -->
-<xsl:attribute-set name="table.properties"
-                   use-attribute-sets="formal.object.properties">
-  <xsl:attribute name="text-align">center</xsl:attribute>
+  <!-- Центрирование подписей рисунков и таблиц -->
+  <xsl:attribute name="text-align">
+    <xsl:choose>
+      <xsl:when test="self::d:table">center</xsl:when>
+      <xsl:when test="self::d:figure">center</xsl:when>
+      <xsl:otherwise>left</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 </xsl:stylesheet>
