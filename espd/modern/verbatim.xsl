@@ -64,7 +64,7 @@
       <xsl:when test="processing-instruction('db-font-size')">
         <xsl:value-of select="processing-instruction('db-font-size')"/>
       </xsl:when>
-      <xsl:otherwise><xsl:value-of select="$espd.verbatim.font.size"/></xsl:otherwise>
+      <xsl:otherwise>0.9em</xsl:otherwise>
     </xsl:choose>
   </xsl:attribute>
 </xsl:attribute-set>

@@ -33,7 +33,7 @@
 <xsl:param name="body.font.master">12</xsl:param>
 <xsl:param name="line-height">1.4</xsl:param>
 <!-- Размер шрифта машинного текста-->
-<xsl:param name="espd.verbatim.font.size">0.9em</xsl:param>
+<xsl:param name="espd.verbatim.font.size">11pt</xsl:param>
 
 <xsl:attribute-set name="monospace.properties">
   <xsl:attribute name="font-family">
