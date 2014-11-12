@@ -36,6 +36,17 @@
   <xsl:attribute name="start-indent">2pt</xsl:attribute>
 </xsl:attribute-set>
 
+<xsl:attribute-set name="calloutlist.properties">
+  <xsl:attribute name="space-before.optimum">1em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>
+  <xsl:attribute name="start-indent">2pt</xsl:attribute>
+  <xsl:attribute name="provisional-distance-between-starts">
+    <xsl:value-of select="$espd.text-indent"/>
+  </xsl:attribute>
+  <xsl:attribute name="provisional-label-separation">0.15em</xsl:attribute>
+</xsl:attribute-set>
+
 <!-- Отбивка и отступы перечислений -->
 <xsl:attribute-set name="list.block.spacing">
   <xsl:attribute name="space-before.optimum">0.1em</xsl:attribute>
