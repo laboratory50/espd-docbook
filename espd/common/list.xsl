@@ -26,8 +26,8 @@
 -->
 <!-- Отбивка пунктов перечислений. -->
 <xsl:attribute-set name="list.item.spacing">
-  <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
-  <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.4em</xsl:attribute>
 </xsl:attribute-set>
 <!--

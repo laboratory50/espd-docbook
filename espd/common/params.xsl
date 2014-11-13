@@ -15,7 +15,7 @@
 <xsl:param name="espd.decimal"/>
 <!-- <xsl:param name="espd.decimal">АБВГ.50.0001-01</xsl:param> -->
 <!-- Абзацный отступ -->
-<xsl:param name="espd.text-indent">1.27cm</xsl:param>
+<xsl:param name="espd.text-indent">1.85em</xsl:param>
 <!-- Лист регистрации изменений -->
 <xsl:param name="espd.lri">1</xsl:param>
 <!-- Шрифт колонтитулов -->
