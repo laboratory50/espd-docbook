@@ -75,7 +75,7 @@
                          mode="item-number"/>
   </xsl:if>
 
-  <xsl:number value="$item-number" format="{$type}" xml:lang="ru_RU"/>
+  <xsl:number value="$item-number" format="{$type}"/>
 </xsl:template>
 
 <!-- Нумерация шагов в процедуре -->
@@ -104,9 +104,6 @@
 
 <!-- Отбивка для variablelist -->
 <xsl:attribute-set name="variablelist.term.properties">
-  <xsl:attribute name="text-indent">
-    <xsl:value-of select="$espd.text-indent"/>
-  </xsl:attribute>
   <xsl:attribute name="font-weight">bold</xsl:attribute>
 </xsl:attribute-set>
   

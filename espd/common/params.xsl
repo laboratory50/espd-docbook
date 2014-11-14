@@ -29,5 +29,8 @@
 <!-- Размер шрифта машинного текста-->
 <xsl:param name="espd.verbatim.font.size">11pt</xsl:param>
 
+<!-- Цвет фона абзацев машинного текста -->
+<xsl:param name="espd.verbatim.color.bg">#f5f5f5</xsl:param>
+
 </xsl:stylesheet>
 

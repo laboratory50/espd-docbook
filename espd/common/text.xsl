@@ -28,9 +28,7 @@
 <!-- Параметры абзаца: абзацный отступ -->
 <xsl:attribute-set name="indent.para.spacing"
                    use-attribute-sets="normal.para.spacing">
-  <xsl:attribute name="text-indent">
-    <xsl:value-of select="$espd.text-indent"/>
-  </xsl:attribute>
+  <xsl:attribute name="text-indent"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Абзацный отступ -->
@@ -57,9 +55,7 @@
                    |parent::d:abstract">
         <xsl:value-of select="$espd.text-indent"/>
       </xsl:when>
-      <xsl:otherwise>
-       0mm
-      </xsl:otherwise>
+      <xsl:otherwise>0mm</xsl:otherwise>
     </xsl:choose>
   </xsl:attribute>
 </xsl:attribute-set>
