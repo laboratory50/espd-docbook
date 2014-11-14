@@ -75,7 +75,7 @@
                          mode="item-number"/>
   </xsl:if>
 
-  <xsl:number value="$item-number" format="{$type}"/>
+  <xsl:number value="$item-number" format="{$type}" xml:lang="ru_RU"/>
 </xsl:template>
 
 <!-- Нумерация шагов в процедуре -->
