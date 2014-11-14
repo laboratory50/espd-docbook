@@ -27,7 +27,7 @@
 <xsl:param name="procedure.numeration.recursive">1</xsl:param>
 
 <!-- Размер шрифта машинного текста-->
-<xsl:param name="espd.verbatim.font.size">0.9em</xsl:param>
+<xsl:param name="espd.verbatim.font.size">11pt</xsl:param>
 
 </xsl:stylesheet>
 
