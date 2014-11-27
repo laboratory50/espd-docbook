@@ -12,13 +12,13 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:d="http://docbook.org/ns/docbook"
+    exclude-result-prefixes="d"
     version="1.1">
 
 <xsl:include href="../common/list.xsl"/>
 
 <xsl:attribute-set name="list.block.properties">
   <xsl:attribute name="provisional-label-separation">2pt</xsl:attribute>
-  <!--  <xsl:attribute name="provisional-distance-between-starts">15mm</xsl:attribute> -->
 </xsl:attribute-set>
 
 <!-- Расстояние между левой границей перечня и текстом -->

@@ -41,4 +41,9 @@
   </xsl:attribute>
 </xsl:attribute-set>
 
+<!-- Изображения по центру -->
+<xsl:attribute-set name="figure.properties">
+  <xsl:attribute name="text-align">center</xsl:attribute>
+</xsl:attribute-set>
+
 </xsl:stylesheet>
