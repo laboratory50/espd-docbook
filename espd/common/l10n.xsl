@@ -17,14 +17,16 @@
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"> 
   <l:l10n language="ru">
     <l:context name="xref-number">
+      <l:template name="table" text="табл.&#160;%n"/>
       <l:template name="figure" text="рис.&#160;%n"/>
       <l:template name="section" text="раздел&#160;%n"/>
       <l:template name="simplesect" text="подраздел&#160;%n"/>
       <l:template name="chapter" text="глава %n"/>
     </l:context>
     <l:context name="title-numbered">
-      <l:template name="chapter" text="%n.&#160;%t"/>
-      <l:template name="section" text="%n.&#160;%t"/>
+      <l:template name="chapter" text="%n %t"/>
+      <l:template name="section" text="%n %t"/>
+      <l:template name="simplesect" text="%t"/>
     </l:context>
     <l:context name="title">
       <l:template name="figure" text="Рис. %n:&#160;%t"/>

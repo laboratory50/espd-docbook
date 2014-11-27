@@ -26,6 +26,7 @@
 <xsl:include href="lu.xsl"/>
 <xsl:include href="lri.xsl"/>
 <xsl:include href="common/verbatim.xsl"/>
+<xsl:include href="common/toc.xsl"/>
 
 <xsl:param name="body.font.family">GentiumAlt</xsl:param>
 <xsl:param name="sans.font.family">FreeSans</xsl:param>
