@@ -42,9 +42,9 @@
   <xsl:param name="gentext-key" select="''"/>
   <fo:block>
     <xsl:choose>
-     <xsl:when test="$pageclass = 'titlepage'"/>
+      <xsl:when test="$pageclass = 'titlepage'"/>
 
-      <xsl:when test="$sequence = 'odd' and $position = 'left'">
+      <xsl:when test="$sequence = 'odd' and $position = 'left' and $gentext-key != 'TableofContents'">
         <xsl:apply-templates select="." mode="titleabbrev.markup"/>
       </xsl:when>
 
@@ -52,7 +52,7 @@
         <xsl:apply-templates select="." mode="titleabbrev.markup"/>
       </xsl:when>-->
 
-      <xsl:when test="$sequence = 'even' and $position = 'right'">
+      <xsl:when test="$sequence = 'even' and $position = 'right' and $gentext-key != 'TableofContents'">
         <xsl:apply-templates select="." mode="titleabbrev.markup"/>
       </xsl:when>
 
