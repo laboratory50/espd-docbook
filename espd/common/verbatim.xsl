@@ -45,12 +45,17 @@
       <xsl:otherwise>normal</xsl:otherwise>
     </xsl:choose>
   </xsl:attribute>
+  <xsl:attribute name="keep-together.within-column">
+    <xsl:choose>
+      <xsl:when test="self::d:screen">always</xsl:when>
+      <xsl:otherwise>auto</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Блок атрибутов для элемента computeroutput -->
 <xsl:attribute-set name="computeroutput.properties">
   <xsl:attribute name="font-size">0.9em</xsl:attribute>
-  <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="shade.verbatim" select="1"/>
