@@ -60,8 +60,8 @@
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
-  <xsl:attribute name="provisional-distance-between-starts">22mm</xsl:attribute>
-  <xsl:attribute name="provisional-label-separation">5mm</xsl:attribute>
+  <xsl:attribute name="provisional-distance-between-starts">20mm</xsl:attribute>
+  <xsl:attribute name="provisional-label-separation">4mm</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Оформление заголовка в соответствии с параметром espd.heading.separation -->
