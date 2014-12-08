@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<!-- © Лаборатория 50, 2013 -->
+<!-- © Лаборатория 50, 2013-14 -->
 <!-- Распространяется на правах лицензии CC BY-SA 3.0 -->
 <book xmlns="http://docbook.org/ns/docbook" 
         xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -10,16 +10,32 @@
     <info>
         <title>Программный комплекс</title>
         <subtitle>Пояснительная записка</subtitle>
-        <author>
-            <orgname>Лаборатория 50</orgname>
-            <address>
-                <city>Санкт-Петербург</city>
-                <street>http://лаб50.рф</street>
-                <postcode>000000</postcode>
-                <country>Россия</country>
-            </address>
-            <email>team@lab50.net</email>
-        </author>
+	 <authorgroup>
+	    <author>
+		<personname>
+		    <firstname>Василий</firstname>
+		    <surname>Шлыков</surname>
+		    <othername>Александрович</othername>
+		</personname>
+		<personblurb><para>Исполнитель</para></personblurb>
+	    </author>
+	    <editor>
+		<personname>
+		    <firstname>Иоанн</firstname>
+		    <surname>Грозный</surname>
+		    <othername>Васильевич</othername>
+		</personname>
+		<personblurb><para>Царь</para></personblurb>
+	    </editor>
+	    <othercredit>
+		<personname>
+		    <firstname>Лев</firstname>
+		    <surname>Мышкин</surname>
+		    <othername>Николаевич</othername>
+		</personname>
+		<personblurb><para>Начальник «Лаборатории 50», князь</para></personblurb>
+	    </othercredit>
+	</authorgroup>
     </info>
     <preface>
         <info>
@@ -66,7 +82,6 @@
 
     <chapter>
         <title>Введение</title>
-        <subtitle>Subtitle of First chapter</subtitle>
         <section>
             <title>Наименование программы</title>
             <subtitle>Subtitle of section</subtitle>
