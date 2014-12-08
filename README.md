@@ -62,7 +62,8 @@ XSL-FO для создания PDF документов. Помимо требо
 
 или Apache FOP:
 
-    fop -catalog -c ~/espd-docbook5/fop.xml -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl -pdf mybook.pdf
+    fop -catalog -c ~/espd-docbook5/fop.xml -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl \
+	-param espd.decimal 'Децимальный номер' -pdf mybook.pdf
 
 Стилевые файлы располагаются по адресу http://lab50.net/xsl/espd/. Например, вы
 можете включить в ваше описание стиля:
