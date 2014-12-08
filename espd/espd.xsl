@@ -13,7 +13,7 @@
     version="1.1">
 <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/>
 
-<xsl:include href="page.xsl"/>
+<xsl:include href="common/page.xsl"/>
 <xsl:include href="common/params.xsl"/>
 <xsl:include href="core.xsl"/>
 <xsl:include href="common/text.xsl"/>
@@ -27,11 +27,6 @@
 <xsl:include href="lri.xsl"/>
 <xsl:include href="common/verbatim.xsl"/>
 <xsl:include href="common/toc.xsl"/>
-
-<xsl:param name="body.font.family">GentiumAlt</xsl:param>
-<xsl:param name="sans.font.family">FreeSans</xsl:param>
-<xsl:param name="title.font.family">URW Gothic L</xsl:param>
-<xsl:param name="symbol.font.family">OpenSymbol,Symbol</xsl:param>
 
 <!--
 <xsl:template name="book.titlepage.recto"/>
