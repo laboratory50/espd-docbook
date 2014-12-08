@@ -18,7 +18,7 @@
 <xsl:include href="core.xsl"/>
 <xsl:include href="common/text.xsl"/>
 <xsl:include href="titles.xsl"/>
-<xsl:include href="headings.xsl"/>
+<xsl:include href="espd/headings.xsl"/>
 <xsl:include href="list.xsl"/>
 <xsl:include href="common/object.xsl"/>
 <xsl:include href="common/l10n.xsl"/>

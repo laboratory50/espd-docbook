@@ -15,16 +15,16 @@
     version="1.1">
 
 <!-- Нумерация страниц -->
-<xsl:template name="initial.page.number">
+<!-- <xsl:template name="initial.page.number">
   <xsl:param name="element" select="local-name(.)"/>
   <xsl:param name="master-reference" select="''"/>
 
   <xsl:choose>
-    <xsl:when test="$element = 'toc'">2</xsl:when> <!-- Когда у нас есть ЛУ, выкидываем его из нумерации. -->
+    <xsl:when test="$element = 'toc'">2</xsl:when> <!- Когда у нас есть ЛУ, выкидываем его из нумерации. ->
     <xsl:when test="$element = 'book'">1</xsl:when>
     <xsl:otherwise>auto</xsl:otherwise>
   </xsl:choose>
-</xsl:template>
+</xsl:template> -->
 
 <xsl:template name="page.number.format">1</xsl:template>
 
@@ -51,11 +51,11 @@
           <xsl:value-of select="$espd.decimal"/>
         </fo:block>
       </xsl:when>
-    
+<!--
       <xsl:when test="$sequence = 'blank' and $position = 'left'">
         <fo:page-number/>
       </xsl:when>
-
+-->
       <xsl:otherwise/>
     
     </xsl:choose>

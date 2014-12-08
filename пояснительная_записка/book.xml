@@ -84,16 +84,11 @@
         <title>Введение</title>
         <section>
             <title>Наименование программы</title>
-            <subtitle>Subtitle of section</subtitle>
-            <section>
-                <title>Section1 Title</title>
-                <subtitle>Subtitle of Section 1</subtitle>
-                <para>Text</para>
-            </section>
+            <para>Текст</para>
         </section>
         <section>
             <title>Условное обозначение темы разработки</title>
-            <para>Text</para>
+            <para>Текст</para>
         </section>
     </chapter>
 
