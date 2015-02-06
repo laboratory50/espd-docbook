@@ -27,6 +27,7 @@
 <xsl:include href="lri.xsl"/>
 <xsl:include href="common/verbatim.xsl"/>
 <xsl:include href="common/toc.xsl"/>
+<xsl:include href="common/qandaset.xsl"/>
 
 <!--
 <xsl:template name="book.titlepage.recto"/>
