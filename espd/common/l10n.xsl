@@ -16,6 +16,8 @@
 
 <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"> 
   <l:l10n language="ru">
+    <l:gentext key="Step" text="шаг"/>
+    <l:gentext key="step" text="шаг"/>
     <l:context name="xref-number">
       <l:template name="table" text="табл.&#160;%n"/>
       <l:template name="figure" text="рис.&#160;%n"/>
