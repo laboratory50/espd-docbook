@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2015.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -52,7 +52,7 @@
     <xsl:value-of select="$sans.font.family"/>
   </xsl:attribute>
   <xsl:attribute name="font-weight">normal</xsl:attribute>
-  <xsl:attribute name="font-size">11pt</xsl:attribute>
+  <xsl:attribute name="font-size">10.5pt</xsl:attribute>
   <xsl:attribute name="text-align">center</xsl:attribute>
   <xsl:attribute name="hyphenate">true</xsl:attribute>
 </xsl:attribute-set>
@@ -105,15 +105,15 @@
           <fo:block xsl:use-attribute-sets="espd.lri.style">
             <fo:table table-layout="fixed" width="100%" height="100%" border-style="solid" border-width="0.4mm">
               <fo:table-column column-width="8mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="18mm" border-style="solid"/>
               <fo:table-column column-width="20mm" border-style="solid"/>
               <fo:table-column column-width="20mm" border-style="solid"/>
-              <fo:table-column column-width="20mm" border-style="solid"/>
-              <fo:table-column column-width="20mm" border-style="solid"/>
-              <fo:table-column column-width="20mm" border-style="solid"/>
-              <fo:table-column column-width="25mm" border-style="solid"/>
               <fo:table-column column-width="25mm" border-style="solid"/>
               <fo:table-column column-width="15mm" border-style="solid"/>
-              <fo:table-column column-width="12mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
               <fo:table-body>
                 <fo:table-row height="9mm" border-style="solid" border-width="0.4mm" text-align="center">
                     <fo:table-cell number-columns-spanned="10" display-align="center">
@@ -131,7 +131,7 @@
                         <fo:block>№ документа</fo:block>
                     </fo:table-cell>
                     <fo:table-cell number-rows-spanned="2" display-align="center">
-                        <fo:block>Входящий № сопроводительного докум. и дата</fo:block>
+                        <fo:block>Входящий № сопр. документа и дата</fo:block>
                     </fo:table-cell>
                     <fo:table-cell number-rows-spanned="2" display-align="center">
                         <fo:block>Подп.</fo:block>
