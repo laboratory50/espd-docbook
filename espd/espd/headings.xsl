@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -13,20 +13,6 @@
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
-
-<!-- Нумерация страниц -->
-<!-- <xsl:template name="initial.page.number">
-  <xsl:param name="element" select="local-name(.)"/>
-  <xsl:param name="master-reference" select="''"/>
-
-  <xsl:choose>
-    <xsl:when test="$element = 'toc'">2</xsl:when> <!- Когда у нас есть ЛУ, выкидываем его из нумерации. ->
-    <xsl:when test="$element = 'book'">1</xsl:when>
-    <xsl:otherwise>auto</xsl:otherwise>
-  </xsl:choose>
-</xsl:template> -->
-
-<xsl:template name="page.number.format">1</xsl:template>
 
 <!-- Удаление разделительных полос. -->
 <xsl:param name="footer.rule" select="0"/>
