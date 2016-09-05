@@ -30,9 +30,7 @@
 <xsl:include href="modern/admonitions.xsl"/>
 <xsl:include href="modern/toc.xsl"/>
 <xsl:include href="common/qandaset.xsl"/>
-<!--<xsl:include href="titlepage.xsl"/>
-<xsl:include href="lu.xsl"/>
-<xsl:include href="lri.xsl"/>-->
+<xsl:include href="common/titlepage.xsl"/>
 
 <xsl:param name="body.font.master">12</xsl:param>
 <xsl:param name="line-height">1.4</xsl:param>

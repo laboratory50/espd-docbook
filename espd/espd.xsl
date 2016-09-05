@@ -22,6 +22,7 @@
 <xsl:include href="list.xsl"/>
 <xsl:include href="common/object.xsl"/>
 <xsl:include href="common/l10n.xsl"/>
+<xsl:include href="common/titlepage.xsl"/>
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="lu.xsl"/>
 <xsl:include href="lri.xsl"/>
