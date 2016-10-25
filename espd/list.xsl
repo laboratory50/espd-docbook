@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -16,8 +16,8 @@
 <xsl:include href="common/list.xsl"/>
 
 <!-- Ширина символов перечислений. -->
-<xsl:param name="orderedlist.label.width">1.2em</xsl:param>
-<xsl:param name="itemizedlist.label.width">1.2em</xsl:param>
+<xsl:param name="orderedlist.label.width">1.6em</xsl:param>
+<xsl:param name="itemizedlist.label.width">1.6em</xsl:param>
 
 <!-- Отбивка и отступы перечислений -->
 <xsl:attribute-set name="list.block.spacing">

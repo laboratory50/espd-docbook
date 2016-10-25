@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии CC BY-SA 4.0.
 
   http://lab50.net/
@@ -213,15 +213,6 @@
         <xsl:with-param name="key" select="'hyphenation-remain-character-count'"/>
       </xsl:call-template>
     </xsl:attribute>
-    <xsl:if test="$axf.extensions != 0">
-      <xsl:attribute name="axf:outline-level">
-        <xsl:value-of select="count($node/ancestor::*)"/>
-      </xsl:attribute>
-      <xsl:attribute name="axf:outline-expand">false</xsl:attribute>
-      <xsl:attribute name="axf:outline-title">
-        <xsl:value-of select="normalize-space($title)"/>
-      </xsl:attribute>
-    </xsl:if>
 
     <xsl:choose>
       <xsl:when test="$level=2">

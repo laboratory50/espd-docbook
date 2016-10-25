@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -22,11 +22,12 @@
 
 <xsl:template name="book.titlepage.recto">
 
-  <!-- УТВЕРЖДАЮ -->
+<!-- УТВЕРЖДАЮ (кто)-->
   <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:editor"/>
 
   <xsl:call-template name="espd-stamp"/>
 
+<!-- Название комплекса -->
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:title"/>
@@ -38,7 +39,8 @@
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:title"/>
     </xsl:when>
   </xsl:choose>
-              
+
+<!-- Тип документа -->
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:subtitle">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:subtitle"/>
@@ -51,6 +53,7 @@
     </xsl:when>
   </xsl:choose>
 
+<!-- Лист утверждения -->
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style"
             space-before="1cm">
     ЛИСТ УТВЕРЖДЕНИЯ
@@ -62,11 +65,12 @@
     <xsl:value-of select="$espd.decimal"/><xsl:text>-ЛУ</xsl:text>
   </fo:block>
 
+<!-- Руководитель проекта -->
   <fo:block-container keep-together="always" space-before="1cm">
     <fo:block-container absolute-position="absolute"
                       keep-together="always"
                       right="0cm"
-                      width="30%"
+                      width="33%"
                       xsl:use-attribute-sets="book.titlepage.recto.style">
 
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:othercredit"/>
@@ -114,11 +118,12 @@
   </fo:block>
 </xsl:template>
 
+<!-- утверждаю -->
 <xsl:template name="espd.title.approvement.approve">
   <fo:block-container absolute-position="absolute"
                       top="0cm"
                       right="0cm"
-                      width="30%"
+                      width="33%"
                       xsl:use-attribute-sets="book.titlepage.recto.style">
 
     <xsl:call-template name="espd.title.approvement">
@@ -131,6 +136,7 @@
   </fo:block-container>
 </xsl:template>
 
+<!-- название комплекса -->
 <xsl:template match="d:title" mode="book.titlepage.recto.auto.mode">
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style" 
             space-before="8cm">
@@ -144,6 +150,7 @@
   </fo:block>
 </xsl:template>
 
+<!-- название документа -->
 <xsl:template match="d:subtitle" mode="book.titlepage.recto.auto.mode">
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style" 
             space-before="5mm" >
@@ -159,6 +166,7 @@
   <xsl:call-template name="espd.title.approvement.approve"/>
 </xsl:template>
 
+<!-- дата публикации -->
 <xsl:template match="d:pubdate" mode="book.titlepage.recto.auto.mode">
   <fo:block-container absolute-position="fixed"
                       top="27cm"

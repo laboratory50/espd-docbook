@@ -14,7 +14,7 @@
 
 <!-- Авторские права в российском стиле (значок организация, дата) -->
 <xsl:template match="d:copyright" mode="book.titlepage.verso.auto.mode">
-  <fo:block xsl:use-attribute-sets="book.titlepage.verso.style" space-before="1em">
+  <fo:block xsl:use-attribute-sets="book.titlepage.verso.style">
   <xsl:call-template name="dingbat">
     <xsl:with-param name="dingbat">copyright</xsl:with-param>
   </xsl:call-template>
