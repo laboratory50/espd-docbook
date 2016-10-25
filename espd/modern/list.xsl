@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -22,25 +22,19 @@
 </xsl:attribute-set>
 
 <!-- Расстояние между левой границей перечня и текстом -->
-<xsl:param name="itemizedlist.label.width">
-  <xsl:value-of select="$espd.text-indent"/>
-</xsl:param>
+<xsl:param name="itemizedlist.label.width">1.6em</xsl:param>
 
 <!-- Расстояние между левой границей перечня и текстом -->
-<xsl:param name="orderedlist.label.width">
-  <xsl:value-of select="$espd.text-indent"/>
-</xsl:param>
+<xsl:param name="orderedlist.label.width">1.6em</xsl:param>
 
 <xsl:attribute-set name="itemizedlist.label.properties">
-  <xsl:attribute name="text-indent">0.3em</xsl:attribute>
-</xsl:attribute-set>
-
-<xsl:attribute-set name="orderedlist.label.properties">
-  <xsl:attribute name="text-indent">0.35em</xsl:attribute>
+  <xsl:attribute name="text-indent">
+    0.3em</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="calloutlist.label.properties">
-  <xsl:attribute name="text-indent">0.35em</xsl:attribute>
+  <xsl:attribute name="text-indent">
+    <xsl:value-of select="$espd.text-indent"/></xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="calloutlist.properties">
@@ -62,7 +56,7 @@
   <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
   <xsl:attribute name="text-indent">0</xsl:attribute>
-  <xsl:attribute name="margin-left">0</xsl:attribute>
+  <xsl:attribute name="margin-left"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:template match="d:varlistentry" mode="vl.as.blocks">
