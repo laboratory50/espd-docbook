@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2016.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -32,12 +32,12 @@
 <xsl:attribute-set name="verbatim.properties">
   <xsl:attribute name="text-indent">0mm</xsl:attribute>
   <xsl:attribute name="margin">0mm</xsl:attribute>
-  <xsl:attribute name="space-before.minimum">0.1em</xsl:attribute>
-  <xsl:attribute name="space-before.optimum">0.2em</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">0.3em</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
-  <xsl:attribute name="space-after.optimum">0.2em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">1.3em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.2em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0.4em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0.6em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.2em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0.4em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.6em</xsl:attribute>
   <xsl:attribute name="line-height">
     <xsl:choose>
       <xsl:when test="self::d:programlisting">1.2</xsl:when>

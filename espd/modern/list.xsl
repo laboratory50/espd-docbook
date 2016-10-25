@@ -28,13 +28,13 @@
 <xsl:param name="orderedlist.label.width">1.6em</xsl:param>
 
 <xsl:attribute-set name="itemizedlist.label.properties">
-  <xsl:attribute name="text-indent">
-    0.3em</xsl:attribute>
+  <xsl:attribute name="text-indent">0.3em</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="calloutlist.label.properties">
   <xsl:attribute name="text-indent">
-    <xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+      <xsl:value-of select="$espd.text-indent"/>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="calloutlist.properties">
