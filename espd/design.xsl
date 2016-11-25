@@ -25,7 +25,7 @@
   <xsl:attribute name="hyphenate">false</xsl:attribute>
 </xsl:attribute-set>
 
-<!-- Печать -->
+<!-- Штамп -->
 <xsl:template name="espd-stamp">
   <fo:block-container reference-orientation="90"
                       absolute-position="fixed"

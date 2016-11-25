@@ -48,19 +48,30 @@
       <xsl:with-param name="node" select="parent::d:orderedlist"/>
     </xsl:call-template>
   </xsl:variable>
-  <xsl:variable name="type">
+  <xsl:variable name="base">
     <xsl:choose>
-      <xsl:when test="$numeration='arabic'">1)</xsl:when>
-      <xsl:when test="$numeration='loweralpha'">а)</xsl:when>
-      <xsl:when test="$numeration='lowerroman'">i)</xsl:when>
-      <xsl:when test="$numeration='upperalpha'">А)</xsl:when>
-      <xsl:when test="$numeration='upperroman'">I)</xsl:when>
+      <xsl:when test="$numeration='arabic'">1</xsl:when>
+      <xsl:when test="$numeration='loweralpha'">а</xsl:when>
+      <xsl:when test="$numeration='lowerroman'">i</xsl:when>
+      <xsl:when test="$numeration='upperalpha'">А</xsl:when>
+      <xsl:when test="$numeration='upperroman'">I</xsl:when>
       <xsl:otherwise>
         <xsl:message>
           <xsl:text>Unexpected numeration: </xsl:text>
           <xsl:value-of select="$numeration"/>
         </xsl:message>
-        <xsl:value-of select="1."/>
+        <xsl:value-of select="1"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="type">
+    <xsl:choose>
+      <xsl:when test="parent::d:orderedlist[@role='dot']">
+        <xsl:value-of select="concat($base, '.')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="concat($base, ')')"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
