@@ -30,6 +30,15 @@
   <xsl:attribute name="space-before.minimum">0</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.4em</xsl:attribute>
 </xsl:attribute-set>
+
+<xsl:attribute-set name="orderedlist.properties">
+  <xsl:attribute name="margin-left"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="itemizedlist.properties">
+  <xsl:attribute name="margin-left"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+</xsl:attribute-set>
+
 <!--
 <xsl:attribute-set name="list.block.properties">
   <xsl:attribute name="provisional-label-separation">0cm</xsl:attribute>
