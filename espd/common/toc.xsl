@@ -79,7 +79,7 @@
     <!-- no automatic even blank pages at end of chapters -->
     <xsl:when test="$force.blank.pages = 0">no-force</xsl:when>
 
-    <xsl:when test="$double.sided != 0 and $master-reference = 'lot'">no-force</xsl:when>
+    <!-- <xsl:when test="$double.sided != 0 and $master-reference = 'lot'">no-force</xsl:when> -->
     <!-- double-sided output -->
     <xsl:when test="$double.sided != 0">end-on-even</xsl:when>
     <!-- single-sided output -->

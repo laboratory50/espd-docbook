@@ -44,7 +44,10 @@
 
 <xsl:template match="d:book">
     <xsl:apply-imports/>
-    <xsl:call-template name="lripage"/>
+<!--     <xsl:call-template name="lripage"/> -->
+    <xsl:if test="$espd.lri = '1'">
+      <xsl:call-template name="lripage"/>
+    </xsl:if>
 </xsl:template>
 
 <xsl:attribute-set name="espd.lri.style">

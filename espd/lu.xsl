@@ -18,7 +18,13 @@
 <xsl:import href="design.xsl"/>
 
 <xsl:attribute-set name="book.titlepage.recto.style"
-                   use-attribute-sets="espd.titlepage.style"/>
+                   use-attribute-sets="espd.titlepage.style">
+  <xsl:attribute name="font-family">
+    <xsl:value-of select="$body.font.family"/>
+  </xsl:attribute>
+  <xsl:attribute name="font-weight">normal</xsl:attribute>
+  <xsl:attribute name="font-size">14pt</xsl:attribute>
+</xsl:attribute-set>
 
 <xsl:template name="book.titlepage.recto">
 
