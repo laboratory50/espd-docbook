@@ -55,13 +55,4 @@
     
 </xsl:template>
 
-<!-- Удаление отступа в ячейке таблицы -->
-<xsl:attribute-set name="table.cell.padding">
-  <xsl:attribute name="padding-start">2pt</xsl:attribute>
-  <xsl:attribute name="padding-end">2pt</xsl:attribute>
-  <xsl:attribute name="padding-top">2pt</xsl:attribute>
-  <xsl:attribute name="padding-bottom">2pt</xsl:attribute>
-  <xsl:attribute name="text-indent">0mm</xsl:attribute>
-</xsl:attribute-set>
-
 </xsl:stylesheet>
