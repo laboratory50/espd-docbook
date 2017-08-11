@@ -32,12 +32,23 @@
 </xsl:attribute-set>
 
 <xsl:attribute-set name="orderedlist.properties">
-  <xsl:attribute name="margin-left"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+  <xsl:attribute name="margin-left">
+    <xsl:choose>
+      <xsl:when test="ancestor::d:listitem">0.6em</xsl:when>
+      <xsl:otherwise><xsl:value-of select="$espd.text-indent"/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="itemizedlist.properties">
-  <xsl:attribute name="margin-left"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+  <xsl:attribute name="margin-left">
+    <xsl:choose>
+      <xsl:when test="ancestor::d:listitem">0.6em</xsl:when>
+      <xsl:otherwise><xsl:value-of select="$espd.text-indent"/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
+ 
 
 <!--
 <xsl:attribute-set name="list.block.properties">
