@@ -70,7 +70,7 @@
   <!-- Количество листов -->
   <fo:block xsl:use-attribute-sets="book.titlepage.verso.style"
             space-before="1cm">
-    Листов <fo:page-number-citation ref-id="END-OF-DOCUMENT"/>  
+    Листов  <fo:page-number-citation ref-id="END-OF-DOCUMENT"/>
   </fo:block>
 
   <xsl:apply-templates mode="book.titlepage.verso.auto.mode" select="d:info/d:author"/>

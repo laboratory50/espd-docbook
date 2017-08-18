@@ -42,6 +42,12 @@
     </fo:page-sequence-master>
 </xsl:template>
 
+<xsl:template match="processing-instruction()[local-name()='lastpage']">
+    <xsl:if test="$espd.lri = '0'">
+      <fo:block id="END-OF-DOCUMENT"/>
+    </xsl:if>
+</xsl:template>
+
 <xsl:template match="d:book">
     <xsl:apply-imports/>
 <!--     <xsl:call-template name="lripage"/> -->
