@@ -28,10 +28,28 @@
   <xsl:attribute name="space-before.minimum">4em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">4em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">4em</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">3em</xsl:attribute>
+<!--  <xsl:attribute name="space-after.minimum">3em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">3em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">3em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">3em</xsl:attribute>-->
   <xsl:attribute name="space-after.precedence">2</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">
+    <xsl:choose>
+      <xsl:when test="parent::d:appendix">1em</xsl:when>
+      <xsl:otherwise>2.8em</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
+  <xsl:attribute name="space-after.optimum">
+    <xsl:choose>
+      <xsl:when test="parent::d:appendix">1em</xsl:when>
+      <xsl:otherwise>3em</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
+  <xsl:attribute name="space-after.maximum">
+    <xsl:choose>
+      <xsl:when test="parent::d:appendix">1em</xsl:when>
+      <xsl:otherwise>3.2em</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <!--
@@ -65,7 +83,7 @@
                                   $uppercase-alphabet)" />
 </xsl:template>
 
-<xsl:template match="d:preface|d:chapter|d:appendix" mode="object.title.markup">
+<xsl:template match="d:preface|d:chapter|d:appendix|d:glossary|d:acknowledgements" mode="object.title.markup">
   <xsl:variable name="content">
     <xsl:apply-imports/>
   </xsl:variable>
@@ -82,20 +100,20 @@
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
-  <xsl:attribute name="space-before.minimum">4em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">3.8em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">4em</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">4em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">4.2em</xsl:attribute>
   <xsl:attribute name="space-before.precedence">1</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">3em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">2.8em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">3em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">3em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">3.2em</xsl:attribute>
 </xsl:attribute-set>
   
 <xsl:attribute-set name="section.title.level1.properties">
-    <xsl:attribute name="font-size">
+  <xsl:attribute name="font-size">
       <xsl:value-of select="$body.font.master"/>
       <xsl:text>pt</xsl:text>
-    </xsl:attribute>
+  </xsl:attribute>
 </xsl:attribute-set>
   
 <xsl:attribute-set name="section.title.level2.properties">
