@@ -52,7 +52,8 @@
                    |parent::d:important
                    |parent::d:warning
                    |parent::d:chapter
-                   |parent::d:abstract">
+                   |parent::d:abstract
+                   |parent::d:acknowledgements">
         <xsl:value-of select="$espd.text-indent"/>
       </xsl:when>
       <xsl:otherwise>0mm</xsl:otherwise>
