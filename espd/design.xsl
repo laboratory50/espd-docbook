@@ -20,7 +20,7 @@
     <xsl:value-of select="$body.font.family"/>
   </xsl:attribute>
   <xsl:attribute name="font-weight">normal</xsl:attribute>
-  <xsl:attribute name="font-size">14pt</xsl:attribute>
+  <xsl:attribute name="font-size">18pt</xsl:attribute>
   <xsl:attribute name="text-align">center</xsl:attribute>
   <xsl:attribute name="hyphenate">false</xsl:attribute>
 </xsl:attribute-set>
@@ -32,16 +32,16 @@
                       bottom="10mm"
                       left="8mm">
       <fo:block font-size="11pt" font-family="{$sans.font.family}">
-        <fo:table table-layout="fixed" width="145mm" height="12mm" border-style="solid" border-width="0.8mm">
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="25mm" border-style="solid" border-width="0.5mm"/>
-            <fo:table-column column-width="35mm" border-style="solid" border-width="0.5mm"/>
+        <fo:table table-layout="fixed" width="145mm" height="12mm" border-style="solid" border-width="0.3mm">
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.3mm"/>
+            <fo:table-column column-width="35mm" border-style="solid" border-width="0.3mm"/>
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.3mm"/>
+            <fo:table-column column-width="25mm" border-style="solid" border-width="0.3mm"/>
+            <fo:table-column column-width="35mm" border-style="solid" border-width="0.3mm"/>
             <fo:table-body>
-                <fo:table-row border-style="solid" border-width="0.8mm">
+                <fo:table-row border-style="solid" border-width="0.3mm">
                     <fo:table-cell>
-                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № подп.</fo:block>
+                        <fo:block margin-left="0.6mm" margin-top="0.3mm">Инв. № подл.</fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
                         <fo:block margin-left="0.6mm" margin-top="0.3mm">Подпись и дата</fo:block>

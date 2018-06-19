@@ -100,13 +100,13 @@
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
-  <xsl:attribute name="space-before.minimum">3.8em</xsl:attribute>
-  <xsl:attribute name="space-before.optimum">4em</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">4.2em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">1.8em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">2em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">2.2em</xsl:attribute>
   <xsl:attribute name="space-before.precedence">1</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">2.8em</xsl:attribute>
-  <xsl:attribute name="space-after.optimum">3em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">3.2em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">1.8em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">2em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">2.2em</xsl:attribute>
 </xsl:attribute-set>
   
 <xsl:attribute-set name="section.title.level1.properties">

@@ -25,7 +25,7 @@
 <xsl:include href="common/titlepage.xsl"/>
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="lu.xsl"/>
-<xsl:include href="lri.xsl"/>
+<!-- <xsl:include href="lri.xsl"/> -->
 <xsl:include href="common/verbatim.xsl"/>
 <xsl:include href="common/toc.xsl"/>
 <xsl:include href="common/qandaset.xsl"/>
