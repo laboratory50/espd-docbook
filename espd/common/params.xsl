@@ -32,5 +32,9 @@
 <!-- Цвет фона абзацев машинного текста -->
 <xsl:param name="espd.verbatim.color.bg">#f5f5f5</xsl:param>
 
+<!-- Нумерация приложений вместо буквизации -->
+<xsl:param name="appendix.autolabel">1</xsl:param>
+<xsl:param name="appendix.label.includes.component.label">1</xsl:param>
+
 </xsl:stylesheet>
 

@@ -18,8 +18,6 @@
 <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/highlight.xsl"/> -->
 <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/profiling/profile.xsl"/> -->
 
-<!-- <xsl:param name="profile.baseuri.fixup" select="false()"/> -->
-
 <xsl:include href="modern/page.xsl"/>
 <xsl:include href="common/params.xsl"/>
 <xsl:include href="modern/params.xsl"/>

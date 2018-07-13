@@ -150,19 +150,19 @@
                     </fo:table-cell>
                 </fo:table-row>
                 <fo:table-row border-style="solid" border-width="0.4mm" text-align="center">
-                    <fo:table-cell>
+                    <fo:table-cell display-align="center">
                         <fo:block>Изм.</fo:block>
                     </fo:table-cell>
-                    <fo:table-cell>
+                    <fo:table-cell display-align="center">
                         <fo:block>измененных</fo:block>
                     </fo:table-cell>
-                    <fo:table-cell>
+                    <fo:table-cell display-align="center">
                         <fo:block>замененных</fo:block>
                     </fo:table-cell>
-                    <fo:table-cell>
+                    <fo:table-cell display-align="center">
                         <fo:block>новых</fo:block>
                     </fo:table-cell>
-                    <fo:table-cell>
+                    <fo:table-cell display-align="center">
                         <fo:block>аннулированных</fo:block>
                     </fo:table-cell>
                 </fo:table-row>
