@@ -40,6 +40,8 @@
       <xsl:attribute name="color">
         <xsl:value-of select="$espd-modern.color.text"/>
       </xsl:attribute>
+      <xsl:attribute name="text-align">center</xsl:attribute>
+      <xsl:attribute name="display-align">center</xsl:attribute>
     </xsl:when>
     <xsl:when test="$bgcolor != ''">
       <xsl:attribute name="background-color">

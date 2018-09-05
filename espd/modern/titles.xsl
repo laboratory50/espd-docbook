@@ -60,13 +60,13 @@
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
-  <xsl:attribute name="provisional-distance-between-starts">20mm</xsl:attribute>
+  <xsl:attribute name="provisional-distance-between-starts">15mm</xsl:attribute>
   <xsl:attribute name="provisional-label-separation">4mm</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Оформление заголовка в соответствии с параметром espd.heading.separation -->
 <xsl:template name="espd.heading">
-  <xsl:param name="title"/>
+  <xsl:param name="title">12pt</xsl:param>
 
   <xsl:choose>
       <xsl:when test="$espd.heading.separation = 0">
@@ -103,7 +103,7 @@
 <xsl:template name="section.heading">
   <xsl:param name="level" select="1"/>
   <xsl:param name="marker" select="1"/>
-  <xsl:param name="title"/>
+  <xsl:param name="title">12pt</xsl:param>
   <xsl:param name="marker.title"/>
 
   <xsl:variable name="title.block">
@@ -246,6 +246,55 @@
     </xsl:choose>
   </fo:block>
 </xsl:template>
+
+<xsl:attribute-set name="component.title.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.33"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level1.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.25"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level2.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.17"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level3.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.08"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level4.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1.08"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level5.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="section.title.level6.properties">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$body.font.master * 1"/>
+      <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>
 
 </xsl:stylesheet>
 

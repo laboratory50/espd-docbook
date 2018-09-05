@@ -31,7 +31,7 @@
       <l:template name="simplesect" text="%t"/>
     </l:context>
     <l:context name="title">
-      <l:template name="figure" text="Рис. %n:&#160;%t"/>
+      <l:template name="figure" text="Рисунок. %n.&#160;%t"/>
     </l:context>
   </l:l10n>
 </l:i18n>
