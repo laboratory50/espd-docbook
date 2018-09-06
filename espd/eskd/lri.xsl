@@ -44,7 +44,7 @@
 
 <xsl:template match="processing-instruction()[local-name()='lastpage']">
     <xsl:if test="$espd.lri = '0'">
-      <fo:block id="END-OF-DOCUMENT-NIC"/>
+      <fo:block id="END-OF-DOCUMENT"/>
     </xsl:if>
 </xsl:template>
 
@@ -110,7 +110,7 @@
       </xsl:apply-templates>
 
       <fo:flow flow-name="xsl-region-body">
-        <fo:block id="END-OF-DOCUMENT-NIC" break-before="page"/>
+        <fo:block id="END-OF-DOCUMENT" break-before="page"/>
           <fo:block xsl:use-attribute-sets="espd.lri.style">
             <fo:table table-layout="fixed" width="100%" height="100%" border-style="solid" border-width="0.4mm">
               <fo:table-column column-width="12.3mm" border-style="solid"/>
@@ -176,15 +176,6 @@
 
 <xsl:template name="lri-empty-row">
     <fo:table-row border-style="solid" height="220mm">
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
-        <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
         <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
     </fo:table-row>
 </xsl:template>
