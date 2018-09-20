@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2018.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -48,7 +48,7 @@
       <xsl:apply-templates mode="book.titlepage.verso.auto.mode" select="d:title"/>
     </xsl:when>
   </xsl:choose>
-              
+
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:subtitle">
       <xsl:apply-templates mode="book.titlepage.verso.auto.mode" select="d:bookinfo/d:subtitle"/>

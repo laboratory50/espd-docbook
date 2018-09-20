@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2014.
+  © Лаборатория 50, 2013-2018.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -28,7 +28,9 @@
 <!-- Параметры абзаца: абзацный отступ -->
 <xsl:attribute-set name="indent.para.spacing"
                    use-attribute-sets="normal.para.spacing">
-  <xsl:attribute name="text-indent"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
+  <xsl:attribute name="text-indent">
+    <xsl:value-of select="$espd.text-indent"/>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Абзацный отступ -->
@@ -47,10 +49,6 @@
                    |parent::d:preface
                    |parent::d:appendix
                    |parent::d:tip
-                   |parent::d:note
-                   |parent::d:caution
-                   |parent::d:important
-                   |parent::d:warning
                    |parent::d:chapter
                    |parent::d:abstract
                    |parent::d:acknowledgements">

@@ -21,9 +21,10 @@
     <l:context name="xref-number">
       <l:template name="table" text="табл.&#160;%n"/>
       <l:template name="figure" text="рис.&#160;%n"/>
-      <l:template name="section" text="раздел&#160;%n"/>
-      <l:template name="simplesect" text="подраздел&#160;%n"/>
-      <l:template name="chapter" text="глава %n"/>
+      <l:template name="chapter" text="разд.&#160;%n"/>
+      <l:template name="section" text="&#167;&#160;%n"/>
+      <l:template name="simplesect" text="&#167;&#160;%n"/>
+      <l:template name="appendix" text="прил.&#160;%n"/>
     </l:context>
     <l:context name="title-numbered">
       <l:template name="chapter" text="%n %t"/>
@@ -31,7 +32,8 @@
       <l:template name="simplesect" text="%t"/>
     </l:context>
     <l:context name="title">
-      <l:template name="figure" text="Рисунок. %n.&#160;%t"/>
+      <l:template name="figure" text="Рисунок&#160;%n.&#160;%t"/>
+      <l:template name="appendix" text="Приложение %n. %t"/>
     </l:context>
   </l:l10n>
 </l:i18n>

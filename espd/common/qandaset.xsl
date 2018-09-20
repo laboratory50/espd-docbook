@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Стиль для форматирования документов в формате DocBook 5.
+  Стиль для форматирования документов в формате DocBook 5.
+  © Лаборатория 50, 2013-2018.
+  Распространяется на условиях лицензии GPL 3.
 
-     © Лаборатория 50, 2013-2015.
-
-     Распространяется на условиях лицензии GPL 3.
-
-     http://lab50.net
+  http://lab50.net
 -->
 
 <!-- Секции вопрос-ответ -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="1.1">
-    
+
 <xsl:template name="qandaset.label.length">
   <xsl:param name="deflabel">
     <xsl:apply-templates select="." mode="qanda.defaultlabel"/>

@@ -12,8 +12,11 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="1.1">
 
-<!-- Форматирование заголовков (под)разделов с отступом. -->
-<!-- Если 0, отступ только у разделов, если 1 - у всех ступеней заголовков -->
-<xsl:param name="espd.heading.separation">1</xsl:param>
+    <!-- Форматирование заголовков (под)разделов с отступом. -->
+    <!-- Если 0, отступ только у разделов, если 1 - у всех ступеней заголовков -->
+    <xsl:param name="espd.heading.separation">1</xsl:param>
+
+    <!-- Абзацный отступ -->
+    <xsl:param name="espd.text-indent">1.85em</xsl:param>
 
 </xsl:stylesheet>

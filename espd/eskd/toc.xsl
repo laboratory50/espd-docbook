@@ -18,56 +18,67 @@
 <!-- По левому краю все уровни -->
     <xsl:param name="toc.indent.width">0</xsl:param>
 
-<!-- Точка после номера в оглавлении (стандартное значение «. »). -->
-    <xsl:param name="autotoc.label.separator"><xsl:text>. </xsl:text></xsl:param>
+<!-- Точка после номера в оглавлении -->
+    <xsl:param name="autotoc.label.separator"><xsl:text> </xsl:text></xsl:param>
 
 <!-- Добавляется слово «Приложение» для номера приложений
     и для Apache FOP ровное выравнивание номеров страниц. --> 
     <xsl:template name="toc.line">
-    <xsl:param name="toc-context" select="NOTANODE"/>
+        <xsl:param name="toc-context" select="NOTANODE"/>
 
-    <xsl:variable name="id">
-        <xsl:call-template name="object.id"/>
-    </xsl:variable>
+        <xsl:variable name="id">
+            <xsl:call-template name="object.id"/>
+        </xsl:variable>
 
-    <xsl:variable name="label">
-        <xsl:choose>
-        <xsl:when test="self::d:appendix">
-            <xsl:call-template name="gentext">
-            <xsl:with-param name="key">appendix</xsl:with-param>
-            </xsl:call-template>
+        <xsl:variable name="label">
+            <xsl:choose>
+            <xsl:when test="self::d:appendix">
+                <xsl:call-template name="gentext">
+                    <xsl:with-param name="key">appendix</xsl:with-param>
+                </xsl:call-template>
 
+                <xsl:text> </xsl:text>
+                <xsl:apply-templates select="." mode="label.markup"/>
+                <xsl:text></xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="." mode="label.markup"/>
+            </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+        <fo:block xsl:use-attribute-sets="toc.line.properties"
+                    text-align-last="justify"
+                    white-space-collapse="false">
+
+            <fo:basic-link internal-destination="{$id}">
+                <xsl:if test="$label != ''">
+                    <xsl:copy-of select="$label"/>
+                    <xsl:value-of select="$autotoc.label.separator"/>
+                </xsl:if>
+                <xsl:apply-templates select="." mode="title.markup"/>
+            </fo:basic-link>
             <xsl:text> </xsl:text>
-            <xsl:apply-templates select="." mode="label.markup"/>
-            <xsl:text></xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:apply-templates select="." mode="label.markup"/>
-        </xsl:otherwise>
+            <fo:leader leader-pattern="dots"
+                    leader-pattern-width="0"
+                    leader-alignment="reference-area"
+                    keep-with-next.within-line="always"/>
+            <xsl:text> </xsl:text>
+            <fo:basic-link internal-destination="{$id}">
+            <fo:page-number-citation ref-id="{$id}"/>
+            </fo:basic-link>
+        </fo:block>
+    </xsl:template>
+
+    <xsl:template name="page.number.format">1</xsl:template>
+
+    <xsl:template name="initial.page.number">
+        <xsl:choose>
+            <!-- double-sided output -->
+            <xsl:when test="$double.sided != 0">auto-odd</xsl:when>
+            <!-- single-sided output -->
+            <xsl:otherwise>auto</xsl:otherwise>
         </xsl:choose>
-    </xsl:variable>
-
-    <fo:block xsl:use-attribute-sets="toc.line.properties"
-                text-align-last="justify"
-                white-space-collapse="false">
-
-        <fo:basic-link internal-destination="{$id}">
-        <xsl:if test="$label != ''">
-            <xsl:copy-of select="$label"/>
-            <xsl:value-of select="$autotoc.label.separator"/>
-        </xsl:if>
-        <xsl:apply-templates select="." mode="title.markup"/>
-        </fo:basic-link>
-        <xsl:text> </xsl:text>
-        <fo:leader leader-pattern="dots"
-                leader-pattern-width="0"
-                leader-alignment="reference-area"
-                keep-with-next.within-line="always"/>
-        <xsl:text> </xsl:text>
-        <fo:basic-link internal-destination="{$id}">
-        <fo:page-number-citation ref-id="{$id}"/>
-        </fo:basic-link>
-    </fo:block>
     </xsl:template>
 
 </xsl:stylesheet>

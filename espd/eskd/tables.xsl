@@ -15,6 +15,8 @@
     exclude-result-prefixes="d"
     version="1.1">
 
+    <xsl:include href="../common/tables.xsl"/>
+
 <!-- Таблица дожна иметь номер -->
 <!-- без номера раздела (сквозная нумерация)-->
     <xsl:template match="d:table|d:figure" mode="label.markup">
@@ -23,7 +25,7 @@
 
         <xsl:variable name="prefix">
             <xsl:if test="count($pchap) &gt; 0">
-            <xsl:apply-templates select="$pchap" mode="label.markup"/>
+                <xsl:apply-templates select="$pchap" mode="label.markup"/>
             </xsl:if>
         </xsl:variable>
         <xsl:choose>
@@ -36,7 +38,7 @@
                         <xsl:text>П</xsl:text>
                         <xsl:apply-templates select="$pchap" mode="label.markup"/>
                         <xsl:apply-templates select="$pchap" mode="intralabel.punctuation">
-                        <xsl:with-param name="object" select="."/>
+                            <xsl:with-param name="object" select="."/>
                         </xsl:apply-templates>
                         <xsl:number format="1" from="d:appendix" level="any"/>
                     </xsl:when>
@@ -80,12 +82,12 @@
                 <fo:table-header>
                   <fo:table-row>
                     <fo:table-cell>
-                            <fo:block xsl:use-attribute-sets="table.caption.properties">
+                        <fo:block xsl:use-attribute-sets="table.caption.properties">
                             <fo:retrieve-table-marker
                                     retrieve-class-name="table-title"
                                     retrieve-position-within-table="first-starting"
                                     retrieve-boundary-within-table="table-fragment"/>&#x00A0;
-                            </fo:block>
+                        </fo:block>
                     </fo:table-cell>
                   </fo:table-row>
                 </fo:table-header>
@@ -147,48 +149,6 @@
                 <xsl:attribute name="display-align">center</xsl:attribute>
             </xsl:when>
         </xsl:choose>
-    </xsl:template>
-
-    <!-- высота строк таблицы -->
-    <xsl:template name="normal-row">
-        <xsl:param name="spans"/>
-        <xsl:param name="browserows"/>
-
-        <xsl:variable name="row-height">
-            <xsl:if test="processing-instruction('dbfo')">
-                <xsl:call-template name="pi.dbfo_row-height"/>
-            </xsl:if>
-        </xsl:variable>  
-
-        <fo:table-row>
-            <xsl:if test="$row-height != ''">
-                <xsl:attribute name="height">
-                    <xsl:value-of select="$row-height"/>
-                </xsl:attribute>
-            </xsl:if>
-
-            <xsl:call-template name="table.row.properties"/>
-            <xsl:call-template name="anchor"/>
-
-            <xsl:apply-templates select="(d:entry|d:entrytbl)[1]">
-                <xsl:with-param name="spans" select="$spans"/>
-            </xsl:apply-templates>
-        </fo:table-row>
-
-        <xsl:if test="$browserows = 'recurse'">
-            <xsl:if test="following-sibling::d:row">
-            <xsl:variable name="nextspans">
-                <xsl:apply-templates select="(d:entry|d:entrytbl)[1]" mode="span">
-                <xsl:with-param name="spans" select="$spans"/>
-                </xsl:apply-templates>
-            </xsl:variable>
-
-            <xsl:apply-templates select="following-sibling::d:row[1]">
-                <xsl:with-param name="spans" select="$nextspans"/>
-                <xsl:with-param name="browserows" select="$browserows"/>
-            </xsl:apply-templates>
-            </xsl:if>
-        </xsl:if>
     </xsl:template>
 
 </xsl:stylesheet>

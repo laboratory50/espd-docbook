@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2016.
+  © Лаборатория 50, 2013-2018.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -15,11 +15,8 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-<!-- Двое уменьшенный отступ относительно стандартного. -->
+<!-- Вдвое уменьшенный отступ относительно стандартного. -->
 <xsl:param name="toc.indent.width">12</xsl:param>
-
-<!-- Убираем точку после номера в оглавлении (стандартное значение «. »). -->
-<xsl:param name="autotoc.label.separator"><xsl:text>  </xsl:text></xsl:param>
 
 <!-- Добавляется слово «Приложение» для номера приложений
      и для Apache FOP ровное выравнивание номеров страниц. -->
@@ -37,13 +34,9 @@
           <xsl:with-param name="key">appendix</xsl:with-param>
         </xsl:call-template>
         <xsl:text> </xsl:text>
-        <xsl:apply-templates select="." mode="label.markup"/>
-        <xsl:text>.</xsl:text>
       </xsl:when>
-      <xsl:otherwise>
-        <xsl:apply-templates select="." mode="label.markup"/>
-      </xsl:otherwise>
     </xsl:choose>
+    <xsl:apply-templates select="." mode="label.markup"/>
   </xsl:variable>
 
   <fo:block xsl:use-attribute-sets="toc.line.properties"

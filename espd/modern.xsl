@@ -12,56 +12,47 @@
 
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    xmlns:d="http://docbook.org/ns/docbook"
+    exclude-result-prefixes="d"
     version="1.1">
-<!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/> -->
-<xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
-<!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/highlight.xsl"/> -->
-<!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/profiling/profile.xsl"/> -->
+    <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/> -->
+    <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
 
-<xsl:include href="modern/page.xsl"/>
-<xsl:include href="common/params.xsl"/>
-<xsl:include href="modern/params.xsl"/>
-<xsl:include href="common/l10n.xsl"/>
-<xsl:include href="common/object.xsl"/>
-<xsl:include href="modern/list.xsl"/>
-<xsl:include href="common/text.xsl"/>
-<xsl:include href="modern/verbatim.xsl"/>
-<xsl:include href="modern/titles.xsl"/>
-<xsl:include href="modern/tables.xsl"/>
-<xsl:include href="modern/headings.xsl"/>
-<xsl:include href="modern/admonitions.xsl"/>
-<xsl:include href="modern/toc.xsl"/>
-<xsl:include href="common/qandaset.xsl"/>
-<xsl:include href="common/titlepage.xsl"/>
+    <xsl:include href="common/params.xsl"/>
+    <xsl:include href="modern/params.xsl"/>
+    <xsl:include href="modern/l10n.xsl"/>
+    <xsl:include href="common/object.xsl"/>
+    <xsl:include href="modern/list.xsl"/>
+    <xsl:include href="common/text.xsl"/>
+    <xsl:include href="modern/verbatim.xsl"/>
+    <xsl:include href="modern/titles.xsl"/>
+    <xsl:include href="common/tables.xsl"/>
+    <xsl:include href="modern/tables.xsl"/>
+    <xsl:include href="modern/headings.xsl"/>
+    <xsl:include href="modern/admonitions.xsl"/>
+    <xsl:include href="modern/toc.xsl"/>
+    <xsl:include href="common/qandaset.xsl"/>
+    <xsl:include href="common/titlepage.xsl"/>
+    <xsl:include href="modern/titlepage.xsl"/>
 
-<xsl:param name="body.font.master">12</xsl:param>
-<xsl:param name="line-height">1.4</xsl:param>
-<!-- Размер шрифта машинного текста-->
-<xsl:param name="espd.verbatim.font.size">11pt</xsl:param>
+    <xsl:attribute-set name="monospace.properties">
+        <xsl:attribute name="font-family">
+            <xsl:value-of select="$monospace.font.family"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:attribute name="font-size">0.9em</xsl:attribute>
+    </xsl:attribute-set>
 
-<xsl:attribute-set name="monospace.properties">
-  <xsl:attribute name="font-family">
-    <xsl:value-of select="$monospace.font.family"></xsl:value-of>
-  </xsl:attribute>
-  <xsl:attribute name="font-size">0.9em</xsl:attribute>
-</xsl:attribute-set>
+    <xsl:param name="espd-modern.color.bg">#0D2868</xsl:param>
+    <!-- Цвет фона для листингов, экранов и т.д. -->
+    <xsl:param name="espd-modern.color.bg2">#f5f5f5</xsl:param>
+    <!-- Цвет фона для примечаний, ошибок, предупреждений -->
+    <xsl:param name="espd-modern.color.bg3">#f5f5f5</xsl:param>
+    <xsl:param name="espd-modern.color.text">#FFFFFF</xsl:param>
+    <!-- Цвет рамок различных вставок -->
+    <xsl:param name="espd-modern.color.border">#92DBFF</xsl:param>
 
-<xsl:param name="espd-modern.color.bg">#0D2868</xsl:param>
-<!-- Цвет фона для листингов, экранов и т.д. -->
-<xsl:param name="espd-modern.color.bg2">#f5f5f5</xsl:param>
-<!-- Цвет фона для примечаний, ошибок, предупреждений -->
-<xsl:param name="espd-modern.color.bg3">#f5f5f5</xsl:param>
-<xsl:param name="espd-modern.color.text">#FFFFFF</xsl:param>
-<!-- Цвет рамок различных вставок -->
-<xsl:param name="espd-modern.color.border">#92DBFF</xsl:param>
+    <!-- Без ЛРИ -->
+    <xsl:param name="espd.lri">0</xsl:param>
 
-<!--
-<xsl:template name="book.titlepage.recto"/>
-<xsl:template name="book.titlepage.before.recto"/>
-<xsl:template name="book.titlepage.before.verso"/>-->
-  
-<xsl:param name="generate.toc">
-    book      toc,title
-</xsl:param>
-  
 </xsl:stylesheet>

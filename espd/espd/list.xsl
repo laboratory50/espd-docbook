@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2016.
+  © Лаборатория 50, 2013-2018.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -13,7 +13,7 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-<xsl:include href="common/list.xsl"/>
+<xsl:include href="../common/list.xsl"/>
 
 <!-- Ширина символов перечислений. -->
 <xsl:param name="orderedlist.label.width">1.6em</xsl:param>
