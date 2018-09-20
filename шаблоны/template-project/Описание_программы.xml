@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../../stylesheet/fo/modern.xsl"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
+    <info>
+        <title>&full_product;</title>
+        <subtitle>&descr_prog;</subtitle>
+        <author>
+            <orgname>&full_supplier;</orgname>
+            <address>
+                <city>Санкт-Петербург</city>
+                <country>Россия</country>
+            </address>
+            <email>&mailto;</email>
+        </author>
+        <authorgroup>
+            <author>
+                <personname>
+                    <firstname>Василий</firstname>
+                    <surname>Шлыков</surname>
+                    <othername>Александрович</othername>
+                </personname>
+                <personblurb>
+                    <para>Исполнитель</para>
+                </personblurb>
+            </author>
+            <editor>
+                <personname>
+                    <firstname>Иоанн</firstname>
+                    <surname>Грозный</surname>
+                    <othername>Васильевич</othername>
+                </personname>
+                <personblurb>
+                    <para>Царь</para>
+                </personblurb>
+            </editor>
+            <othercredit>
+                <personname>
+                    <firstname>Лев</firstname>
+                    <surname>Мышкин</surname>
+                    <othername>Николаевич</othername>
+                </personname>
+                <personblurb>
+                    <para>Руководитель разработки</para>
+                </personblurb>
+            </othercredit>
+        </authorgroup>
+        <pubdate><?dbtimestamp format="Y"?></pubdate>
+    </info>
+    <preface>
+        <info>
+            <title>Аннотация</title>
+        </info>
+        <para>В документе приведено описание программного обеспечения (далее ПО) продукта
+            &product;.</para>
+        <para>В разделе «Общие сведения» указано обозначение и наименование программы, а также
+            программное обеспечение, необходимое для функционирования программы, и языки
+            программирования, на которых написана программа.</para>
+        <para>В разделе «Функциональное назначение» указаны классы решаемых задач, назначение
+            программы и сведения о функциональных ограничениях на применение.</para>
+        <para>В разделе «Описание логической структуры» приведён алгоритм программы, перечислены
+            используемые методы и приведена структура программы с описанием функций составных частей
+            и связей между ними. Также указаны связи программы с другими программами и указаны типы
+            электронных вычислительных машин и устройств, которые используются при работе
+            программы.</para>
+        <para>В разделе «Используемые технические средства» указаны типы электронных вычислительных
+            машин и устройств, которые используются при работе программы.</para>
+        <para>В разделе «Вызов и загрузка» указан способ вызова программы и входные точки в
+            программу.</para>
+        <para>В разделе «Входные данные» указана организация и предварительная подготовка входных
+            данных, а также формат, описание входных данных.</para>
+        <para>В разделе «Выходные данные» указаны формат и описание выходных данных.</para>
+        <para>Оформление программного документа &descr_prog; произведено по требованиям ЕСПД (ГОСТ
+            19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ 19.105-78, ГОСТ 19.106-78, ГОСТ
+            19.402-78, ГОСТ 19.604-78) </para>
+        <section>
+            <title>Принятые обозначения</title>
+            <para>В данном руководстве принят ряд обозначений.</para>
+            <para>В документе могут встречаться следующие типы замечаний:</para>
+            <note>
+                <para>Примечание или полезная подсказка.</para>
+            </note>
+            <important>
+                <para>Существенные нюансы, которые вы должны принять во внимание, прежде чем начнёте
+                    какое-либо действие.</para>
+            </important>
+            <warning>
+                <para>Важная информация о проблемах безопасности или риске потери данных.</para>
+            </warning>
+            <para>В документе используются два варианта приглашения командного
+                интерпретатора.</para>
+            <variablelist>
+                <?dbfo term-width="3.5cm"?>
+                <varlistentry>
+                    <term><prompt>$</prompt> команда</term>
+                    <listitem>
+                        <para>Команды, начинающиеся с приглашения <prompt>$</prompt>, может
+                            выполнять любой пользователь, в том числе
+                            <literal>root</literal>.</para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><prompt>#</prompt> команда</term>
+                    <listitem>
+                        <para>Команды, начинающиеся с приглашения <prompt>#</prompt>, должен
+                            выполнять пользователь <literal>root</literal>. Но вы можете
+                            использовать утилиту <command>sudo</command> чтобы запускать их под
+                            другой учётной записью.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+    </preface>
+    <chapter>
+        <title>Общие сведения</title>
+        <section>
+            <title>Обозначения и наименования программы</title>
+            <para>Обозначение продукта — &product;.</para>
+            <para>Наименование — &full_product;.</para>
+            <para>Производитель — &full_supplier;.</para>
+        </section>
+        <section>
+            <title>Программное обеспечение, необходимое для функционирования программы</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Языки программирования, на которых написана программа</title>
+            <para>Text</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Функциональное назначение</title>
+        <section>
+            <title>Классы решаемых задач</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Назначение программы</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Сведения о функциональных ограничениях на применение</title>
+            <para>Text</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Описание логической структуры</title>
+        <section>
+            <title>Алгоритм программы</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Используемые методы</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Структура программы</title>
+            <para>Text</para>
+        </section>
+        <section>
+            <title>Связи программы с другими программами</title>
+            <para>Text</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Используемые технические средства</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Вызов и загрузка</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Входные данные</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Выходные данные</title>
+        <para>Text</para>
+    </chapter>
+    <appendix xml:id="app_install_list">
+        <title>Список файлов программы после установки</title>
+        <para>Файлы, входящие в состав программы.</para>
+        <?lastpage?>
+    </appendix>
+</book>

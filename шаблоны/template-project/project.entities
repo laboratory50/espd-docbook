@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % centities SYSTEM "../common.entities" >
+%centities;
+<!-- продукт -->
+<!ENTITY product "«Компонент 01»">
+<!ENTITY full_product "Программный компонент «Компонент 01»">
+<!ENTITY version "2.0">
+<!ENTITY pkgversion "1labft1">
+<!ENTITY product_no "01">

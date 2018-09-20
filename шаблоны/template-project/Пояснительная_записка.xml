@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book [
-<!ENTITY % gentities SYSTEM "../project.entities" >
+<!ENTITY % gentities SYSTEM "project.entities" >
 %gentities;
 ]>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
@@ -11,16 +11,14 @@
         xml:lang="ru" version="5.0">
     <info>
         <title>&full_product;</title>
-        <subtitle>Пояснительная записка</subtitle>
+        <subtitle>&expl_note;</subtitle>
         <author>
             <orgname>&full_supplier;</orgname>
             <address>
                 <city>Санкт-Петербург</city>
-                <street>ул. Пограничника Гарькавого, дом 36, корп. 1, литер А, пом. 10Н</street>
-                <postcode>198259</postcode>
                 <country>Россия</country>
             </address>
-            <email>team@lab50.net</email>
+            <email>&mailto;</email>
         </author>
         <authorgroup>
             <author>
@@ -46,7 +44,7 @@
                     <othername>Николаевич</othername>
                 </personname>
                 <personblurb>
-                    <para>Князь «Лаборатории 50»</para>
+                    <para>Руководитель разработки</para>
                 </personblurb>
             </othercredit>
         </authorgroup>
@@ -175,16 +173,15 @@
         </section>
 
         <section>
-            <title>Описание и обоснование выбора метода организации входных и
-                   выходных данных</title>
+            <title>Описание и обоснование выбора метода организации входных и выходных данных</title>
             
             <section>
-                <title>Описание и обоснование выбора метода организации входных данных</title>
+                <title>Входных данных</title>
                 <para>Входными данными для &product; являются:</para>
             </section>
             
             <section>
-                <title>Описание и обоснование выбора метода организации выходных данных</title>
+                <title>Выходных данных</title>
                 <para>&product; не предоставляет выходных данных.</para>
             </section>
         </section>
@@ -212,5 +209,6 @@
     <chapter>
         <title>Источники, использованные при разработке</title>
         <para>Список</para>
+        <?lastpage?>
     </chapter>
 </book>

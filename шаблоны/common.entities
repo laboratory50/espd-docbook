@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- авторское -->
+<!ENTITY supplier "Лаборатория 50">
+<!ENTITY full_supplier "ООО «Лаборатория 50»">
+<!ENTITY address_supplier "198216, г. Санкт-Петербург, Ленинский пр., дом 140 литер И, офис 422В">
+<!ENTITY mailto "team@lab50.net">
+<!ENTITY project_director "Иванов Иван Иванович">
+<!ENTITY project_developer "Петров Пётр Петрович">
+<!ENTITY project_tester "Сидоров Сидор Сидорович">
+<!ENTITY gen_director "Генеральный директор">
+<!ENTITY director "Директор">
+<!ENTITY manage "Руководитель проекта">
+<!ENTITY developer "Разработчик">
+
+<!-- заказчик -->
+<!ENTITY customer "заказчик">
+<!ENTITY full_customer "Заказчик">
+<!ENTITY address_customer "адрес заказчика">
+<!ENTITY contract "Договор номер № ХХХ от ХХ ууууyy ZZZZ года">
+
+<!-- продукт -->
+<!ENTITY product "«Система Lab50»">
+<!ENTITY full_product "Программный комплекс «Система Lab50»">
+
+<!-- документы -->
+<!ENTITY spec "Спецификация">
+<!ENTITY ved "Ведомость держателей подлинников">
+<!ENTITY ved_no "05">
+<!ENTITY text_prog "Текст программы">
+<!ENTITY text_prog_no "12">
+<!ENTITY descr_prog "Описание программы">
+<!ENTITY descr_prog_no "13">
+<!ENTITY ved "Ведомость эксплуатационных документов">
+<!ENTITY ved_no "20">
+<!ENTITY formular "Формуляр">
+<!ENTITY formular_no "30">
+<!ENTITY descr_use "Описание применения">
+<!ENTITY descr_use_no "31">
+<!ENTITY s_prog_guide "Руководство системного программиста">
+<!ENTITY s_prog_guide_no "32">
+<!ENTITY prog_guide "Руководство программиста">
+<!ENTITY prog_guide_no "33">
+<!ENTITY user_guide "Руководство оператора">
+<!ENTITY user_guide_no "34">
+<!ENTITY maint_guide "Руководство по техническому обслуживанию">
+<!ENTITY maint_guide_no "46">
+<!ENTITY pm "Программа и методика испытаний">
+<!ENTITY pm_no "51">
+<!ENTITY expl_note "Пояснительная записка">
+<!ENTITY expl_note_no "81">
+<!ENTITY tech_assign "Техническое задание»">
+<!ENTITY lu "Лист утверждений">
+
+<!-- названия -->
+<!ENTITY os "Astra Linux Special Edition">
+<!ENTITY osver "1.4">
+
+<!-- прочее -->
+<!ENTITY content "xmlns(db=http://docbook.org/ns/docbook) xpointer(/db:section/*[not(self::db:title)])">
+<!ENTITY content_chapter "xmlns(db=http://docbook.org/ns/docbook) xpointer(/db:chapter/*[not(self::db:title)])">
+
+<!-- децимальные -->
+<!ENTITY release "01">
+<!-- base -->
+<!ENTITY decimal "B&#8288;A&#8288;S&#8288;E&#8288;.&#8288;D&#8288;E&#8288;C&#8288;I&#8288;M&#8288;A&#8288;L-01">
+<!ENTITY nbsp "&#160;">
+<!ENTITY bsp "&#8288;">

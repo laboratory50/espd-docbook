@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../russian.xsl"?>
+<book xml:lang="ru" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>&product;</title>
+        <subtitle>&spec;</subtitle>
+        <author>
+            <orgname>&full_supplier;</orgname>
+            <address>
+                <city>Санкт-Петербург</city>
+                <country>Россия</country>
+            </address>
+            <email>&mailto;</email>
+        </author>
+        <authorgroup>
+            <author>
+                <personname>
+                    <firstname>Василий</firstname>
+                    <surname>Шлыков</surname>
+                    <othername>Александрович</othername>
+                </personname>
+                <personblurb><para>Исполнитель</para></personblurb>
+            </author>
+            <editor>
+                <personname>
+                    <firstname>Иоанн</firstname>
+                    <surname>Грозный</surname>
+                    <othername>Васильевич</othername>
+                </personname>
+                <personblurb><para>Царь</para></personblurb>
+            </editor>
+            <othercredit>
+                <personname>
+                    <firstname>Лев</firstname>
+                    <surname>Мышкин</surname>
+                    <othername>Николаевич</othername>
+                </personname>
+                <personblurb>
+                    <para>Руководитель разработки</para>
+                </personblurb>
+            </othercredit>
+        </authorgroup>
+        <pubdate><?dbtimestamp format="Y"?></pubdate>
+    </info>
+    <dedication>
+        <title></title>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <colspec colnum="1" colname="c1" colwidth="70mm"/>
+                <colspec colnum="2" colname="c2" colwidth="80mm"/>
+                <colspec colnum="3" colname="c3" colwidth="30mm"/>
+            <thead role="notdouble">
+                <row>
+                    <entry align="center" valign="middle">Обозначение</entry>
+                    <entry align="center" valign="middle">Наименование</entry>
+                    <entry align="center" valign="middle">Примечания</entry>
+                </row>
+            </thead>
+            <tbody>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry/>
+                    <entry align="center" valign="middle"><emphasis role="underline">Документация</emphasis></entry>
+                    <entry/>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;-ЛУ</entry>
+                    <entry><para>&spec;.</para>
+                        <para>&lu;</para></entry>
+                    <entry>Размножать по указанию</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&text_prog_no;&nbsp;&product_no;</entry>
+                    <entry>&text_prog;</entry>
+                    <entry>На ОНЗ</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&text_prog_no;&nbsp;&product_no;-ЛУ</entry>
+                    <entry><para>&text_prog;.</para>
+                        <para>&lu;</para></entry>
+                    <entry>Размножать по указанию</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&descr_prog_no;&nbsp;&product_no;</entry>
+                    <entry>&descr_prog;</entry>
+                    <entry>На ОНЗ</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&descr_prog_no;&nbsp;&product_no;-ЛУ</entry>
+                    <entry><para>&descr_prog;.</para>
+                        <para>&lu;</para></entry>
+                    <entry>Размножать по указанию</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&descr_use_no;&nbsp;&product_no;</entry>
+                    <entry>&descr_use;</entry>
+                    <entry/>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&descr_use_no;&nbsp;&product_no;-ЛУ</entry>
+                    <entry><para>&descr_use;.</para>
+                        <para>&lu;</para></entry>
+                    <entry>Размножать по указанию</entry>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&expl_note_no;&nbsp;&product_no;</entry>
+                    <entry>&expl_note;</entry>
+                    <entry/>
+                </row>
+                <row><?dbfo row-height="12mm" ?>
+                    <entry>&decimal;&nbsp;&expl_note_no;&nbsp;&product_no;-ЛУ</entry>
+                    <entry><para>&expl_note;.</para>
+                        <para>&lu;</para></entry>
+                    <entry>Размножать по указанию</entry>
+                </row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <?lastpage?>
+    </dedication>
+</book>

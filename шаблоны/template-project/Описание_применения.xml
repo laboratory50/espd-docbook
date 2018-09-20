@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../../stylesheet/fo/modern.xsl"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
+    <info>
+        <title>&full_product;</title>
+        <subtitle>&descr_use;</subtitle>
+        <author>
+            <orgname>&full_supplier;</orgname>
+            <address>
+                <city>Санкт-Петербург</city>
+                <country>Россия</country>
+            </address>
+            <email>&mailto;</email>
+        </author>
+        <authorgroup>
+            <author>
+                <personname>
+                    <firstname>Василий</firstname>
+                    <surname>Шлыков</surname>
+                    <othername>Александрович</othername>
+                </personname>
+                <personblurb><para>Исполнитель</para></personblurb>
+            </author>
+            <editor>
+                <personname>
+                    <firstname>Иоанн</firstname>
+                    <surname>Грозный</surname>
+                    <othername>Васильевич</othername>
+                </personname>
+                <personblurb><para>Царь</para></personblurb>
+            </editor>
+            <othercredit>
+                <personname>
+                    <firstname>Лев</firstname>
+                    <surname>Мышкин</surname>
+                    <othername>Николаевич</othername>
+                </personname>
+                <personblurb>
+                    <para>Руководитель разработки</para>
+                </personblurb>
+            </othercredit>
+        </authorgroup>
+        <pubdate><?dbtimestamp format="Y"?></pubdate>
+    </info>
+    <preface>
+        <info>
+            <title>Аннотация</title>
+        </info>
+        <para>В документе приведено описание применения продукта &product;.</para>
+        <para>В разделе «Назначение программы» указывают назначение, возможности программы, её
+            основные характеристики, ограничения, накладываемые на область применения
+            программы.</para>
+        <para>В разделе «Условия применения» указываются условия, необходимые для выполнения
+            программы (требования к необходимым для данной программы техническим средствам, и другим
+            программам, общие характеристики входной и выходной информации, а также требования и
+            условия организационного, технического и технологического характера и т.п.).</para>
+        <para>В разделе «Описание задачи» должны быть указаны определения задачи и методы ее
+            решения.</para>
+        <para>В разделе «Входные и выходные данные» должны быть указаны сведения о входных и
+            выходных данных.</para>
+        <para>В приложение к общему описанию могут быть включены справочные материалы (иллюстрации,
+            таблицы, графики, примеры и т.п.).</para>
+        <para>Оформление программного документа &descr_prog; произведено по требованиям ЕСПД (ГОСТ
+            19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ 19.105-78, ГОСТ 19.106-78, ГОСТ
+            19.502-78, ГОСТ 19.604-78) </para>
+    </preface>
+    <chapter>
+        <title>Назначение программы</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Условия применения</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Описание задачи</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title>Входные и выходные данные</title>
+        <para>Text</para>
+        <?lastpage?>
+    </chapter>
+</book>
