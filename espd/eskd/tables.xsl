@@ -35,7 +35,8 @@
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="$prefix != ''">
-                        <xsl:text>П</xsl:text>
+                    <!-- Если в приложениях буквизация, то параметр не нужен <xsl:text>П</xsl:text>-->
+                        <!-- <xsl:text>П</xsl:text> -->
                         <xsl:apply-templates select="$pchap" mode="label.markup"/>
                         <xsl:apply-templates select="$pchap" mode="intralabel.punctuation">
                             <xsl:with-param name="object" select="."/>

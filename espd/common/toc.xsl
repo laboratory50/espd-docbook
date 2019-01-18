@@ -26,7 +26,7 @@
   <xsl:variable name="id">
     <xsl:call-template name="object.id"/>
   </xsl:variable>
-
+  
   <xsl:variable name="label">
     <xsl:choose>
       <xsl:when test="self::d:appendix">
@@ -37,7 +37,18 @@
       </xsl:when>
     </xsl:choose>
     <xsl:apply-templates select="." mode="label.markup"/>
-  </xsl:variable>
+ </xsl:variable>
+
+ <xsl:variable name="separator">
+    <xsl:choose>
+      <xsl:when test="self::d:appendix">
+        <xsl:text> </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$autotoc.label.separator"/>
+      </xsl:otherwise>
+    </xsl:choose>
+ </xsl:variable>
 
   <fo:block xsl:use-attribute-sets="toc.line.properties"
             text-align-last="justify"
@@ -46,7 +57,7 @@
     <fo:basic-link internal-destination="{$id}">
       <xsl:if test="$label != ''">
         <xsl:copy-of select="$label"/>
-        <xsl:value-of select="$autotoc.label.separator"/>
+        <xsl:copy-of select="$separator"/>
       </xsl:if>
       <xsl:apply-templates select="." mode="title.markup"/>
     </fo:basic-link>
@@ -90,6 +101,8 @@
     <xsl:otherwise>auto</xsl:otherwise>
   </xsl:choose>
 </xsl:template>
+
+<xsl:template match="d:preface" mode="toc"/>
 
 </xsl:stylesheet>
 

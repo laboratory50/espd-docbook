@@ -21,15 +21,16 @@
     <xsl:param name="local.l10n.xml" select="document('')"/>
         <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"> 
             <l:l10n language="ru">
+                <!-- Нумерованные заголовки в теле документа -->
                 <l:context name="title-numbered">
                     <l:template name="chapter" text="%n. %t"/>
                     <l:template name="section" text="%n. %t"/>
-                <!-- цифры в нумерации приложений -->
+                    <!-- цифры в нумерации приложений -->
                     <l:template name="appendix" text="Приложение&#160;%n"/>
                 </l:context>
                 <l:context name="title">
                     <l:template name="appendix" text="Приложение %n. %t"/>
-                <!-- Слово таблица - разреженное -->
+                    <!-- Слово таблица - разреженное -->
                     <l:template name="table" text="Т а б л и ц а&#160;&#160;%n — %t"/>
                     <l:template name="note" text="П р и м е ч а н и е. "/>
                     <l:template name="figure" text="%t&#010;&#013;Рисунок %n"/>

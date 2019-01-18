@@ -36,14 +36,19 @@
 
     <!-- Размер бумаги и отступов ГОСТ 19.106-78 -->
     <xsl:param name="paper.type">A4</xsl:param>
-    <xsl:param name="page.margin.inner">20mm</xsl:param>
+    <!-- Отступ слева -->
+    <xsl:param name="page.margin.inner">25mm</xsl:param>
+    <!-- Отступ справва -->
     <xsl:param name="page.margin.outer">10mm</xsl:param>
-    <xsl:param name="page.margin.top">10mm</xsl:param>
+    <!-- Отступ сверху -->
+    <xsl:param name="page.margin.top">5mm</xsl:param>
+    <xsl:param name="region.before.extent">0mm</xsl:param>
+    <xsl:param name="body.margin.top">5mm</xsl:param>
+    <!-- Отступ снизу -->
     <xsl:param name="page.margin.bottom">5mm</xsl:param>
-    <xsl:param name="region.before.extent">10mm</xsl:param>
-    <xsl:param name="body.margin.top">15mm</xsl:param>
-    <xsl:param name="region.after.extent">5mm</xsl:param>
-    <xsl:param name="body.margin.bottom">10mm</xsl:param>
+    <xsl:param name="region.after.extent">15mm</xsl:param>
+    <xsl:param name="body.margin.bottom">20mm</xsl:param>
+    
     <xsl:param name="body.font.master">12</xsl:param>
     <xsl:param name="line-height">1.4</xsl:param>
 
@@ -57,12 +62,15 @@
     <xsl:param name="body.start.indent">0pt</xsl:param>
     <xsl:param name="xref.with.number.and.title">0</xsl:param>
 
+    <!-- Буквизации приложений вместо нумерация-->
+    <xsl:param name="appendix.autolabel">A</xsl:param>
     <!-- Нумерация приложений вместо буквизации -->
-    <xsl:param name="appendix.autolabel">1</xsl:param>
+<!--     <xsl:param name="appendix.autolabel">1</xsl:param> -->
     <xsl:param name="appendix.label.includes.component.label">1</xsl:param>
 
     <xsl:param name="generate.toc">book title</xsl:param>
     <xsl:param name="process.empty.source.toc" select="1"/>
+    <xsl:template match="preface[@role='NotInToc']"  mode="toc"/>
 
 </xsl:stylesheet>
 

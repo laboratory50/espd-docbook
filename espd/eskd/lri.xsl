@@ -14,10 +14,35 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
+<xsl:template name="user.pagemasters">
+  <fo:simple-page-master master-name="lrip"
+                         page-width="{$page.width}"
+                         page-height="{$page.height}"
+                         margin-top="5mm"
+                         margin-bottom="5mm"
+                         margin-left="20mm"
+                         margin-right="5mm">
+    <fo:region-body margin-bottom="0mm"
+                    margin-top="0mm"/>
+    <fo:region-before region-name="xsl-region-before-even"
+                      extent="0mm"
+                      display-align="before"/>
+    <fo:region-after region-name="xsl-region-after-even"
+                      extent="0mm"
+                      display-align="after"/>
+  </fo:simple-page-master>
+
+  <fo:page-sequence-master master-name="lripage">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference blank-or-not-blank="blank" master-reference="lrip"/>
+        <fo:conditional-page-master-reference page-position="first" master-reference="lrip"/>
+        <fo:conditional-page-master-reference odd-or-even="odd" master-reference="lrip"/>
+        <fo:conditional-page-master-reference odd-or-even="even" master-reference="lrip"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+</xsl:template>
     <xsl:template name="lripage">
-        <xsl:variable name="master-reference">
-            <xsl:call-template name="select.pagemaster"/>
-        </xsl:variable>
+        <xsl:variable name="master-reference">lripage</xsl:variable>
         <fo:page-sequence master-reference="{$master-reference}">
             <xsl:attribute name="language">
                 <xsl:call-template name="l10n.language"/>
@@ -50,29 +75,21 @@
                 </xsl:call-template>
             </xsl:attribute>
 
-            <xsl:apply-templates select="." mode="running.head.mode">
-                <xsl:with-param name="master-reference" select="$master-reference"/>
-            </xsl:apply-templates>
-            <xsl:apply-templates select="." mode="running.foot.mode">
-                <xsl:with-param name="master-reference" select="$master-reference"/>
-            </xsl:apply-templates>
-
             <fo:flow flow-name="xsl-region-body">
-                <fo:block id="END-OF-DOCUMENT" break-before="page"/>
-                <fo:block xsl:use-attribute-sets="espd.lri.style">
+                <fo:block xsl:use-attribute-sets="espd.lri.style" break-before="page" font-size="10pt" font-family="{$sans.font.family}">
                     <fo:table table-layout="fixed" width="100%" height="100%" border-style="solid" border-width="0.4mm">
-                        <fo:table-column column-width="12.3mm" border-style="solid"/>
+                        <fo:table-column column-width="8mm" border-style="solid"/>
+                        <fo:table-column column-width="20mm" border-style="solid"/>
+                        <fo:table-column column-width="20mm" border-style="solid"/>
+                        <fo:table-column column-width="20mm" border-style="solid"/>
+                        <fo:table-column column-width="20mm" border-style="solid"/>
+                        <fo:table-column column-width="20mm" border-style="solid"/>
+                        <fo:table-column column-width="25mm" border-style="solid"/>
+                        <fo:table-column column-width="25mm" border-style="solid"/>
                         <fo:table-column column-width="15mm" border-style="solid"/>
-                        <fo:table-column column-width="14.7mm" border-style="solid"/>
-                        <fo:table-column column-width="12.5mm" border-style="solid"/>
-                        <fo:table-column column-width="15mm" border-style="solid"/>
-                        <fo:table-column column-width="24.8mm" border-style="solid"/>
-                        <fo:table-column column-width="22.3mm" border-style="solid"/>
-                        <fo:table-column column-width="26.5mm" border-style="solid"/>
-                        <fo:table-column column-width="20.9mm" border-style="solid"/>
-                        <fo:table-column column-width="14.9mm" border-style="solid"/>
+                        <fo:table-column column-width="12mm" border-style="solid"/>
                         <fo:table-body>
-                            <fo:table-row height="9mm" border-style="solid" border-width="0.4mm" text-align="center">
+                            <fo:table-row height="10mm" border-style="solid" border-width="0.4mm" text-align="center">
                                 <fo:table-cell number-columns-spanned="10" display-align="center">
                                     <fo:block>Лист регистрации изменений</fo:block>
                                 </fo:table-cell>
@@ -100,7 +117,7 @@
                                     <fo:block>Дата</fo:block>
                                 </fo:table-cell>
                             </fo:table-row>
-                            <fo:table-row border-style="solid" border-width="0.4mm" text-align="center">
+                            <fo:table-row height="19mm" border-style="solid" border-width="0.4mm" text-align="center">
                                 <fo:table-cell display-align="center">
                                     <fo:block>изменённых</fo:block>
                                 </fo:table-cell>
@@ -123,7 +140,7 @@
     </xsl:template>
 
     <xsl:template name="lri-empty-row">
-        <fo:table-row border-style="solid" height="220mm">
+        <fo:table-row border-style="solid" height="250mm">
             <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
         </fo:table-row>
     </xsl:template>

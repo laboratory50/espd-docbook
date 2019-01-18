@@ -14,6 +14,34 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
+<xsl:template name="user.pagemasters">
+  <fo:simple-page-master master-name="lrip"
+                         page-width="{$page.width}"
+                         page-height="{$page.height}"
+                         margin-top="{$page.margin.top}"
+                         margin-bottom="25mm"
+                         margin-left="{$page.margin.inner}"
+                         margin-right="5mm">
+    <fo:region-body margin-bottom="{$body.margin.bottom}"
+                    margin-top="{$body.margin.top}"/>
+    <fo:region-before region-name="xsl-region-before-even"
+                      extent="{$region.before.extent}"
+                      display-align="before"/>
+    <fo:region-after region-name="xsl-region-after-even"
+                      extent="{$region.after.extent}"
+                      display-align="after"/>
+  </fo:simple-page-master>
+
+  <fo:page-sequence-master master-name="lripage">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference blank-or-not-blank="blank" master-reference="lrip"/>
+        <fo:conditional-page-master-reference page-position="first" master-reference="lrip"/>
+        <fo:conditional-page-master-reference odd-or-even="odd" master-reference="lrip"/>
+        <fo:conditional-page-master-reference odd-or-even="even" master-reference="lrip"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+</xsl:template>
+
 <xsl:template name="lripage">
   <xsl:variable name="master-reference">
     <xsl:call-template name="select.pagemaster"/>
@@ -58,8 +86,7 @@
       </xsl:apply-templates>
 
       <fo:flow flow-name="xsl-region-body">
-        <fo:block id="END-OF-DOCUMENT" break-before="page"/>
-          <fo:block xsl:use-attribute-sets="espd.lri.style">
+          <fo:block xsl:use-attribute-sets="espd.lri.style" break-before="page">
             <fo:table table-layout="fixed" width="100%" height="100%" border-style="solid" border-width="0.4mm">
               <fo:table-column column-width="8mm" border-style="solid"/>
               <fo:table-column column-width="17mm" border-style="solid"/>

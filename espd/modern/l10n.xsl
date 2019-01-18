@@ -25,6 +25,8 @@
       <l:template name="section" text="&#167;&#160;%n"/>
       <l:template name="simplesect" text="&#167;&#160;%n"/>
       <l:template name="appendix" text="прил.&#160;%n"/>
+        <l:template name="reference" text="22%t"/>
+        <l:template name="refsection" text="«sss%t»"/>
     </l:context>
     <l:context name="title-numbered">
       <l:template name="chapter" text="%n %t"/>
@@ -34,6 +36,9 @@
     <l:context name="title">
       <l:template name="figure" text="Рисунок&#160;%n.&#160;%t"/>
       <l:template name="appendix" text="Приложение %n. %t"/>
+    </l:context>
+    <l:context name="xref">
+        <l:template name="reference" text="22%t"/>
     </l:context>
   </l:l10n>
 </l:i18n>
