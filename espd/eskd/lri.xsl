@@ -41,6 +41,7 @@
       </fo:repeatable-page-master-alternatives>
     </fo:page-sequence-master>
 </xsl:template>
+
     <xsl:template name="lripage">
         <xsl:variable name="master-reference">lripage</xsl:variable>
         <fo:page-sequence master-reference="{$master-reference}">

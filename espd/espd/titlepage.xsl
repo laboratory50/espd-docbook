@@ -102,7 +102,7 @@
   <fo:block-container absolute-position="fixed"
                       top="27cm"
                       left="2cm"
-                      right="2cm">
+                      right="1cm">
   <fo:block xsl:use-attribute-sets="book.titlepage.verso.style" 
             space-before="5mm" >
      <xsl:apply-templates select="." mode="book.titlepage.verso.mode"/>

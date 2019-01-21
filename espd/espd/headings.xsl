@@ -27,7 +27,7 @@
   <xsl:param name="gentext-key" select="''"/>
   <fo:block>
     <xsl:choose>
-      <xsl:when test="$pageclass = 'titlepage'"/>
+      <xsl:when test="$pageclass = 'titlepage' or $pageclass = 'lripage'"/>
 
       <xsl:when test="$position = 'center'">
         <fo:block space-after="1mm">

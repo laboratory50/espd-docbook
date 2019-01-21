@@ -43,9 +43,7 @@
 </xsl:template>
 
 <xsl:template name="lripage">
-  <xsl:variable name="master-reference">
-    <xsl:call-template name="select.pagemaster"/>
-  </xsl:variable>
+  <xsl:variable name="master-reference">lripage</xsl:variable>
   <fo:page-sequence master-reference="{$master-reference}">
       <xsl:attribute name="language">
         <xsl:call-template name="l10n.language"/>
