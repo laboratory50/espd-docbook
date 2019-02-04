@@ -8,6 +8,9 @@
 -->
 
 <!-- Оформление приложений -->
+<!-- ГОСТ 2.105-95 ЕСКД -->
+<!--4.3.7 Каждое приложение следует начинать с новой страницы с указанием наверху посередине страницы слова "Приложение" и его обозначения, а под ним в скобках для обязательного приложения пишут слово "обязательное", а для информационного - "рекомендуемое" или "справочное".-->
+
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
@@ -15,30 +18,50 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-    <!-- subtitle как title, только слева -->
-    <xsl:template match="d:subtitle" mode="appendix.titlepage.recto.auto.mode">
-    <xsl:variable name="content">
-        <xsl:apply-templates select="." mode="appendix.titlepage.recto.mode"/>
-    </xsl:variable>
+    <xsl:template match="d:title" mode="appendix.titlepage.recto.auto.mode">
+        <fo:block xsl:use-attribute-sets="appendix.titlepage.recto.style">
+            <xsl:variable name="id">
+                <xsl:call-template name="object.id">
+                <xsl:with-param name="object" select="ancestor-or-self::d:appendix[1]"/>
+                </xsl:call-template>
+            </xsl:variable>
 
-    <fo:block xsl:use-attribute-sets="section.title.properties section.title.level1.properties"
-            text-indent="0mm"
-            text-align="center" 
-            font-family="{$title.fontset}">
-        <xsl:call-template name="ucase">
-        <xsl:with-param name="string" select="$content"/>
-        </xsl:call-template>
-    </fo:block>
+            <xsl:variable name="title">
+                <xsl:apply-templates select="ancestor-or-self::d:appendix[1]" mode="object.title.markup">
+                <xsl:with-param name="allow-anchors" select="1"/>
+                </xsl:apply-templates>
+            </xsl:variable>
+
+            <fo:block xsl:use-attribute-sets="component.title.properties">
+                <xsl:attribute name="hyphenation-character">
+                <xsl:call-template name="gentext">
+                    <xsl:with-param name="key" select="'hyphenation-character'"/>
+                </xsl:call-template>
+                </xsl:attribute>
+                <xsl:attribute name="hyphenation-push-character-count">
+                <xsl:call-template name="gentext">
+                    <xsl:with-param name="key" select="'hyphenation-push-character-count'"/>
+                </xsl:call-template>
+                </xsl:attribute>
+                <xsl:attribute name="hyphenation-remain-character-count">
+                <xsl:call-template name="gentext">
+                    <xsl:with-param name="key" select="'hyphenation-remain-character-count'"/>
+                </xsl:call-template>
+                </xsl:attribute>
+
+                <xsl:copy-of select="$title"/>
+                <fo:block>
+                    <xsl:value-of select="."/>
+                </fo:block>
+                <xsl:if test="ancestor::d:subtitle">
+                    <fo:block>
+                        <xsl:value-of select="."/>
+                    </fo:block>
+                </xsl:if>
+            </fo:block>
+
+        </fo:block>
+
     </xsl:template>
-
-    <!-- Приложение справа -->
-    <xsl:attribute-set name="component.title.properties">
-    <xsl:attribute name="text-align">
-        <xsl:choose>
-        <xsl:when test="parent::d:appendix">right</xsl:when>
-        <xsl:otherwise>center</xsl:otherwise>
-        </xsl:choose>
-    </xsl:attribute>
-    </xsl:attribute-set>
 
 </xsl:stylesheet>

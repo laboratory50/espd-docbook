@@ -7,63 +7,13 @@
   http://lab50.net/
 -->
 
-<!-- Оформление таблиц -->
+<!-- Оформление таблиц (ГОСТ 2.105-95)-->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     exclude-result-prefixes="d"
     version="1.1">
-
-    <xsl:include href="../common/tables.xsl"/>
-
-<!-- Таблица дожна иметь номер -->
-<!-- без номера раздела (сквозная нумерация)-->
-    <xsl:template match="d:table|d:figure" mode="label.markup">
-        <xsl:variable name="pchap"
-                        select="(ancestor::d:appendix[ancestor::d:book])[last()]"/>
-
-        <xsl:variable name="prefix">
-            <xsl:if test="count($pchap) &gt; 0">
-                <xsl:apply-templates select="$pchap" mode="label.markup"/>
-            </xsl:if>
-        </xsl:variable>
-        <xsl:choose>
-            <xsl:when test="@label">
-                <xsl:value-of select="@label"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="$prefix != ''">
-                    <!-- Если в приложениях буквизация, то параметр не нужен <xsl:text>П</xsl:text>-->
-                        <!-- <xsl:text>П</xsl:text> -->
-                        <xsl:apply-templates select="$pchap" mode="label.markup"/>
-                        <xsl:apply-templates select="$pchap" mode="intralabel.punctuation">
-                            <xsl:with-param name="object" select="."/>
-                        </xsl:apply-templates>
-                        <xsl:number format="1" from="d:appendix" level="any"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:number format="1" from="d:book|d:article" level="any"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:attribute-set name="formal.title.properties" use-attribute-sets="normal.para.spacing">
-        <xsl:attribute name="text-align">
-            <xsl:choose>
-                <xsl:when test="self::d:table">left</xsl:when>
-                <xsl:otherwise>center</xsl:otherwise>
-            </xsl:choose>
-        </xsl:attribute>
-    </xsl:attribute-set>
-    <xsl:template name="table.cell.block.properties">
-        <xsl:if test="ancestor::thead">
-            <xsl:attribute name="font-weight">normal</xsl:attribute>
-        </xsl:if>
-    </xsl:template>
 
     <!-- отступ между названием таблицы и самой таблицей -->
     <xsl:attribute-set name="table.table.properties">
@@ -137,19 +87,14 @@
     <!-- Заголовок таблицы отделен двойной линией -->
     <xsl:template name="table.row.properties">
         <xsl:choose>
-            <xsl:when test="ancestor::d:thead and not (following-sibling::d:row) and not (ancestor::d:thead[@role='notdouble'])">
+            <xsl:when test="@role='double' or (ancestor::d:thead and not (following-sibling::d:row) and not (ancestor::d:thead[@role='notdouble']))">
                 <xsl:attribute name="border-after-style">double</xsl:attribute>
                 <xsl:attribute name="border-after-width">0.5mm</xsl:attribute>
-                <xsl:attribute name="text-align">center</xsl:attribute>
-                <xsl:attribute name="display-align">center</xsl:attribute>
-            </xsl:when>
-            <xsl:when test="@role='double'">
-                <xsl:attribute name="border-after-style">double</xsl:attribute>
-                <xsl:attribute name="border-after-width">0.5mm</xsl:attribute>
-                <xsl:attribute name="text-align">center</xsl:attribute>
-                <xsl:attribute name="display-align">center</xsl:attribute>
+            <xsl:attribute name="text-align">center</xsl:attribute>
+            <xsl:attribute name="display-align">center</xsl:attribute>
             </xsl:when>
         </xsl:choose>
+        <xsl:call-template name="espd.row.height"/>
     </xsl:template>
 
 </xsl:stylesheet>

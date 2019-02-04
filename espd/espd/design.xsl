@@ -26,7 +26,7 @@
 </xsl:attribute-set>
 
 <!-- Штамп -->
-<xsl:template name="espd-stamp">
+<xsl:template name="espd.stamp">
   <fo:block-container reference-orientation="90"
                       absolute-position="fixed"
                       bottom="5mm"

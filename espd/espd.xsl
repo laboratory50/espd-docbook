@@ -16,8 +16,10 @@
     <!-- <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/> -->
 
     <xsl:include href="common/params.xsl"/>
+    <xsl:include href="espd/params.xsl"/>
     <xsl:include href="common/text.xsl"/>
-    <xsl:include href="eskd/tables.xsl"/>
+    <xsl:include href="common/tables.xsl"/>
+    <xsl:include href="espd/tables.xsl"/>
     <xsl:include href="eskd/appendix.xsl"/>
     <xsl:include href="espd/titles.xsl"/>
     <xsl:include href="espd/headings.xsl"/>
@@ -27,11 +29,12 @@
     <xsl:include href="common/titlepage.xsl"/>
     <xsl:include href="espd/titlepage.xsl"/>
     <xsl:include href="espd/lu.xsl"/>
+    <xsl:include href="common/lri.xsl"/>
     <xsl:include href="espd/lri.xsl"/>
     <xsl:include href="eskd/images.xsl"/>
     <xsl:include href="espd/admonitions.xsl"/>
-    <xsl:include href="common/lri.xsl"/>
     <xsl:include href="common/verbatim.xsl"/>
+    <xsl:include href="eskd/toc.xsl"/>
     <xsl:include href="common/toc.xsl"/>
     <xsl:include href="common/qandaset.xsl"/>
 

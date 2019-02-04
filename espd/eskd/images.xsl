@@ -7,7 +7,7 @@
   http://lab50.net/
 -->
 
-<!-- Оформление рисунков -->
+<!-- Оформление рисунков (ГОСТ 2.105-95)-->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"

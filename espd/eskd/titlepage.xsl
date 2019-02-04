@@ -7,7 +7,7 @@
   http://lab50.net/
 -->
 
-<!-- Титульный лист. -->
+<!-- Титульный лист -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
@@ -50,7 +50,7 @@
         </fo:block>
     </fo:block-container>
 
-    <xsl:call-template name="espd-stamp"/>
+    <xsl:call-template name="espd.stamp"/>
 
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">

@@ -7,88 +7,25 @@
   http://lab50.net/
 -->
 
-<!-- Лист регистрации изменений. -->
+<!-- Лист регистрации изменений ГОСТ 2.503-90 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-<xsl:template name="user.pagemasters">
-  <fo:simple-page-master master-name="lrip"
-                         page-width="{$page.width}"
-                         page-height="{$page.height}"
-                         margin-top="5mm"
-                         margin-bottom="5mm"
-                         margin-left="20mm"
-                         margin-right="5mm">
-    <fo:region-body margin-bottom="0mm"
-                    margin-top="0mm"/>
-    <fo:region-before region-name="xsl-region-before-even"
-                      extent="0mm"
-                      display-align="before"/>
-    <fo:region-after region-name="xsl-region-after-even"
-                      extent="0mm"
-                      display-align="after"/>
-  </fo:simple-page-master>
-
-  <fo:page-sequence-master master-name="lripage">
-      <fo:repeatable-page-master-alternatives>
-        <fo:conditional-page-master-reference blank-or-not-blank="blank" master-reference="lrip"/>
-        <fo:conditional-page-master-reference page-position="first" master-reference="lrip"/>
-        <fo:conditional-page-master-reference odd-or-even="odd" master-reference="lrip"/>
-        <fo:conditional-page-master-reference odd-or-even="even" master-reference="lrip"/>
-      </fo:repeatable-page-master-alternatives>
-    </fo:page-sequence-master>
-</xsl:template>
-
-    <xsl:template name="lripage">
-        <xsl:variable name="master-reference">lripage</xsl:variable>
-        <fo:page-sequence master-reference="{$master-reference}">
-            <xsl:attribute name="language">
-                <xsl:call-template name="l10n.language"/>
-            </xsl:attribute>
-            <xsl:attribute name="format">
-                <xsl:call-template name="page.number.format">
-                    <xsl:with-param name="master-reference" select="$master-reference"/>
-                </xsl:call-template>
-            </xsl:attribute>
-
-            <xsl:attribute name="force-page-count">
-                <xsl:call-template name="force.page.count">
-                    <xsl:with-param name="master-reference" select="$master-reference"/>
-                </xsl:call-template>
-            </xsl:attribute>
-
-            <xsl:attribute name="hyphenation-character">
-                <xsl:call-template name="gentext">
-                    <xsl:with-param name="key" select="'hyphenation-character'"/>
-                </xsl:call-template>
-            </xsl:attribute>
-            <xsl:attribute name="hyphenation-push-character-count">
-                <xsl:call-template name="gentext">
-                    <xsl:with-param name="key" select="'hyphenation-push-character-count'"/>
-                </xsl:call-template>
-            </xsl:attribute>
-            <xsl:attribute name="hyphenation-remain-character-count">
-                <xsl:call-template name="gentext">
-                    <xsl:with-param name="key" select="'hyphenation-remain-character-count'"/>
-                </xsl:call-template>
-            </xsl:attribute>
-
-            <fo:flow flow-name="xsl-region-body">
-                <fo:block xsl:use-attribute-sets="espd.lri.style" break-before="page" font-size="10pt" font-family="{$sans.font.family}">
+    <xsl:template name="lri.table">
                     <fo:table table-layout="fixed" width="100%" height="100%" border-style="solid" border-width="0.4mm">
                         <fo:table-column column-width="8mm" border-style="solid"/>
-                        <fo:table-column column-width="20mm" border-style="solid"/>
-                        <fo:table-column column-width="20mm" border-style="solid"/>
-                        <fo:table-column column-width="20mm" border-style="solid"/>
-                        <fo:table-column column-width="20mm" border-style="solid"/>
-                        <fo:table-column column-width="20mm" border-style="solid"/>
-                        <fo:table-column column-width="25mm" border-style="solid"/>
-                        <fo:table-column column-width="25mm" border-style="solid"/>
-                        <fo:table-column column-width="15mm" border-style="solid"/>
-                        <fo:table-column column-width="12mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
+              <fo:table-column column-width="18mm" border-style="solid"/>
+              <fo:table-column column-width="20mm" border-style="solid"/>
+              <fo:table-column column-width="20mm" border-style="solid"/>
+              <fo:table-column column-width="25mm" border-style="solid"/>
+              <fo:table-column column-width="15mm" border-style="solid"/>
+              <fo:table-column column-width="17mm" border-style="solid"/>
                         <fo:table-body>
                             <fo:table-row height="10mm" border-style="solid" border-width="0.4mm" text-align="center">
                                 <fo:table-cell number-columns-spanned="10" display-align="center">
@@ -135,9 +72,6 @@
                             <xsl:call-template name="lri-empty-row"/>
                         </fo:table-body>
                     </fo:table>
-                </fo:block>
-            </fo:flow>
-        </fo:page-sequence>
     </xsl:template>
 
     <xsl:template name="lri-empty-row">

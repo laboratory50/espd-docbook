@@ -26,10 +26,10 @@
                     <l:template name="chapter" text="%n. %t"/>
                     <l:template name="section" text="%n. %t"/>
                     <!-- цифры в нумерации приложений -->
-                    <l:template name="appendix" text="Приложение&#160;%n"/>
+                    <l:template name="appendix" text="Приложение&#160;%n" lang="ru"/>
                 </l:context>
                 <l:context name="title">
-                    <l:template name="appendix" text="Приложение %n. %t"/>
+                    <l:template name="appendix" text="Приложение %n. %t" lang="ru"/>
                     <!-- Слово таблица - разреженное -->
                     <l:template name="table" text="Т а б л и ц а&#160;&#160;%n — %t"/>
                     <l:template name="note" text="П р и м е ч а н и е. "/>

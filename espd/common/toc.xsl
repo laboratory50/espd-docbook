@@ -7,7 +7,7 @@
   http://lab50.net/
 -->
 
-<!-- Оформление содержания. -->
+<!-- Оформление содержания -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
@@ -15,7 +15,7 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-<!-- Вдвое уменьшенный отступ относительно стандартного. -->
+<!-- Вдвое уменьшенный отступ относительно стандартного -->
 <xsl:param name="toc.indent.width">12</xsl:param>
 
 <!-- Добавляется слово «Приложение» для номера приложений
@@ -26,7 +26,7 @@
   <xsl:variable name="id">
     <xsl:call-template name="object.id"/>
   </xsl:variable>
-  
+
   <xsl:variable name="label">
     <xsl:choose>
       <xsl:when test="self::d:appendix">
@@ -94,12 +94,28 @@
 <xsl:template name="page.number.format">1</xsl:template>
 
 <xsl:template name="initial.page.number">
+  <xsl:param name="element" select="local-name(.)"/>
+  <xsl:param name="master-reference" select="''"/>
+
+  <xsl:message>
+  <xsl:value-of select="$master-reference"/>
+    <xsl:value-of select="$element"/>
+  </xsl:message>
+
+  <xsl:variable name="first">
+    <xsl:choose>
+      <!-- double-sided output -->
+      <xsl:when test="$double.sided != 0">auto-odd</xsl:when>
+      <!-- single-sided output -->
+      <xsl:otherwise>auto</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
   <xsl:choose>
-    <!-- double-sided output -->
-    <xsl:when test="$double.sided != 0">auto-odd</xsl:when>
-    <!-- single-sided output -->
-    <xsl:otherwise>auto</xsl:otherwise>
+    <xsl:when test="$master-reference = 'titlepage'">1</xsl:when>
+    <xsl:otherwise><xsl:value-of select="$first"/></xsl:otherwise>
   </xsl:choose>
+
 </xsl:template>
 
 <xsl:template match="d:preface" mode="toc"/>

@@ -35,7 +35,7 @@
     </fo:block>
   </fo:block-container>
 
-  <xsl:call-template name="espd-stamp"/>
+  <xsl:call-template name="espd.stamp"/>
 
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">

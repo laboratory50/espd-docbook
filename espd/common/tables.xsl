@@ -15,46 +15,68 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-<!-- высота строк таблицы -->
-    <xsl:template name="normal-row">
-        <xsl:param name="spans"/>
-        <xsl:param name="browserows"/>
+<!-- Сквозная нумерация-->
+    <xsl:template match="d:table|d:figure" mode="label.markup">
+        <xsl:variable name="pchap"
+                        select="(ancestor::d:appendix[ancestor::d:book])[last()]"/>
 
+        <xsl:variable name="prefix">
+            <xsl:if test="count($pchap) &gt; 0">
+                <xsl:apply-templates select="$pchap" mode="label.markup"/>
+            </xsl:if>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="@label">
+                <xsl:value-of select="@label"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="$prefix != ''">
+                    <!-- Если в приложениях буквизация, то параметр не нужен <xsl:text>П</xsl:text>-->
+                        <!-- <xsl:text>П</xsl:text> -->
+                        <xsl:apply-templates select="$pchap" mode="label.markup"/>
+                        <xsl:apply-templates select="$pchap" mode="intralabel.punctuation">
+                            <xsl:with-param name="object" select="."/>
+                        </xsl:apply-templates>
+                        <xsl:number format="1" from="d:appendix" level="any"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:number format="1" from="d:book|d:article" level="any"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- Номер и название таблицы слева -->
+    <xsl:attribute-set name="formal.title.properties" use-attribute-sets="normal.para.spacing">
+        <xsl:attribute name="text-align">
+            <xsl:choose>
+                <xsl:when test="self::d:table">left</xsl:when>
+                <xsl:otherwise>center</xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:attribute-set>
+
+    <!-- Нормальнаятолщина шрифта в заголовке таблицы -->
+    <xsl:template name="table.cell.block.properties">
+        <xsl:if test="ancestor::thead">
+            <xsl:attribute name="font-weight">normal</xsl:attribute>
+        </xsl:if>
+    </xsl:template>
+
+    <!-- Высота строк таблицы -->
+    <xsl:template name="espd.row.height">
         <xsl:variable name="row-height">
             <xsl:if test="processing-instruction('dbfo')">
                 <xsl:call-template name="pi.dbfo_row-height"/>
             </xsl:if>
         </xsl:variable>
 
-        <fo:table-row>
-            <xsl:if test="$row-height != ''">
-                <xsl:attribute name="height">
-                    <xsl:value-of select="$row-height"/>
-                </xsl:attribute>
-            </xsl:if>
-
-            <xsl:call-template name="table.row.properties"/>
-            <xsl:call-template name="anchor"/>
-
-            <xsl:apply-templates select="(d:entry|d:entrytbl)[1]">
-                <xsl:with-param name="spans" select="$spans"/>
-            </xsl:apply-templates>
-        </fo:table-row>
-
-        <xsl:if test="$browserows = 'recurse'">
-            <xsl:if test="following-sibling::d:row">
-            <xsl:variable name="nextspans">
-                <xsl:apply-templates select="(d:entry|d:entrytbl)[1]" mode="span">
-                    <xsl:with-param name="spans" select="$spans"/>
-                </xsl:apply-templates>
-            </xsl:variable>
-
-            <xsl:apply-templates select="following-sibling::d:row[1]">
-                <xsl:with-param name="spans" select="$nextspans"/>
-                <xsl:with-param name="browserows" select="$browserows"/>
-            </xsl:apply-templates>
-            </xsl:if>
+        <xsl:if test="$row-height != ''">
+            <xsl:attribute name="block-progression-dimension">
+                <xsl:value-of select="$row-height"/>
+            </xsl:attribute>
         </xsl:if>
     </xsl:template>
-
 </xsl:stylesheet>

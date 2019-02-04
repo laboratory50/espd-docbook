@@ -7,7 +7,7 @@
   http://lab50.net/
 -->
 
-<!-- Лист утверждения. -->
+<!-- Лист утверждения -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
@@ -71,11 +71,6 @@
                 <xsl:value-of select="$espd.decimal"/><xsl:text>-ЛУ</xsl:text>
             </fo:block>
 
-            <!-- Дата публикации (год) -->
-            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:pubdate"/>
-
-            <!-- Литера -->
-            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:releaseinfo"/>
             </xsl:with-param>
         </xsl:call-template>
     </xsl:template>
@@ -182,29 +177,6 @@
 
     <xsl:template match="d:othercredit" mode="book.titlepage.recto.auto.mode">
         <xsl:call-template name="lu.approvement.custom"/>
-    </xsl:template>
-
-    <!-- дата публикации -->
-    <xsl:template match="d:pubdate" mode="book.titlepage.recto.auto.mode">
-        <fo:block-container absolute-position="fixed"
-                            top="255mm"
-                            left="25mm"
-                            right="10mm">
-            <fo:block xsl:use-attribute-sets="lu.style" space-before="5mm">
-                <xsl:apply-templates select="." mode="book.titlepage.recto.mode"/>
-            </fo:block>
-        </fo:block-container>
-    </xsl:template>
-
-    <xsl:template match="d:releaseinfo" mode="book.titlepage.recto.auto.mode">
-        <fo:block-container absolute-position="fixed"
-                        top="265mm"
-                        left="165mm"
-                        right="10mm">
-            <fo:block xsl:use-attribute-sets="lu.style" space-before="5mm" >
-                <xsl:apply-templates select="." mode="book.titlepage.recto.mode"/>
-            </fo:block>
-        </fo:block-container>
     </xsl:template>
 
 </xsl:stylesheet>
