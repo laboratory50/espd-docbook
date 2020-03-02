@@ -13,20 +13,38 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-    <xsl:attribute-set name="espd.stamp.style">
+<xsl:attribute-set name="espd.stamp.style">
     <xsl:attribute name="font-family">
         <xsl:value-of select="$sans.font.family"/>
     </xsl:attribute>
     <xsl:attribute name="font-weight">normal</xsl:attribute>
     <xsl:attribute name="font-size">10pt</xsl:attribute>
+    <xsl:attribute name="text-align">center</xsl:attribute>
     <xsl:attribute name="border">0.3mm solid black</xsl:attribute>
     <xsl:attribute name="hyphenate">false</xsl:attribute>
-    </xsl:attribute-set>
+</xsl:attribute-set>
 
 <!-- !!! Для расчётов размеров: при условии, что все размеры считаются от середины бордера -->
 <!--     для ширины ячейки указываются настоящие размеры -->
 <!--     для высоты ячейки необходимо из рамера вычесть толщину бордера -->
 <!-- !!! -->
+
+<xsl:template name="eskd.frame">
+    <fo:block-container absolute-position="fixed"
+                        top="5mm"
+                        left="20mm">
+        <fo:block>
+            <fo:table width="185mm" height="286.6mm" border-style="solid" border-width="0.3mm">
+                <fo:table-column column-width="185mm" border-style="solid" border-width="0.3mm"/>
+                <fo:table-body>
+                    <fo:table-row border-style="solid" text-align="center" height="286.6mm">
+                        <fo:table-cell><fo:block/></fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
+        </fo:block>
+    </fo:block-container>
+</xsl:template>
 
 <!-- Рамка и основная надпись (первый лист)-->
 <xsl:template name="eskd.main.stamp">
@@ -73,9 +91,10 @@
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell number-rows-spanned="3"
-                                        number-columns-spanned="6"
-                                        display-align="center"
-                                        border-style="solid">
+                                       number-columns-spanned="6"
+                                       font-size="16pt"
+                                       display-align="center"
+                                       border-style="solid">
                             <fo:block><xsl:value-of select="$espd.decimal"/></fo:block>
                         </fo:table-cell>
                     </fo:table-row>
@@ -101,7 +120,9 @@
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell><fo:block/></fo:table-cell>
-                        <fo:table-cell number-rows-spanned="5" display-align="center">
+                        <fo:table-cell number-rows-spanned="5"
+                                       font-size="12pt"
+                                       display-align="center">
                             <fo:block>
                                 <xsl:value-of select="/d:book/d:info/d:title"/>
                             </fo:block>
@@ -131,7 +152,10 @@
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell><fo:block/></fo:table-cell>
                         <fo:table-cell><fo:block/></fo:table-cell>
-                        <fo:table-cell number-columns-spanned="5" number-rows-spanned="3" display-align="center">
+                        <fo:table-cell number-columns-spanned="5"
+                                       number-rows-spanned="3"
+                                       font-size="12pt"
+                                       display-align="center">
                             <fo:block><xsl:value-of select="/d:book/d:info/d:author/d:orgname"/></fo:block></fo:table-cell>
                     </fo:table-row>
 
@@ -181,7 +205,7 @@
                         <fo:table-cell number-rows-spanned="3" display-align="center" font-size="16pt">
                             <fo:block><xsl:value-of select="$espd.decimal"/></fo:block>
                         </fo:table-cell>
-                        <fo:table-cell number-rows-spanned="2" display-align="center">
+                        <fo:table-cell number-rows-spanned="2" display-align="center" font-size="16pt">
                             <fo:block><fo:page-number/></fo:block>
                         </fo:table-cell>
                     </fo:table-row>

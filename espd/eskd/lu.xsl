@@ -8,6 +8,7 @@
 -->
 
 <!-- Лист утверждения -->
+<!-- В соответствии с ГОСТ 2.105-95 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
@@ -15,15 +16,12 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-    <xsl:import href="design.xsl"/>
-
-    <xsl:attribute-set name="lu.style"
-                    use-attribute-sets="espd.titlepage.style">
+    <xsl:attribute-set name="lu.style" 
+        use-attribute-sets="espd.titlepage.style">
         <xsl:attribute name="font-family">
             <xsl:value-of select="$body.font.family"/>
         </xsl:attribute>
         <xsl:attribute name="font-weight">normal</xsl:attribute>
-        <xsl:attribute name="font-size">16pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:template name="front.cover">
@@ -31,46 +29,38 @@
             <xsl:with-param name="master-reference">lu</xsl:with-param>
             <xsl:with-param name="content">
 
-            <!-- Рамка -->
-            <fo:block-container absolute-position="fixed"
-                                top="5mm"
-                                left="20mm">
-                    <fo:block font-size="10pt" font-family="{$sans.font.family}">
-                        <fo:table width="185mm" height="286.6mm" border-style="solid" border-width="0.3mm">
-                            <fo:table-column column-width="185mm" border-style="solid" border-width="0.3mm"/>
-                            <fo:table-body>
-                                <fo:table-row border-style="solid" text-align="center" height="286.6mm">
-                                    <fo:table-cell><fo:block/></fo:table-cell>
-                                </fo:table-row>
-                            </fo:table-body>
-                        </fo:table>
-                    </fo:block>
-                </fo:block-container>
+                <!-- Рамка -->
+                <xsl:call-template name="eskd.frame"/>
 
-            <!-- Штамп вертикальный слева -->
-            <xsl:call-template name="espd.stamp"/>
+                <!-- Штамп вертикальный слева -->
+                <xsl:call-template name="espd.stamp"/>
 
-            <!-- УТВЕРЖДАЮ (кто)-->
+                <!-- УТВЕРЖДАЮ (кто)-->
                 <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:editor"/>
                 <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:othercredit"/>
 
-            <!-- Название комплекса -->
-            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:title"/>
+                <!-- Название комплекса -->
+                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:title"/>
 
-            <!-- Тип документа -->
-            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:subtitle"/>
+                <!-- Тип документа -->
+                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:subtitle"/>
 
-            <!-- Лист утверждения -->
-            <fo:block xsl:use-attribute-sets="lu.style"
-                        space-before="10mm">
-                Лист утверждения
-            </fo:block>
+                <!-- Лист утверждения -->
+                <fo:block xsl:use-attribute-sets="lu.style"
+                            space-before="10mm">
+                    Лист утверждения
+                </fo:block>
 
-            <!-- Децимальный -->
-            <fo:block xsl:use-attribute-sets="lu.style">
-                <xsl:value-of select="$espd.decimal"/><xsl:text>-ЛУ</xsl:text>
-            </fo:block>
+                <!-- Децимальный -->
+                <fo:block xsl:use-attribute-sets="lu.style">
+                    <xsl:value-of select="$espd.decimal"/><xsl:text>-ЛУ</xsl:text>
+                </fo:block>
 
+                <!-- Дата публикации (год) -->
+                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:date"/>
+
+                <!-- Литера -->
+                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:releaseinfo"/>
             </xsl:with-param>
         </xsl:call-template>
     </xsl:template>
@@ -87,18 +77,18 @@
             <xsl:call-template name="person.name" mode="initials"/>
         </xsl:param>
 
-        <fo:block>
+        <fo:block text-align="left">
             <xsl:if test="$caption != ''">
-                <fo:block text-align="center" line-height="2.5"><xsl:value-of select="$caption"/></fo:block>
+                <fo:block><xsl:value-of select="$caption"/></fo:block>
             </xsl:if>
-            <fo:block text-align="center"><xsl:value-of select="$appointment"/></fo:block>
-            <fo:block text-align="center"><xsl:value-of select="$organization"/></fo:block>
-            <fo:block text-align="right" line-height="2.5">
+            <fo:block><xsl:value-of select="$appointment"/></fo:block>
+            <fo:block><xsl:value-of select="$organization"/></fo:block>
+            <fo:block line-height="2.5">
                 <fo:inline>
                     <xsl:text>___________ </xsl:text>
                     <xsl:value-of select="$initials"/>
                 </fo:inline></fo:block>
-            <fo:block text-align="center">
+            <fo:block>
                 <fo:inline>
                     <xsl:text>«__»___________</xsl:text>
                     <xsl:call-template name="datetime.format">
@@ -145,7 +135,7 @@
                             width="40%"
                             xsl:use-attribute-sets="lu.style">
             <xsl:call-template name="lu.approvement">
-                <xsl:with-param name="caption" select="'УТВЕРЖДАЮ'"/>
+                <xsl:with-param name="caption" select="'СОГЛАСОВАНО'"/>
             </xsl:call-template>
         </fo:block-container>
     </xsl:template>
@@ -177,6 +167,29 @@
 
     <xsl:template match="d:othercredit" mode="book.titlepage.recto.auto.mode">
         <xsl:call-template name="lu.approvement.custom"/>
+    </xsl:template>
+
+     <!-- дата публикации -->
+    <xsl:template match="d:date" mode="book.titlepage.recto.auto.mode">
+        <fo:block-container absolute-position="fixed"
+                            top="255mm"
+                            left="25mm"
+                            right="10mm">
+            <fo:block xsl:use-attribute-sets="lu.style" space-before="5mm">
+                <xsl:apply-templates select="." mode="book.titlepage.recto.mode"/>
+            </fo:block>
+        </fo:block-container>
+    </xsl:template>
+
+    <xsl:template match="d:releaseinfo" mode="book.titlepage.recto.auto.mode">
+        <fo:block-container absolute-position="fixed"
+                        top="265mm"
+                        left="165mm"
+                        right="10mm">
+            <fo:block xsl:use-attribute-sets="lu.style" space-before="5mm" >
+                <xsl:apply-templates select="." mode="book.titlepage.recto.mode"/>
+            </fo:block>
+        </fo:block-container>
     </xsl:template>
 
 </xsl:stylesheet>

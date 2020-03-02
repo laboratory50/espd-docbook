@@ -7,15 +7,14 @@
   http://lab50.net/
 -->
 
-<!-- Лист утверждения. -->
+<!-- Лист утверждения -->
+<!-- ГОСТ 19.104-78 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:date="http://exslt.org/dates-and-times"
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
-
-    <xsl:import href="design.xsl"/>
 
     <xsl:attribute-set name="lu.style"
                     use-attribute-sets="espd.titlepage.style">
@@ -72,7 +71,7 @@
             </fo:block>
 
             <!-- Дата публикации (год) -->
-            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:pubdate"/>
+            <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:date"/>
 
             <!-- Литера -->
             <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:releaseinfo"/>
@@ -185,7 +184,7 @@
     </xsl:template>
 
     <!-- дата публикации -->
-    <xsl:template match="d:pubdate" mode="book.titlepage.recto.auto.mode">
+    <xsl:template match="d:date" mode="book.titlepage.recto.auto.mode">
         <fo:block-container absolute-position="fixed"
                             top="255mm"
                             left="25mm"

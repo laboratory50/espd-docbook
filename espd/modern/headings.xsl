@@ -45,7 +45,7 @@
       <xsl:when test="$position = 'center'">
         <xsl:value-of select="$espd.decimal"/>
       </xsl:when>
-    
+
       <xsl:when test="($sequence = 'odd' or $sequence = 'first') and $position = 'right'">
         <fo:page-number/>
       </xsl:when>
@@ -87,7 +87,7 @@
 </xsl:attribute-set>
 
 <!-- Относительная ширина колонок в верхнем колонтитуле. -->
-<!-- <xsl:param name="header.column.widths">2 2 1</xsl:param> -->
+<xsl:param name="header.column.widths">1 1 1</xsl:param>
 
 <xsl:attribute-set name="footer.content.properties"
                    use-attribute-sets="header.content.properties">

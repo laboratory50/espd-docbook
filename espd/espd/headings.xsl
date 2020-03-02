@@ -19,32 +19,32 @@
 <xsl:param name="header.rule" select="0"/>
 
 <!-- Содержимое колонтитулов -->
-<!-- Верхний — номер страницы и децимальный номер по центру. -->
+<!-- Верхний — номер страницы и децимальный номер по центру -->
 <xsl:template name="header.content">
-  <xsl:param name="pageclass" select="''"/>
-  <xsl:param name="sequence" select="''"/>
-  <xsl:param name="position" select="''"/>
-  <xsl:param name="gentext-key" select="''"/>
-  <fo:block>
-    <xsl:choose>
-      <xsl:when test="$pageclass = 'titlepage' or $pageclass = 'lripage'"/>
+    <xsl:param name="pageclass" select="''"/>
+    <xsl:param name="sequence" select="''"/>
+    <xsl:param name="position" select="''"/>
+    <xsl:param name="gentext-key" select="''"/>
+    <fo:block>
+        <xsl:choose>
+        <xsl:when test="$pageclass = 'titlepage' or $pageclass = 'lripage'"/>
 
-      <xsl:when test="$position = 'center'">
-        <fo:block space-after="1mm">
-          <fo:page-number/>
-        </fo:block>
-        <fo:block>
-          <xsl:value-of select="$espd.decimal"/>
-        </fo:block>
-      </xsl:when>
-<!--
-      <xsl:when test="$sequence = 'blank' and $position = 'left'">
-        <fo:page-number/>
-      </xsl:when>
--->
-      <xsl:otherwise/>
-    </xsl:choose>
-  </fo:block>
+        <xsl:when test="$position = 'center'">
+            <fo:block space-after="1mm">
+            <fo:page-number/>
+            </fo:block>
+            <fo:block>
+            <xsl:value-of select="$espd.decimal"/>
+            </fo:block>
+        </xsl:when>
+    <!--
+        <xsl:when test="$sequence = 'blank' and $position = 'left'">
+            <fo:page-number/>
+        </xsl:when>
+    -->
+        <xsl:otherwise/>
+        </xsl:choose>
+    </fo:block>
 </xsl:template>
 
 <!-- Нижний колонтитул: отсутствует. -->
