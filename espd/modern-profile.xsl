@@ -17,7 +17,7 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-    <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/docbook.xsl"/>
+    <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
 
     <xsl:include href="modern/params.xsl"/>
     <xsl:include href="modern/page.xsl"/>
