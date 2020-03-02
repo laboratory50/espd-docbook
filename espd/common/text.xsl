@@ -18,7 +18,7 @@
 <xsl:attribute-set name="normal.para.spacing">
   <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">0mm</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
@@ -31,9 +31,16 @@
   <xsl:attribute name="text-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0.4em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Абзацный отступ -->
+<!-- !!! Конфликтует с espd/list!!! -->
 <xsl:attribute-set name="para.properties"
      xsl:use-attribute-sets="normal.para.spacing">
   <xsl:attribute name="text-indent">

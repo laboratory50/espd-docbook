@@ -7,7 +7,7 @@
   http://lab50.net/
 -->
 
-<!-- Оформление машинного текста. -->
+<!-- Оформление машинного текста -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
@@ -19,12 +19,13 @@
 <xsl:attribute-set name="monospace.verbatim.properties">
   <xsl:attribute name="wrap-option">no-wrap</xsl:attribute>
   <xsl:attribute name="font-size">
-    <xsl:choose>
+  <xsl:value-of select="$espd.verbatim.font.size"/>
+<!--    <xsl:choose>
       <xsl:when test="processing-instruction('db-font-size')">
         <xsl:value-of select="processing-instruction('db-font-size')"/>
       </xsl:when>
       <xsl:otherwise><xsl:value-of select="$espd.verbatim.font.size"/></xsl:otherwise>
-    </xsl:choose>
+    </xsl:choose>-->
   </xsl:attribute>
 </xsl:attribute-set>
 
@@ -37,11 +38,11 @@
   <xsl:attribute name="space-before.maximum">0.6em</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0.2em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0.4em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">1.6em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.6em</xsl:attribute>
   <xsl:attribute name="line-height">
     <xsl:choose>
       <xsl:when test="self::d:programlisting">1.2</xsl:when>
-      <xsl:when test="self::d:screen">1.0</xsl:when>
+<!--       <xsl:when test="self::d:screen">1.0</xsl:when> -->
       <xsl:otherwise>normal</xsl:otherwise>
     </xsl:choose>
   </xsl:attribute>
@@ -55,16 +56,22 @@
 
 <!-- Блок атрибутов для элемента computeroutput -->
 <xsl:attribute-set name="computeroutput.properties">
-  <xsl:attribute name="font-size">0.9em</xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$espd.verbatim.font.size"></xsl:value-of>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="shade.verbatim" select="1"/>
 
+<!-- Цвет фона абзацев машинного текста -->
 <xsl:attribute-set name="shade.verbatim.style">
   <xsl:attribute name="background-color">
     <xsl:value-of select="$espd.verbatim.color.bg"/>
   </xsl:attribute>
-  <xsl:attribute name="padding">2mm</xsl:attribute>
+  <xsl:attribute name="padding-top">2mm</xsl:attribute>
+  <xsl:attribute name="padding-bottom">1.5mm</xsl:attribute>
+  <xsl:attribute name="padding-left">3mm</xsl:attribute>
+  <xsl:attribute name="padding-right">2mm</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Использование блока параметров computeroutput.properties
