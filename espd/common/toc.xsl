@@ -42,7 +42,7 @@
  <xsl:variable name="separator">
     <xsl:choose>
       <xsl:when test="self::d:appendix">
-        <xsl:text> </xsl:text>
+        <xsl:text>. </xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$autotoc.label.separator"/>
@@ -65,6 +65,7 @@
     <fo:leader leader-pattern="dots"
                leader-pattern-width="0"
                leader-alignment="reference-area"
+               leader-length.minimum="0"
                keep-with-next.within-line="always"/>
     <xsl:text> </xsl:text>
     <fo:basic-link internal-destination="{$id}">
@@ -96,11 +97,6 @@
 <xsl:template name="initial.page.number">
   <xsl:param name="element" select="local-name(.)"/>
   <xsl:param name="master-reference" select="''"/>
-
-  <xsl:message>
-  <xsl:value-of select="$master-reference"/>
-    <xsl:value-of select="$element"/>
-  </xsl:message>
 
   <xsl:variable name="first">
     <xsl:choose>
