@@ -26,11 +26,12 @@
       <l:template name="simplesect" text="&#167;&#160;%n"/>
       <l:template name="appendix" text="прил.&#160;%n"/>
     </l:context>
+    <!-- Нумерованные заголовки в теле документа -->
     <l:context name="title-numbered">
       <l:template name="chapter" text="%n. %t"/>
       <l:template name="section" text="%n. %t"/>
       <l:template name="simplesect" text="%t"/>
-      <l:template name="appendix" text="Приложение %n. %t"/>
+      <l:template name="appendix" text="Приложение %n.&#160;%t"/>
     </l:context>
     <l:context name="title">
       <l:template name="figure" text="Рисунок %n.&#160;%t"/>

@@ -7,7 +7,6 @@
   http://lab50.net/
 -->
 
-<!-- Оформление рисунков (ГОСТ 2.105-95)-->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
@@ -24,22 +23,5 @@
             </xsl:choose>
         </xsl:attribute>
     </xsl:attribute-set>
-
-    <!-- сначала название рисунка, потом номер -->
-    <xsl:template match="d:figure" mode="object.title.markup">
-        <xsl:param name="allow-anchors" select="0"/>
-            <fo:block>
-                <xsl:call-template name="substitute-markup">
-                    <xsl:with-param name="allow-anchors" select="$allow-anchors"/>
-                    <xsl:with-param name="template" select="'%t'"/>
-                </xsl:call-template>
-            </fo:block>
-            <fo:block>
-                <xsl:call-template name="substitute-markup">
-                    <xsl:with-param name="allow-anchors" select="$allow-anchors"/>
-                    <xsl:with-param name="template" select="'Рисунок %n'"/>
-                </xsl:call-template>
-            </fo:block>
-    </xsl:template>
 
 </xsl:stylesheet>
