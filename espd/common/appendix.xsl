@@ -8,29 +8,16 @@
 -->
 
 <!-- Оформление приложений -->
+<!-- ГОСТ 19.106-78 ЕСПД -->
+<!--2.9.2. Каждое приложение должно начинаться с новой страницы с указанием в правом верхнем углу слова "ПРИЛОЖЕНИЕ" прописными буквами и иметь тематический заголовок, который записывают симметрично тексту прописными буквами.
+При наличии в документе более одного приложения все приложения нумеруют арабскими цифрами (без знака N), например ПРИЛОЖЕНИЕ 1, ПРИЛОЖЕНИЕ 2 и т.д.-->
+
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:d="http://docbook.org/ns/docbook"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     exclude-result-prefixes="d"
     version="1.1">
-
-<xsl:variable name="english-alphabet" select="'ABCDEFGHIJKLMNOPQRSTUVWXY'"/>
-<xsl:variable name="russian-alphabet" select="'АБВГДЕЖИКЛМНПРСТУФХЦШЩЭЮЯ'"/>
-
-<xsl:template name="espd.appendix.label">
-    <xsl:param name="number"/>
-    <xsl:param name="format"/>
-
-    <xsl:choose>
-        <xsl:when test="$format='upperalpha' or $format='A'">
-           <xsl:value-of select="translate($number, $english-alphabet, $russian-alphabet)"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$number"/>
-          </xsl:otherwise>
-          </xsl:choose>
-</xsl:template>
 
 
 <!-- Буквизация -->
