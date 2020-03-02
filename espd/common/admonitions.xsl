@@ -14,21 +14,7 @@
     xmlns:d="http://docbook.org/ns/docbook"
     version="1.1">
 
-    <xsl:param name="admon.graphics.extension">.svg</xsl:param>
-    <xsl:param name="admon.graphics.path">../common/figures/</xsl:param>
-    <xsl:param name="admon.graphics">0</xsl:param>
-
-    <xsl:attribute-set name="nongraphical.admonition.properties">
-        <xsl:attribute name="text-indent">
-            <xsl:value-of select="$espd.text-indent"/>
-        </xsl:attribute>
-    </xsl:attribute-set>
-
-    <xsl:attribute-set name="admonition.title.properties">
-        <xsl:attribute name="font-weight">normal</xsl:attribute>
-        <xsl:attribute name="font-size">1em</xsl:attribute>
-    </xsl:attribute-set>
-
+    <!-- Выравнивание отступов -->
     <xsl:template name="nongraphical.admonition">
         <xsl:param name="content">
             <xsl:apply-templates/>
@@ -38,11 +24,20 @@
         </xsl:variable>
 
         <fo:block id="{$id}"
-                    xsl:use-attribute-sets="nongraphical.admonition.properties">
+                  xsl:use-attribute-sets="nongraphical.admonition.properties">
+            <xsl:attribute name="padding-bottom">0pt</xsl:attribute>
+            <xsl:attribute name="padding-top">0pt</xsl:attribute>
+            <xsl:attribute name="padding-right">0pt</xsl:attribute>
+            <xsl:attribute name="padding-left">0pt</xsl:attribute>
+            <xsl:attribute name="margin-left">0pt</xsl:attribute>
+            <xsl:attribute name="margin-bottom">0pt</xsl:attribute>
+            <xsl:attribute name="margin-right">0pt</xsl:attribute>
+            <xsl:attribute name="margin-top">0pt</xsl:attribute>
+            <xsl:attribute name="text-indent">
+                <xsl:value-of select="$espd.text-indent"/>
+            </xsl:attribute>
             <fo:block xsl:use-attribute-sets="admonition.properties">
-            <fo:inline xsl:use-attribute-sets="admonition.title.properties">
                 <xsl:apply-templates select="." mode="object.title.markup"/>
-                </fo:inline>
                 <xsl:value-of select="$content"/>
             </fo:block>
         </fo:block>
