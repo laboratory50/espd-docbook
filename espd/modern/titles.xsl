@@ -15,7 +15,15 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-<xsl:include href="../common/titles.xsl"/>
+<!-- Нумерация вида X.Y.Z -->
+<xsl:param name="section.autolabel">1</xsl:param>
+<xsl:param name="section.label.includes.component.label">1</xsl:param>
+
+<xsl:attribute-set name="formal.title.properties"
+                   use-attribute-sets="normal.para.spacing">
+  <xsl:attribute name="font-weight">normal</xsl:attribute>
+  <xsl:attribute name="hyphenate">false</xsl:attribute>
+</xsl:attribute-set>
 
 <!-- Главы (разделы) -->
 <xsl:attribute-set name="component.title.properties">
@@ -47,7 +55,6 @@
   <xsl:attribute name="space-before.minimum">1em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">1em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">1em</xsl:attribute>
-  <!--  <xsl:attribute name="space-before.precedence">1</xsl:attribute> -->
   <xsl:attribute name="space-after.minimum">0.5em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0.5em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0.5em</xsl:attribute>
@@ -60,7 +67,7 @@
   <xsl:attribute name="start-indent">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
-  <xsl:attribute name="provisional-distance-between-starts">15mm</xsl:attribute>
+  <xsl:attribute name="provisional-distance-between-starts">25mm</xsl:attribute>
   <xsl:attribute name="provisional-label-separation">4mm</xsl:attribute>
 </xsl:attribute-set>
 
