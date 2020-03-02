@@ -15,7 +15,7 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-<!-- Сквозная нумерация-->
+    <!-- Сквозная нумерация-->
     <xsl:template match="d:table|d:figure" mode="label.markup">
         <xsl:variable name="pchap"
                         select="(ancestor::d:appendix[ancestor::d:book])[last()]"/>
@@ -58,7 +58,7 @@
         </xsl:attribute>
     </xsl:attribute-set>
 
-    <!-- Нормальнаятолщина шрифта в заголовке таблицы -->
+    <!-- Нормальная толщина шрифта в заголовке таблицы -->
     <xsl:template name="table.cell.block.properties">
         <xsl:if test="ancestor::thead">
             <xsl:attribute name="font-weight">normal</xsl:attribute>
@@ -79,4 +79,79 @@
             </xsl:attribute>
         </xsl:if>
     </xsl:template>
+
+    <!-- отступ между названием таблицы и самой таблицей -->
+    <xsl:attribute-set name="table.table.properties">
+            <xsl:attribute name="margin-top">
+    <xsl:choose>
+        <xsl:when test="self::d:table">-6mm</xsl:when>
+        <xsl:otherwise>0mm</xsl:otherwise>
+    </xsl:choose>
+            </xsl:attribute>
+    </xsl:attribute-set>
+
+    <!-- продолжение в таблице -->
+    <xsl:template name="table.layout">
+    <xsl:param name="table.content"/>
+
+    <xsl:choose>
+        <xsl:when test="self::d:informaltable">
+            <xsl:copy-of select="$table.content"/>
+        </xsl:when>
+        <xsl:otherwise>
+            <fo:table>
+                <fo:table-header>
+                  <fo:table-row>
+                    <fo:table-cell>
+                        <fo:block xsl:use-attribute-sets="table.caption.properties">
+                            <fo:retrieve-table-marker
+                                    retrieve-class-name="table-title"
+                                    retrieve-position-within-table="first-starting"
+                                    retrieve-boundary-within-table="table-fragment"/>&#x00A0;
+                        </fo:block>
+                    </fo:table-cell>
+                  </fo:table-row>
+                </fo:table-header>
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell>
+                            <fo:block xsl:use-attribute-sets="table.caption.properties">
+                                <fo:marker marker-class-name="table-title"></fo:marker>
+                            </fo:block>
+                            <fo:block>
+                                <fo:marker marker-class-name="table-title">
+                                    <fo:inline font-style="italic">
+                                    <xsl:text>П р о д о л ж е н и е&#160;&#160;&#160;т а б л и ц ы&#160;&#160;&#160;</xsl:text>
+                                        <xsl:call-template name="substitute-markup">
+                                            <xsl:with-param name="allow-anchors" select="0"/>
+                                            <xsl:with-param name="template" select="'%n'"/>
+                                        </xsl:call-template>
+                                    </fo:inline>
+                                </fo:marker>
+                                <xsl:copy-of select="$table.content"/>
+                            </fo:block>
+                            <fo:block keep-with-previous.within-column="always">
+                                <fo:marker marker-class-name="table-title">
+                                    <fo:inline font-style="italic">
+                                        <xsl:text>О к о н ч а н и е&#160;&#160;&#160;т а б л и ц ы&#160;&#160;&#160;</xsl:text>
+                                    <xsl:call-template name="substitute-markup">
+                                        <xsl:with-param name="allow-anchors" select="0"/>
+                                        <xsl:with-param name="template" select="'%n'"/>
+                                    </xsl:call-template>
+                                    </fo:inline>
+                                </fo:marker>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- чтобы таблицу не отрывало от заголовка -->
+    <xsl:attribute-set name="table.caption.properties">
+        <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>
