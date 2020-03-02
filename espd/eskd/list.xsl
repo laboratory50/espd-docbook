@@ -37,7 +37,7 @@
     </xsl:attribute-set>
 
     <!-- Выравнивание отступов -->
-    <xsl:template name="nongraphical.admonition">
+    <!--<xsl:template name="nongraphical.admonition">
         <xsl:param name="content">
             <xsl:apply-templates/>
         </xsl:param>
@@ -46,7 +46,7 @@
         </xsl:variable>
 
         <fo:block id="{$id}"
-                    xsl:use-attribute-sets="nongraphical.admonition.properties">
+                  xsl:use-attribute-sets="nongraphical.admonition.properties">
             <xsl:attribute name="padding-bottom">0pt</xsl:attribute>
             <xsl:attribute name="padding-top">0pt</xsl:attribute>
             <xsl:attribute name="padding-right">0pt</xsl:attribute>
@@ -63,7 +63,15 @@
             <xsl:value-of select="$content"/>
             </fo:block>
         </fo:block>
-    </xsl:template>
+    </xsl:template>-->
+
+
+<!--     !!!Переписать!!! -->
+<!--     !!Избавиться от констант!! -->
+<!--     !mm заменить на em! -->
+<!--     espd.text-indent в common.params -->
+<!--     orderedlist.label.width itemizedlist.label.width в common.list -->
+
 
     <!-- Отбивка и отступы перечислений -->
     <xsl:attribute-set name="list.block.spacing">
@@ -85,11 +93,12 @@
         <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
         <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
         <xsl:attribute name="space-after.maximum">0.2mm</xsl:attribute>
-        <!--   положение знака перечислений -->
-        <xsl:attribute name="text-indent">19.5mm</xsl:attribute>
+        <!-- положение знака перечислений -->
+<!--         <xsl:attribute name="text-indent">19.5mm</xsl:attribute> -->
     </xsl:attribute-set>
 
     <!-- Положение знаков перечислений относительно отступа -->
+    <!-- !!! Это так же есть в common.text !!! -->
     <!-- Абзацный отступ -->
     <xsl:attribute-set name="para.properties"
         xsl:use-attribute-sets="normal.para.spacing">
@@ -115,8 +124,7 @@
                             |parent::d:acknowledgements">
                     <xsl:value-of select="$espd.text-indent"/>
                 </xsl:when>
-                <xsl:when test="ancestor::d:varlistentry and not (ancestor::d:itemizedlist) and not (ancestor::d:orderedlist)">13mm</xsl:when>
-                <xsl:when test="parent::d:listitem">19mm</xsl:when>
+                <xsl:when test="parent::d:listitem">19.5mm</xsl:when>
                 <xsl:otherwise>0mm</xsl:otherwise>
             </xsl:choose>
         </xsl:attribute>

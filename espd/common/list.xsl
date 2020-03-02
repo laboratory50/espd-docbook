@@ -20,15 +20,18 @@
 —
 </xsl:template>
 
-<!-- Ширина символов перечислений. -->
-<!--<xsl:param name="orderedlist.label.width">6mm</xsl:param>
-<xsl:param name="itemizedlist.label.width">6mm</xsl:param>
--->
+<!-- Ширина символов перечислений (отступ слева). -->
+<xsl:param name="orderedlist.label.width">1.6em</xsl:param>
+<xsl:param name="itemizedlist.label.width">1.6em</xsl:param>
+
 <!-- Отбивка пунктов перечислений. -->
 <xsl:attribute-set name="list.item.spacing">
-  <xsl:attribute name="space-before.optimum">0</xsl:attribute>
-  <xsl:attribute name="space-before.minimum">0</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.4em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="orderedlist.properties">
@@ -48,7 +51,6 @@
     </xsl:choose>
   </xsl:attribute>
 </xsl:attribute-set>
- 
 
 <!--
 <xsl:attribute-set name="list.block.properties">

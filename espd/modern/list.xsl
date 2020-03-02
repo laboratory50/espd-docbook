@@ -46,16 +46,19 @@
   <xsl:attribute name="space-before.optimum">1em</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">1em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
   <xsl:attribute name="provisional-distance-between-starts">
     <xsl:value-of select="$espd.text-indent"/>
   </xsl:attribute>
   <xsl:attribute name="provisional-label-separation">0.15em</xsl:attribute>
 </xsl:attribute-set>
 
-<!-- Отбивка и отступы перечислений -->
+<!-- Отбивка и отступы списков перечислений целиком -->
 <xsl:attribute-set name="list.block.spacing">
   <xsl:attribute name="space-before.optimum">0.1em</xsl:attribute>
-  <xsl:attribute name="space-before.minimum">0</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.1em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.2em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">0.3em</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
@@ -81,12 +84,12 @@
 </xsl:template>
 
 <xsl:attribute-set name="variablelist.term.properties">
-  <xsl:attribute name="space-after.optimum">0.15em</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">0.2em</xsl:attribute>
   <xsl:attribute name="space-before.optimum">0.4em</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0.3em</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.6em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0.15em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.2em</xsl:attribute>
   <xsl:attribute name="text-indent">0</xsl:attribute>
 </xsl:attribute-set>
 
