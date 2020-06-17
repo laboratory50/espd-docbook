@@ -31,7 +31,7 @@
       <l:template name="chapter" text="%n. %t"/>
       <l:template name="section" text="%n. %t"/>
       <l:template name="simplesect" text="%t"/>
-      <l:template name="appendix" text="Приложение %n.&#160;%t"/>
+      <l:template name="appendix" text="Приложение %n"/>
     </l:context>
     <l:context name="title">
       <l:template name="figure" text="Рисунок %n.&#160;%t"/>

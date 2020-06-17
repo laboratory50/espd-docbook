@@ -15,9 +15,6 @@
     exclude-result-prefixes="d"
     version="1.1">
 
-    <xsl:param name="appendix.autolabel">1</xsl:param>
-    <xsl:param name="appendix.label.includes.component.label">1</xsl:param>
-
     <xsl:param name="local.l10n.xml" select="document('')"/>
         <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"> 
             <l:l10n language="ru">

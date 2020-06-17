@@ -65,15 +65,6 @@
     симметрично относительно правой и левой границ текста.
     Заголовки подразделов записывают с абзаца строчными буквами (кроме первой прописной).
     -->
-    <xsl:variable name="uppercase-alphabet" select="'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
-    <xsl:variable name="lowercase-alphabet" select="'абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz'"/>
-
-    <xsl:template name="ucase">
-        <xsl:param name="string" />
-        <xsl:value-of select="translate($string,
-                                        $lowercase-alphabet,
-                                        $uppercase-alphabet)" />
-    </xsl:template>
 
     <xsl:template match="d:preface|d:chapter|d:appendix|d:glossary|d:acknowledgements|d:bibliography" mode="object.title.markup">
         <xsl:variable name="content">

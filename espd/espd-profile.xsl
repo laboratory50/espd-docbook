@@ -14,6 +14,7 @@
 
     <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
 
+    <xsl:include href="common/common.xsl"/>
     <xsl:include href="common/params.xsl"/>
     <xsl:include href="espd/params.xsl"/>
     <xsl:include href="common/text.xsl"/>

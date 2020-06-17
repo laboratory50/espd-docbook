@@ -19,6 +19,7 @@
 
     <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
 
+    <xsl:include href="common/common.xsl"/>
     <xsl:include href="modern/params.xsl"/>
     <xsl:include href="modern/page.xsl"/>
     <xsl:include href="modern/l10n.xsl"/>
@@ -31,6 +32,7 @@
     <xsl:include href="modern/tables.xsl"/>
     <xsl:include href="modern/headings.xsl"/>
     <xsl:include href="modern/admonitions.xsl"/>
+    <xsl:include href="common/appendix.xsl"/>
     <xsl:include href="modern/toc.xsl"/>
     <xsl:include href="common/qandaset.xsl"/>
     <xsl:include href="modern/titlepage.xsl"/>

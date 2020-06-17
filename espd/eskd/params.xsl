@@ -44,6 +44,7 @@
 
     <!-- Буквизации приложений вместо нумерация-->
     <xsl:param name="appendix.autolabel">A</xsl:param>
+    <xsl:param name="appendix.label.includes.component.label">1</xsl:param>
 
 </xsl:stylesheet>
 

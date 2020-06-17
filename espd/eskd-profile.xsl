@@ -14,6 +14,7 @@
 
     <xsl:import href="http://docbook.sourceforge.net/release/xsl-ns/current/fo/profile-docbook.xsl"/>
 
+    <xsl:include href="common/common.xsl"/>
     <xsl:include href="common/params.xsl"/>
     <xsl:include href="eskd/params.xsl"/>
     <xsl:include href="common/titles.xsl"/>
@@ -25,7 +26,7 @@
     <xsl:include href="common/object.xsl"/>
     <xsl:include href="common/verbatim.xsl"/>
     <xsl:include href="common/admonitions.xsl"/>
-    <xsl:include href="eskd/appendix.xsl"/>
+    <xsl:include href="common/appendix.xsl"/>
     <xsl:include href="eskd/headings.xsl"/>
     <xsl:include href="eskd/design.xsl"/>
     <xsl:include href="common/titlepage.xsl"/>

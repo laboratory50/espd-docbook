@@ -48,8 +48,6 @@
     <!-- Лист регистрации изменений (для ЕСПД и ЕСКД по умолчаниб есть) -->
     <xsl:param name="espd.lri">0</xsl:param>
 
-
-
     <!-- Рекурсивная нумерация шагов процедуры-->
     <xsl:param name="procedure.numeration.recursive">1</xsl:param>
 
@@ -80,5 +78,7 @@
     <xsl:param name="generate.toc">book title</xsl:param>
     <xsl:param name="process.empty.source.toc" select="1"/>
     <xsl:template match="preface[@role='NotInToc']"  mode="toc"/>
+
+    <xsl:param name="appendix.autolabel">A</xsl:param>
 
 </xsl:stylesheet>
