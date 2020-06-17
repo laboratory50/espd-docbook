@@ -15,7 +15,7 @@
 
 <xsl:template name="table.row.properties">
 
-   <xsl:call-template name="espd.row.height"/>
+  <xsl:call-template name="espd.row.height"/>
 
   <xsl:variable name="bgcolor">
     <xsl:call-template name="pi.dbfo_bgcolor"/>

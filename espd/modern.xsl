@@ -28,7 +28,6 @@
     <xsl:include href="common/text.xsl"/>
     <xsl:include href="modern/verbatim.xsl"/>
     <xsl:include href="modern/titles.xsl"/>
-    <xsl:include href="common/tables.xsl"/>
     <xsl:include href="modern/tables.xsl"/>
     <xsl:include href="modern/headings.xsl"/>
     <xsl:include href="modern/admonitions.xsl"/>

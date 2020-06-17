@@ -24,4 +24,19 @@
                                         $uppercase-alphabet)" />
     </xsl:template>
 
+    <!-- Высота строк таблицы -->
+    <xsl:template name="espd.row.height">
+        <xsl:variable name="row-height">
+            <xsl:if test="processing-instruction('dbfo')">
+                <xsl:call-template name="pi.dbfo_row-height"/>
+            </xsl:if>
+        </xsl:variable>
+
+        <xsl:if test="$row-height != ''">
+            <xsl:attribute name="block-progression-dimension">
+                <xsl:value-of select="$row-height"/>
+            </xsl:attribute>
+        </xsl:if>
+    </xsl:template>
+
 </xsl:stylesheet>
