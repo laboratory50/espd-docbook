@@ -26,7 +26,7 @@
     <xsl:include href="common/object.xsl"/>
     <xsl:include href="common/verbatim.xsl"/>
     <xsl:include href="common/admonitions.xsl"/>
-    <xsl:include href="common/appendix.xsl"/>
+    <xsl:include href="eskd/appendix.xsl"/>
     <xsl:include href="eskd/headings.xsl"/>
     <xsl:include href="eskd/design.xsl"/>
     <xsl:include href="common/titlepage.xsl"/>

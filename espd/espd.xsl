@@ -8,6 +8,7 @@
 
      http://lab50.net
 -->
+<!-- ГОСТ 19.106-78 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="1.1">
@@ -21,6 +22,7 @@
     <xsl:include href="espd/tables.xsl"/>
     <xsl:include href="common/tables.xsl"/>
     <xsl:include href="common/titles.xsl"/>
+    <xsl:include href="espd/titles.xsl"/>
     <xsl:include href="espd/list.xsl"/>
     <xsl:include href="common/object.xsl"/>
     <xsl:include href="espd/images.xsl"/>

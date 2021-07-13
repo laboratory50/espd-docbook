@@ -31,7 +31,6 @@
     <xsl:include href="modern/tables.xsl"/>
     <xsl:include href="modern/headings.xsl"/>
     <xsl:include href="modern/admonitions.xsl"/>
-    <xsl:include href="common/appendix.xsl"/>
     <xsl:include href="modern/toc.xsl"/>
     <xsl:include href="common/qandaset.xsl"/>
     <xsl:include href="modern/titlepage.xsl"/>

@@ -35,7 +35,7 @@
     </l:context>
     <l:context name="title">
       <l:template name="figure" text="Рисунок %n.&#160;%t"/>
-      <l:template name="appendix" text="Приложение %n.&#160;%t"/>
+      <l:template name="appendix" text="Приложение %n.&#13;%t"/>
       <l:template name="note" text="Примечание. "/>
       <l:template name="important" text="Важно. "/>
       <l:template name="warning" text="Предупреждение. "/>

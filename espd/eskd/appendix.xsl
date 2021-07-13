@@ -129,5 +129,14 @@
         </fo:block>
     </fo:block>
 </xsl:template>
+<!-- Приложение справа -->
+    <xsl:attribute-set name="component.title.properties">
+        <xsl:attribute name="text-align">
+            <xsl:choose>
+                <xsl:when test="parent::d:appendix">center</xsl:when>
+                <xsl:otherwise>left</xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:attribute-set>
 
 </xsl:stylesheet>
