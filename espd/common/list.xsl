@@ -138,6 +138,7 @@
 <!-- Отбивка для variablelist -->
 <xsl:attribute-set name="variablelist.term.properties">
   <xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="text-indent"><xsl:value-of select="$espd.text-indent"/></xsl:attribute>
 </xsl:attribute-set>
-  
+
 </xsl:stylesheet>

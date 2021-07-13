@@ -87,14 +87,12 @@
 
     <!-- Отбивка пунктов перечислений. -->
     <xsl:attribute-set name="list.item.spacing">
-        <xsl:attribute name="space-before.optimum">0</xsl:attribute>
-        <xsl:attribute name="space-before.minimum">0</xsl:attribute>
-        <xsl:attribute name="space-before.maximum">0.2em</xsl:attribute>
+        <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
+        <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
+        <xsl:attribute name="space-before.maximum">0.2mm</xsl:attribute>
         <xsl:attribute name="space-after.optimum">0mm</xsl:attribute>
         <xsl:attribute name="space-after.minimum">0mm</xsl:attribute>
         <xsl:attribute name="space-after.maximum">0.2mm</xsl:attribute>
-        <!-- положение знака перечислений -->
-<!--         <xsl:attribute name="text-indent">19.5mm</xsl:attribute> -->
     </xsl:attribute-set>
 
     <!-- Положение знаков перечислений относительно отступа -->
