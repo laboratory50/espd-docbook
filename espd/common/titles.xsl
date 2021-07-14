@@ -27,8 +27,10 @@
     <!-- Главы (разделы) -->
     <xsl:attribute-set name="component.title.properties">
         <xsl:attribute name="font-weight">normal</xsl:attribute>
-        <xsl:attribute name="text-align">center</xsl:attribute>
         <xsl:attribute name="hyphenate">false</xsl:attribute>
+        <xsl:attribute name="start-indent">
+            <xsl:value-of select="$espd.text-indent"/>
+        </xsl:attribute>
         <xsl:attribute name="font-size">
             <xsl:value-of select="$body.font.master"/>
             <xsl:text>pt</xsl:text>
@@ -36,9 +38,9 @@
         <xsl:attribute name="space-before.minimum">4em</xsl:attribute>
         <xsl:attribute name="space-before.optimum">4em</xsl:attribute>
         <xsl:attribute name="space-before.maximum">4em</xsl:attribute>
-        <xsl:attribute name="space-after.minimum">3em</xsl:attribute>
-        <xsl:attribute name="space-after.optimum">3em</xsl:attribute>
-        <xsl:attribute name="space-after.maximum">3em</xsl:attribute>
+        <xsl:attribute name="space-after.minimum">2em</xsl:attribute>
+        <xsl:attribute name="space-after.optimum">2em</xsl:attribute>
+        <xsl:attribute name="space-after.maximum">2em</xsl:attribute>
         <xsl:attribute name="space-after.precedence">2</xsl:attribute>
         <xsl:attribute name="space-after.minimum">
             <xsl:choose>
