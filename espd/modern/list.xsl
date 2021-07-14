@@ -63,7 +63,6 @@
   <xsl:attribute name="space-after.optimum">0.3em</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">0.4em</xsl:attribute>
-  <xsl:attribute name="text-indent">0</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:template match="d:varlistentry" mode="vl.as.blocks">

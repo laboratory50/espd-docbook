@@ -19,6 +19,10 @@
   <xsl:attribute name="border-width">0.5pt</xsl:attribute>
   <xsl:attribute name="border-style">dashed</xsl:attribute>
   <xsl:attribute name="border-color">#aaaaaa</xsl:attribute>
+  <xsl:attribute name="padding-top">2mm</xsl:attribute>
+  <xsl:attribute name="padding-bottom">1.5mm</xsl:attribute>
+  <xsl:attribute name="padding-left">2mm</xsl:attribute>
+  <xsl:attribute name="padding-right">2mm</xsl:attribute>
 </xsl:attribute-set>
 
 </xsl:stylesheet>

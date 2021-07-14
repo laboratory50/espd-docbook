@@ -68,6 +68,8 @@
     </fo:block-container>
 
     <fo:block-container absolute-position="absolute" top="180mm">
+         <!-- Лого -->
+        <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:mediaobject"/>
         <!-- Название организации -->
         <xsl:choose>
             <xsl:when test="d:info/d:author/d:orgname">
@@ -103,9 +105,6 @@
      <fo:block-container absolute-position="absolute" top="230mm">
         <!-- Год -->
         <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:date"/>
-
-        <!-- Лого -->
-        <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:mediaobject"/>
     </fo:block-container>
 
 </xsl:template>

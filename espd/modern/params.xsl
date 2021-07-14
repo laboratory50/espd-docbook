@@ -43,6 +43,13 @@
     <!-- Абзацный отступ -->
     <xsl:param name="espd.text-indent">12.5mm</xsl:param>
 
+    <xsl:attribute-set name="monospace.properties">
+        <xsl:attribute name="font-family">
+            <xsl:value-of select="$monospace.font.family"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:attribute name="font-size">0.9em</xsl:attribute>
+    </xsl:attribute-set>
+
     <!-- Децимальный номер -->
     <xsl:param name="espd.decimal"/>
     <!-- Лист регистрации изменений (для ЕСПД и ЕСКД по умолчаниб есть) -->

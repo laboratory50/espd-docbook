@@ -15,7 +15,7 @@
     <!-- Размер бумаги и отступов -->
     <xsl:param name="paper.type">A4</xsl:param>
     <!-- Отступ слева -->
-    <xsl:param name="page.margin.inner">20mm</xsl:param>
+    <xsl:param name="page.margin.inner">30mm</xsl:param>
     <!-- Отступ справва -->
     <xsl:param name="page.margin.outer">20mm</xsl:param>
     <!-- Отступ сверху -->

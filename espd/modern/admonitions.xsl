@@ -18,16 +18,20 @@
     <xsl:param name="admon.graphics.path">../common/figures/</xsl:param>
     <xsl:param name="admon.graphics">0</xsl:param>
 
+<!-- Параметры текста -->
     <xsl:attribute-set name="nongraphical.admonition.properties">
         <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
         <xsl:attribute name="color">black</xsl:attribute>
         <xsl:attribute name="background-color">white</xsl:attribute>
+        <xsl:attribute name="text-indent">
+            <xsl:value-of select="$espd.text-indent"/>
+        </xsl:attribute>
         <xsl:attribute name="padding-bottom">0pt</xsl:attribute>
         <xsl:attribute name="padding-top">0pt</xsl:attribute>
-        <xsl:attribute name="padding-left">0pt</xsl:attribute>
+        <xsl:attribute name="padding-left">-15pt</xsl:attribute>
         <xsl:attribute name="padding-right">0pt</xsl:attribute>
         <xsl:attribute name="margin-bottom">1em</xsl:attribute>
-        <xsl:attribute name="margin-left">0pt</xsl:attribute>
+        <xsl:attribute name="margin-top">0pt</xsl:attribute>
         <xsl:attribute name="margin-left">0pt</xsl:attribute>
         <xsl:attribute name="margin-right">-1pt</xsl:attribute>
         <xsl:attribute name="space-after.minimum">0.6em</xsl:attribute>
@@ -37,7 +41,7 @@
         <xsl:attribute name="space-before.optimum">0.8em</xsl:attribute>
         <xsl:attribute name="space-before.maximum">1.0em</xsl:attribute>
     </xsl:attribute-set>
-
+<!-- Параметры заголовка -->
     <xsl:attribute-set name="admonition.title.properties">
         <xsl:attribute name="padding-left">0em</xsl:attribute>
         <xsl:attribute name="padding-bottom">0em</xsl:attribute>
@@ -61,10 +65,11 @@
     <xsl:attribute-set name="admonition.properties">
         <xsl:attribute name="margin-right">0em</xsl:attribute>
         <xsl:attribute name="margin-left">0em</xsl:attribute>
+        <xsl:attribute name="margin-top">0em</xsl:attribute>
+        <xsl:attribute name="margin-bottom">0em</xsl:attribute>
         <xsl:attribute name="border-width">1pt</xsl:attribute>
         <xsl:attribute name="border-start-width">5pt</xsl:attribute>
         <xsl:attribute name="border-style">solid</xsl:attribute>
-        <xsl:attribute name="text-indent">0mm</xsl:attribute>
         <xsl:attribute name="border-color">
             <xsl:choose>
                 <xsl:when test="self::d:note">#8e9f00</xsl:when>
@@ -77,8 +82,6 @@
         <xsl:attribute name="padding-bottom">0.8em</xsl:attribute>
         <xsl:attribute name="padding-left">1em</xsl:attribute>
         <xsl:attribute name="padding-right">1em</xsl:attribute>
-        <xsl:attribute name="margin-top">0em</xsl:attribute>
-        <xsl:attribute name="margin-bottom">0em</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="graphical.admonition.properties">
@@ -108,7 +111,6 @@
             <xsl:attribute name="margin-top">1em</xsl:attribute>
             <xsl:attribute name="padding-bottom">-3em</xsl:attribute>
             <xsl:attribute name="margin-bottom">4em</xsl:attribute>
-            <xsl:attribute name="margin-left">0em</xsl:attribute>
             <fo:block-container>
                 <fo:block-container>
                     <xsl:attribute name="margin-left">0em</xsl:attribute>
