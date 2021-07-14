@@ -28,9 +28,6 @@
 <!-- Параметры абзаца: абзацный отступ -->
 <xsl:attribute-set name="indent.para.spacing"
                    use-attribute-sets="normal.para.spacing">
-  <xsl:attribute name="text-indent">
-    <xsl:value-of select="$espd.text-indent"/>
-  </xsl:attribute>
   <xsl:attribute name="space-before.optimum">0mm</xsl:attribute>
   <xsl:attribute name="space-before.minimum">0mm</xsl:attribute>
   <xsl:attribute name="space-before.maximum">0.4em</xsl:attribute>
@@ -40,7 +37,6 @@
 </xsl:attribute-set>
 
 <!-- Абзацный отступ -->
-<!-- !!! Конфликтует с espd/list!!! -->
 <xsl:attribute-set name="para.properties"
      xsl:use-attribute-sets="normal.para.spacing">
   <xsl:attribute name="text-indent">
@@ -65,5 +61,17 @@
     </xsl:choose>
   </xsl:attribute>
 </xsl:attribute-set>
+
+<!-- Нумерованные абзацы -->
+<xsl:template match="d:para[@role = 'statute']">
+  <fo:block xsl:use-attribute-sets="para.properties">
+    <xsl:call-template name="anchor"/>
+      <xsl:apply-templates select="parent::*" mode="label.markup"/>
+      <xsl:text>.</xsl:text>
+    <xsl:number count="d:para[@role = 'statute']" from="d:chapter|d:section" level="any"/>
+    <xsl:text>. </xsl:text>
+    <xsl:apply-templates/>
+  </fo:block>
+</xsl:template>
 
 </xsl:stylesheet>
