@@ -40,7 +40,7 @@
             <xsl:when test="$pageclass = 'titlepage' or $pageclass = 'lripage'">
             </xsl:when>
 
-            <xsl:when test="$pageclass = 'front' and $position = 'center'">
+            <xsl:when test="$pageclass = 'lot' and $position = 'center'">
                 <!-- Рамка и основная надпись -->
                 <xsl:call-template name="eskd.main.stamp"/>
                 <!-- Штамп вертикальный слева -->

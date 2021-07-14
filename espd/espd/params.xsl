@@ -13,13 +13,13 @@
     <!-- Отступ справва -->
     <xsl:param name="page.margin.outer">10mm</xsl:param>
     <!-- Отступ сверху -->
-    <xsl:param name="page.margin.top">10mm</xsl:param>
-    <xsl:param name="region.before.extent">10mm</xsl:param>
-    <xsl:param name="body.margin.top">15mm</xsl:param>
+    <xsl:param name="page.margin.top">8mm</xsl:param>
+    <xsl:param name="region.before.extent">14mm</xsl:param>
+    <xsl:param name="body.margin.top">17mm</xsl:param>
     <!-- Отступ снизу -->
     <xsl:param name="page.margin.bottom">10mm</xsl:param>
-    <xsl:param name="region.after.extent">0mm</xsl:param>
-    <xsl:param name="body.margin.bottom">0mm</xsl:param>
+    <xsl:param name="region.after.extent">1mm</xsl:param>
+    <xsl:param name="body.margin.bottom">1mm</xsl:param>
 
     <!-- Отступы для ЛРИ по ГОСТ 19.604-78 -->
     <xsl:param name="lri.margin.top">25mm</xsl:param>
@@ -34,5 +34,8 @@
 
     <!-- Нумерация приложений вместо буквизации -->
      <xsl:param name="appendix.autolabel">1</xsl:param>
+
+    <!-- Глубина нумерации в содержании (по умолчанию 2)-->
+     <xsl:param name="toc.section.depth">1</xsl:param>
 
 </xsl:stylesheet>

@@ -25,6 +25,7 @@
             </xsl:if>
 
         <xsl:call-template name="espd.row.height"/>
+        <xsl:attribute name="font-size">0.9em</xsl:attribute>
     </xsl:template>
 
 </xsl:stylesheet>

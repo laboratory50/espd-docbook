@@ -84,7 +84,7 @@
             <xsl:copy-of select="$table.content"/>
         </xsl:when>
         <xsl:otherwise>
-            <fo:table>
+            <fo:table table-layout="fixed" width="100%">
                 <fo:table-header>
                   <fo:table-row>
                     <fo:table-cell>

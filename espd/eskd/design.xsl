@@ -52,7 +52,7 @@
               bottom="5mm"
               left="20mm">
         <fo:block>
-            <fo:table table-layout="fixed" xsl:use-attribute-sets="espd.stamp.style">
+            <fo:table table-layout="fixed" width="185mm" xsl:use-attribute-sets="espd.stamp.style">
                 <fo:table-column column-width="7mm" border-style="solid"/>
                 <fo:table-column column-width="10mm" border-style="solid"/>
                 <fo:table-column column-width="23mm" border-style="solid"/>

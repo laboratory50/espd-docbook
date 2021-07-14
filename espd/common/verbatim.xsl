@@ -70,7 +70,7 @@
   </xsl:attribute>
   <xsl:attribute name="padding-top">2mm</xsl:attribute>
   <xsl:attribute name="padding-bottom">1.5mm</xsl:attribute>
-  <xsl:attribute name="padding-left">3mm</xsl:attribute>
+  <xsl:attribute name="padding-left">0mm</xsl:attribute>
   <xsl:attribute name="padding-right">2mm</xsl:attribute>
 </xsl:attribute-set>
 
