@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<info xmlns="http://docbook.org/ns/docbook" xml:lang="ru" version="5.0">
+    <title>&full_product;</title>
+    <titleabbrev>&product;</titleabbrev>
+    <productnumber>Версия 19.02</productnumber>
+    <productname>&os;</productname>
+    <releaseinfo>Литера О</releaseinfo>
+    <author>
+        <orgname>&full_supplier;</orgname>
+        <address><city>&address_supplier;</city></address>
+        <email>&mailto;</email>
+    </author>
+    <authorgroup>
+        <author>
+            <personname>
+                <firstname>Василий</firstname>
+                <surname>Шлыков</surname>
+                <othername>Александрович</othername>
+            </personname>
+            <affiliation>
+                <jobtitle>разработчик</jobtitle>
+                <orgname>ООО «Работа»</orgname>
+            </affiliation>
+        </author>
+        <editor>
+            <personname>
+                <firstname>Иоанн</firstname>
+                <surname>Грозный</surname>
+                <othername>Васильевич</othername>
+            </personname>
+            <affiliation>
+                <jobtitle>Царь</jobtitle>
+                <orgname>Всея Руси</orgname>
+            </affiliation>
+        </editor>
+        <othercredit>
+            <personname>
+                <firstname>Лев</firstname>
+                <surname>Мышкин</surname>
+                <othername>Николаевич</othername>
+            </personname>
+            <affiliation>
+                <jobtitle>князь</jobtitle>
+                <orgname>ООО «Княжество»</orgname>
+            </affiliation>
+        </othercredit>
+    </authorgroup>
+    <copyright>
+        <year><?dbtimestamp format="Y"?></year>
+        <holder>&full_supplier;</holder>
+    </copyright>
+    <mediaobject>
+        <imageobject>
+            <imagedata fileref="logo_lab50.png" width="25mm"/>
+        </imageobject>
+    </mediaobject>
+    <date><?dbtimestamp format="Y"?></date>
+    <pubdate><?dbtimestamp format="d B Y" padding="0"?> г.</pubdate>
+    <abstract>
+        <title/>
+        <para>Настоящий документ является описанием &product;...</para>
+    </abstract>
+</info>

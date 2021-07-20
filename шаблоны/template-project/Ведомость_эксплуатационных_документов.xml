@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xml:lang="ru" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <subtitle>&ved;</subtitle>
+    </info>
+    <xi:include href="info.xml"/>
+
+    <preface>
+        <title/>
+        <informaltable frame="all">
+            <tgroup cols="4">
+                <colspec colnum="1" colname="c1" colwidth="50mm"/>
+                <colspec colnum="2" colname="c2" colwidth="90mm"/>
+                <colspec colnum="3" colname="c3" colwidth="10mm"/>
+                <colspec colnum="4" colname="c4" colwidth="30mm"/>
+                <thead role="notdouble">
+                    <row>
+                        <entry align="center" valign="middle">Обозначение</entry>
+                        <entry align="center" valign="middle">Наименование</entry>
+                        <entry align="center" valign="middle">Кол. экз.</entry>
+                        <entry align="center" valign="middle">Местонахождение</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"><emphasis role="underline">Документы на программу</emphasis></entry>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry valign="middle">&decimal;&nbsp;&formular_no;&nbsp;&full_product_no;</entry>
+                        <entry valign="middle">&formular;</entry>
+                        <entry align="center">1</entry>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry valign="middle">&decimal;&nbsp;&descr_use_no;&nbsp;&full_product_no;</entry>
+                        <entry valign="middle">&descr_use;</entry>
+                        <entry align="center" valign="middle">1</entry>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry valign="middle">&decimal;&nbsp;&s_prog_guide_no;&nbsp;&full_product_no;</entry>
+                        <entry valign="middle">&s_prog_guide;</entry>
+                        <entry align="center" valign="middle">1</entry>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="6mm" ?>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                        <entry align="center" valign="middle"/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        <?lastpage?>
+    </preface>
+</book>

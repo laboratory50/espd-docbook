@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xml:lang="ru" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <subtitle>&formular;</subtitle>
+    </info>
+    <xi:include href="info.xml"/>
+
+    <preface>
+        <title>Аннотация</title>
+        <para>Настоящий формуляр содержит основные характеристики и общие сведения об изделии «&full_product; &decimal; (далее — &full_prod;, программный
+            комплекс). Формуляр удостоверяет комплектность и гарантированное Изготовителем качество изделия, содержит указания по его эксплуатации, а также
+            определяет условия предъявления рекламаций в период гарантийного срока эксплуатации. В формуляре отражается техническое состояние изделия после
+            изготовления и в процессе эксплуатации.</para>
+    </preface>
+    <toc/>
+    <chapter>
+        <title>Общие указания</title>
+        <para role="statute">Формуляр является неотъемлемой принадлежностью &full_prod; и должен находиться вместе с ним.</para>
+        <para role="statute">Перед началом эксплуатации &full_prod; необходимо внимательно ознакомиться с документом «&full_product;. Руководство
+            администратора &decimal;&nbsp;&s_prog_guide_no;&nbsp;&full_product_no;».</para>
+        <para role="statute">Формуляр является эксплуатационным документом, содержащим сведения, удостоверяющие гарантии изготовителя (поставщика),
+            значения основных параметров и характеристик &full_prod;, сведения отражающие техническое состояние комплекса, а также сведения, которые вносят в
+            период его эксплуатации.</para>
+        <para role="statute">Формуляр должен находиться в подразделении, ответственным за эксплуатацию &full_prod;.</para>
+        <para role="statute">При записи в формуляре не допускаются записи карандашом, смывающимися чернилами и подчистки.</para>
+        <para role="statute">Неправильная запись должна быть аккуратно зачёркнута и рядом записана новая, которую заверяет ответственное лицо и печать
+            (штамп).</para>
+    </chapter>
+    <chapter>
+        <title>Общие сведение</title>
+        <para>В разделе «Общие сведения» указывают наименование программного изделия, его обозначение, наименование предприятия-изготовителя, номер программного
+            изделия предприятия и другие общие сведения о программном изделии.</para>
+        <para>Наименование программного изделия: «&full_product;.</para>
+        <para>Обозначение программного изделия: &decimal;.</para>
+        <para>Изготовитель, разработчик и производитель изделия: &full_supplier; (юридический адрес: &address_supplier;, электронная почта: &mailto;).</para>
+    </chapter>
+    <chapter>
+        <title>Основные характеристики</title>
+        <para>В разделе «Основные характеристики» приводят необходимые при эксплуатации программного изделия значения основных характеристик (например,
+            функциональных, надежности и др.).</para>
+    </chapter>
+    <chapter>
+        <title>Комплектность</title>
+        <para>В разделе «Комплектность» перечисляют все непосредственно входящие в программное изделие другие программные изделия и документацию в соответствии
+            с комплектностью, указанной в технических условиях на программное изделие.</para>
+    </chapter>
+
+    <chapter>
+        <title>Периодический контроль основных характеристик при эксплуатации и хранении</title>
+        <para role="statute">Контроль основных характеристик должен быть произведён при первичном закреплении изделия за должностным лицом, ответственным за эксплуатацию.
+            Результаты периодического контроля заносят в <xref linkend="form"/>. Фактические значения характеристик записывают в раздел формуляра после каждого
+            определения.</para>
+        <table frame="all" xml:id="form">
+            <title>Результаты проверок</title>
+            <tgroup cols="8" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colwidth="2.5*"/>
+                <colspec colname="c2" colwidth="1.27*"/>
+                <colspec colname="c3" colwidth="1*"/>
+                <colspec colname="c4" colwidth="1.16*"/>
+                <colspec colname="c5" colwidth="1*"/>
+                <colspec colname="c6" colwidth="1.16*"/>
+                <colspec colname="c7" colwidth="1*"/>
+                <colspec colname="c8" colwidth="1.16*"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center"><para>Проверяемая</para>
+                            <para>характеристика</para></entry>
+                        <entry namest="c3" nameend="c8" align="center" valign="middle">Дата проведения проверки</entry>
+                    </row>
+                    <row>
+                        <entry align="center"><para>Наименование</para><para>проверки</para></entry>
+                        <entry align="center">Величина</entry>
+                        <entry namest="c3" nameend="c4" align="center" valign="middle">20__г.</entry>
+                        <entry namest="c5" nameend="c6" align="center" valign="middle">20__г.</entry>
+                        <entry namest="c7" nameend="c8" align="center" valign="middle">20__г.</entry>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Результат проверки</entry>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Проверил (должность, подпись)</entry>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Результат проверки</entry>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Проверил (должность, подпись)</entry>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Результат проверки</entry>
+                        <entry align="center"><?dbfo orientation="90"?><?dbfo rotated-width="1in"?>Проверил (должность, подпись)</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="50pt" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <?dbfo row-height="50pt" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+    <chapter>
+        <title>Свидетельство о приёмке</title>
+        <informaltable frame="none" rowsep="0" colsep="0">
+            <tgroup cols="3">
+                <colspec colnum="1" colname="c1" colwidth="3.09*"/>
+                <colspec colnum="2" colname="c2" colwidth="0.1*"/>
+                <colspec colnum="3" colname="c3" colwidth="1*"/>
+                <tbody>
+                    <row>
+                        <entry align="center" rowsep="1">&full_product;</entry>
+                        <entry/>
+                        <entry align="center" rowsep="1">&decimal;</entry>
+                    </row>
+                    <row>
+                        <entry align="center"><superscript>наименование</superscript></entry>
+                        <entry/>
+                        <entry align="center"><superscript>обозначение</superscript></entry>
+                    </row>
+                    <row>
+                        <entry align="center" rowsep="1"/>
+                        <entry/>
+                        <entry align="center" rowsep="1"/>
+                    </row>
+                    <row>
+                        <entry align="center"><superscript>серийный номер программного изделия</superscript></entry>
+                        <entry/>
+                        <entry align="center"><superscript>вариант исполнения</superscript></entry>
+                    </row>
+                    <row>
+                        <entry align="center">соответствует техническим условиям</entry>
+                        <entry/>
+                        <entry align="center" rowsep="1"/>
+                    </row>
+                    <row>
+                        <entry align="center"/>
+                        <entry/>
+                        <entry align="center"><superscript>номер технических условий</superscript></entry>
+                    </row>
+                    <row>
+                        <entry> и признан годным для эксплуатации.</entry>
+                        <entry/>
+                        <entry align="center"/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        <informaltable frame="none" rowsep="0" colsep="0">
+            <tgroup cols="3">
+                <colspec colnum="1" colname="c1" colwidth="1.32*"/>
+                <colspec colnum="2" colname="c2" colwidth="1*"/>
+                <colspec colnum="3" colname="c3" colwidth="1*"/>
+                <tbody>
+                    <row>
+                        <entry align="center"/>
+                        <entry align="right" namest="c2" nameend="c3">Дата выпуска __________________________</entry>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry align="center">Руководитель предприятия</entry>
+                        <entry align="center">__________________________</entry>
+                        <entry align="right">__________________________</entry>
+                    </row>
+                    <row>
+                        <entry align="center">М. П.</entry>
+                        <entry align="center"><superscript>личная подпись</superscript></entry>
+                        <entry align="center"><superscript>расшифровка подписи</superscript></entry>
+                    </row>
+                    <row>
+                        <entry align="center"/>
+                        <entry align="center">__________________________</entry>
+                        <entry align="center"/>
+                    </row>
+                    <row>
+                        <entry align="center"/>
+                        <entry align="center"><superscript>число, месяц, год</superscript></entry>
+                        <entry align="center"/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </chapter>
+    <chapter>
+        <title>Свидетельство об упаковке и маркировке</title>
+        <informaltable frame="none" rowsep="0" colsep="0">
+            <tgroup cols="4">
+                <colspec colnum="1" colname="c1" colwidth="0.7*"/>
+                <colspec colnum="2" colname="c2" colwidth="2.2*"/>
+                <colspec colnum="3" colname="c3" colwidth="0.1*"/>
+                <colspec colnum="4" colname="c4" colwidth="1*"/>
+                <tbody>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center" rowsep="1">&full_product;</entry>
+                        <entry/>
+                        <entry align="center" rowsep="1">&decimal;</entry>
+                    </row>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center">
+                            <superscript>наименование</superscript></entry>
+                        <entry/>
+                        <entry align="center"><superscript>обозначение</superscript></entry>
+                    </row>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center" rowsep="1"/>
+                        <entry/>
+                        <entry align="center" rowsep="1"/>
+                    </row>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center">
+                            <superscript>серийный номер программного изделия</superscript></entry>
+                        <entry/>
+                        <entry align="center"><superscript>вариант исполнения</superscript></entry>
+                    </row>
+                    <row>
+                        <entry>упакован</entry>
+                        <entry align="center" rowsep="1">&full_supplier;</entry>
+                        <entry/>
+                        <entry morerows="1" align="center"><superscript><para><emphasis role="italic">з. знак</emphasis></para></superscript></entry>
+                    </row>
+                    <row>
+                        <entry align="center"/>
+                        <entry namest="c2" nameend="c3" align="center"><superscript>наименование или код предприятия-изготовителя</superscript></entry>
+                    </row>
+                    <row>
+                        <entry namest="c1" nameend="c2">согласно требованиям, предусмотренным инструкцией</entry>
+                        <entry/>
+                        <entry align="center" rowsep="1">&decimal_tech_spec;</entry>
+                    </row>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center"/>
+                        <entry/>
+                        <entry align="center"><superscript>обозначение</superscript></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+
+        <informaltable frame="none" rowsep="0" colsep="0">
+            <tgroup cols="4">
+                <colspec colnum="1" colname="c1" colwidth="0.5*"/>
+                <colspec colnum="2" colname="c1" colwidth="1.5*"/>
+                <colspec colnum="3" colname="c3" colwidth="1.5*"/>
+                <colspec colnum="4" colname="c4" colwidth="0.5*"/>
+                <tbody>
+                    <row>
+                        <entry/>
+                        <entry>Дата упаковки</entry>
+                        <entry align="left">____________________</entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry>Упаковку произвёл</entry>
+                        <entry align="left">____________________ (подпись)</entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry>Изделие после упаковки принял</entry>
+                        <entry align="left">____________________ (подпись)</entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry align="left">МП</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+
+    </chapter>
+    <chapter>
+        <title>Гарантийные обязательства</title>
+        <para>В разделе «Гарантийные обязательства» приводят гарантийные обязательства предприятия-изготовителя.</para>
+    </chapter>
+    <chapter>
+        <title>Сведения о рекламациях</title>
+        <para role="statute">Рекламации предъявляются изготовителю в письменном виде с указанием даты обнаружения неисправности, содержания и условий возникновения
+            неисправности.</para>
+        <para role="statute">Рекламации подписываются руководителем подразделения, принимающего и эксплуатирующего изделие.</para>
+        <para role="statute">Сведения о рекламациях заносятся в <xref linkend="table_reklam"/>.</para>
+        <table xml:id="table_reklam">
+            <title>Сведения о рекламациях</title>
+            <tgroup cols="4" align="center" colsep="1" rowsep="1">
+                <colspec colname="c1" colwidth="1*"/>
+                <colspec colname="c2" colwidth="2*"/>
+                <colspec colname="c3" colwidth="2*"/>
+                <colspec colname="c4" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Дата</entry>
+                        <entry>Содержание рекламации</entry>
+                        <entry>Меры, принятые по рекламации</entry>
+                        <entry><para>Подпись</para><para>ответственного лица</para></entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="170mm" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+    <chapter>
+        <title>Сведения о хранении</title>
+        <para role="statute">В процессе эксплуатации носитель с дистрибутивом программного обеспечения и эксплуатационными документами хранится в вертикальном положении
+            на предназначенном для этой цели стеллаже в упаковке, поставленной изготовителем, при температуре окружающего воздуха от плюс 5 °С до плюс 35 °С,
+            относительной влажности воздуха от 20 до 65 %.</para>
+        <para role="statute">В помещении для хранения не должно быть агрессивных примесей (паров кислот, щелочей), конденсата.</para>
+        <para role="statute">При хранении не допускаются резкие изменения температуры окружающего воздуха (более 20 °С/ч) и воздействия внешних магнитных полей
+            напряжённостью более 4000 А/м.</para>
+        <para role="statute">Сведения о хранении изделия заносятся в <xref linkend="table_store"/>.</para>
+        <table xml:id="table_store">
+            <title>Сведения о хранении</title>
+            <tgroup cols="4" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colwidth="1*"/>
+                <colspec colname="c2" colwidth="1*"/>
+                <colspec colname="c3" colwidth="1*"/>
+                <colspec colname="c4" colwidth="2.5*"/>
+                <thead>
+                    <row>
+                        <entry namest="c1" nameend="c2" align="center">Дата</entry>
+                        <entry morerows="1" valign="middle" align="center">Условия хранения</entry>
+                        <entry morerows="1" valign="middle" align="center">Должность, фамилия и подпись лица, ответственного за хранение</entry>
+                    </row>
+                    <row>
+                        <entry align="center">установки на хранение</entry>
+                        <entry align="center">снятия с хранения</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="140mm" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+    <chapter>
+        <title>Сведения о закреплении программного изделия при эксплуатации</title>
+        <para role="statute">Фамилии и должности лиц, за которыми закреплено изделие, заносятся в <xref linkend="table_who"/>.</para>
+        <table xml:id="table_who">
+            <title>Сведения о закреплении программного изделия при эксплуатации</title>
+            <tgroup cols="5" align="center" colsep="1" rowsep="1">
+                <colspec colname="c1"/>
+                <colspec colname="c2"/>
+                <colspec colname="c3"/>
+                <colspec colname="c4"/>
+                <colspec colname="c5"/>
+                <thead>
+                    <row>
+                        <entry morerows="1" valign="middle">Должность ответственного лица</entry>
+                        <entry morerows="1" valign="middle">Фамилия ответственного лица</entry>
+                        <entry namest="c3" nameend="c4" align="center">Фамилия ответственного лица</entry>
+                        <entry morerows="1" valign="middle">Подпись ответственного лица</entry>
+                    </row>
+                    <row>
+                        <entry align="center">о назначении</entry>
+                        <entry align="center">об освобождении</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="185mm" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+    <chapter>
+        <title>Сведения об изменениях</title>
+        <para role="statute">Сведения об изменениях заносятся в <xref linkend="table_changes"/>.</para>
+        <table xml:id="table_changes">
+            <title>Сведения об изменениях</title>
+            <tgroup cols="6" align="center" colsep="1" rowsep="1">
+                <colspec colname="c1" colwidth="1.2*"/>
+                <colspec colname="c2" colwidth="1*"/>
+                <colspec colname="c3" colwidth="1.08*"/>
+                <colspec colname="c4" colwidth="1.08*"/>
+                <colspec colname="c5" colwidth="1.08*"/>
+                <colspec colname="c6" colwidth="1.08*"/>
+                <thead>
+                    <row>
+                        <entry align="center" valign="middle">Основание (входящий номер сопроводительного документа и дата)</entry>
+                        <entry align="center" valign="middle">Дата проведения изменения</entry>
+                        <entry align="center" valign="middle">Содержание изменения</entry>
+                        <entry align="center" valign="middle">Порядковый номер изменения</entry>
+                        <entry align="center" valign="middle">Должность, фамилия и подпись ответственного лица за проведение изменения</entry>
+                        <entry align="center" valign="middle">Подпись лица, ответственного за эксплуатацию программного изделия</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <?dbfo row-height="165mm" ?>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+    <chapter>
+        <title>Особые отметки</title>
+        <para/>
+        <?lastpage?>
+    </chapter>
+</book>

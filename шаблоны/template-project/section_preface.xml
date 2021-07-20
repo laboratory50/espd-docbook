@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="ru" version="5.0" xml:id="sect_preface">
+    <title>Принятые обозначения</title>
+    <para>В данном руководстве принят ряд обозначений.</para>
+    <para>В документе могут встречаться следующие типы замечаний:</para>
+    <note>
+        <para>Примечание или полезная подсказка.</para>
+    </note>
+    <important>
+        <para>Существенные нюансы, которые вы должны принять во внимание, прежде чем начнёте
+            какое-либо действие.</para>
+    </important>
+    <warning>
+        <para>Важная информация о проблемах безопасности или риске потери данных.</para>
+    </warning>
+    <para>В документе используются два варианта приглашения командного
+        интерпретатора.</para>
+    <variablelist>
+        <?dbfo term-width="3.5cm"?>
+        <varlistentry>
+            <term><prompt>$</prompt> команда</term>
+            <listitem>
+                <para>Команды, начинающиеся с приглашения <prompt>$</prompt>, может
+                    выполнять любой пользователь, в том числе
+                    <literal>root</literal>.</para>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><prompt>#</prompt> команда</term>
+            <listitem>
+                <para>Команды, начинающиеся с приглашения <prompt>#</prompt>, должен
+                    выполнять пользователь <literal>root</literal>. Но вы можете
+                    использовать утилиту <command>sudo</command> чтобы запускать их под
+                    другой учётной записью.</para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</section>

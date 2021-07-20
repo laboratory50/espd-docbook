@@ -5,120 +5,36 @@
 ]>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../../stylesheet/fo/modern.xsl"?>
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
     <info>
-        <title>&full_product;</title>
         <subtitle>&descr_prog;</subtitle>
-        <author>
-            <orgname>&full_supplier;</orgname>
-            <address>
-                <city>Санкт-Петербург</city>
-                <country>Россия</country>
-            </address>
-            <email>&mailto;</email>
-        </author>
-        <authorgroup>
-            <author>
-                <personname>
-                    <firstname>Василий</firstname>
-                    <surname>Шлыков</surname>
-                    <othername>Александрович</othername>
-                </personname>
-                <personblurb>
-                    <para>Исполнитель</para>
-                </personblurb>
-            </author>
-            <editor>
-                <personname>
-                    <firstname>Иоанн</firstname>
-                    <surname>Грозный</surname>
-                    <othername>Васильевич</othername>
-                </personname>
-                <personblurb>
-                    <para>Царь</para>
-                </personblurb>
-            </editor>
-            <othercredit>
-                <personname>
-                    <firstname>Лев</firstname>
-                    <surname>Мышкин</surname>
-                    <othername>Николаевич</othername>
-                </personname>
-                <personblurb>
-                    <para>Руководитель разработки</para>
-                </personblurb>
-            </othercredit>
-        </authorgroup>
-        <pubdate><?dbtimestamp format="Y"?></pubdate>
     </info>
+    <xi:include href="info.xml"/>
+
     <preface>
-        <info>
-            <title>Аннотация</title>
-        </info>
-        <para>В документе приведено описание программного обеспечения (далее ПО) продукта
-            &product;.</para>
-        <para>В разделе «Общие сведения» указано обозначение и наименование программы, а также
-            программное обеспечение, необходимое для функционирования программы, и языки
-            программирования, на которых написана программа.</para>
-        <para>В разделе «Функциональное назначение» указаны классы решаемых задач, назначение
-            программы и сведения о функциональных ограничениях на применение.</para>
-        <para>В разделе «Описание логической структуры» приведён алгоритм программы, перечислены
-            используемые методы и приведена структура программы с описанием функций составных частей
-            и связей между ними. Также указаны связи программы с другими программами и указаны типы
-            электронных вычислительных машин и устройств, которые используются при работе
+        <title>Аннотация</title>
+        <para>В документе приведено описание программного обеспечения (далее ПО) программного комплекса &product;.</para>
+        <para>В разделе «Общие сведения» указано обозначение и наименование программы, а также программное обеспечение, необходимое для функционирования
+            программы, и языки программирования, на которых написана программа.</para>
+        <para>В разделе «Функциональное назначение» указаны классы решаемых задач, назначение программы и сведения о функциональных ограничениях на
+            применение.</para>
+        <para>В разделе «Описание логической структуры» приведён алгоритм программы, перечислены используемые методы и приведена структура программы с описанием
+            функций составных частей и связей между ними. Также указаны связи программы с другими программами и указаны типы электронных вычислительных машин и
+            устройств, которые используются при работе программы.</para>
+        <para>В разделе «Используемые технические средства» указаны типы электронных вычислительных машин и устройств, которые используются при работе
             программы.</para>
-        <para>В разделе «Используемые технические средства» указаны типы электронных вычислительных
-            машин и устройств, которые используются при работе программы.</para>
-        <para>В разделе «Вызов и загрузка» указан способ вызова программы и входные точки в
-            программу.</para>
-        <para>В разделе «Входные данные» указана организация и предварительная подготовка входных
-            данных, а также формат, описание входных данных.</para>
+        <para>В разделе «Вызов и загрузка» указан способ вызова программы и входные точки в программу.</para>
+        <para>В разделе «Входные данные» указана организация и предварительная подготовка входных данных, а также формат, описание входных данных.</para>
         <para>В разделе «Выходные данные» указаны формат и описание выходных данных.</para>
-        <para>Оформление программного документа &descr_prog; произведено по требованиям ЕСПД (ГОСТ
-            19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ 19.105-78, ГОСТ 19.106-78, ГОСТ
-            19.402-78, ГОСТ 19.604-78) </para>
-        <section>
-            <title>Принятые обозначения</title>
-            <para>В данном руководстве принят ряд обозначений.</para>
-            <para>В документе могут встречаться следующие типы замечаний:</para>
-            <note>
-                <para>Примечание или полезная подсказка.</para>
-            </note>
-            <important>
-                <para>Существенные нюансы, которые вы должны принять во внимание, прежде чем начнёте
-                    какое-либо действие.</para>
-            </important>
-            <warning>
-                <para>Важная информация о проблемах безопасности или риске потери данных.</para>
-            </warning>
-            <para>В документе используются два варианта приглашения командного
-                интерпретатора.</para>
-            <variablelist>
-                <?dbfo term-width="3.5cm"?>
-                <varlistentry>
-                    <term><prompt>$</prompt> команда</term>
-                    <listitem>
-                        <para>Команды, начинающиеся с приглашения <prompt>$</prompt>, может
-                            выполнять любой пользователь, в том числе
-                            <literal>root</literal>.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><prompt>#</prompt> команда</term>
-                    <listitem>
-                        <para>Команды, начинающиеся с приглашения <prompt>#</prompt>, должен
-                            выполнять пользователь <literal>root</literal>. Но вы можете
-                            использовать утилиту <command>sudo</command> чтобы запускать их под
-                            другой учётной записью.</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-        </section>
+        <para>Оформление программного документа &descr_prog; произведено по требованиям ЕСПД (ГОСТ 19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ 19.105-78,
+            ГОСТ 19.106-78, ГОСТ 19.202-78, ГОСТ 19.301-78, ГОСТ 19.401-78, ГОСТ 19.402-78, ГОСТ 19.402-78, ГОСТ 19.404-79, ГОСТ 19.501-78, ГОСТ 19.502-78, ГОСТ
+            19.604-78).</para>
     </preface>
+    <toc/>
     <chapter>
         <title>Общие сведения</title>
+        <para>В разделе «Общие сведения» указано обозначение и наименование программы, а также программное обеспечение, необходимое для функционирования
+            программы, и языки программирования, на которых написана программа.</para>
         <section>
             <title>Обозначения и наименования программы</title>
             <para>Обозначение продукта — &product;.</para>
@@ -132,13 +48,49 @@
         <section>
             <title>Языки программирования, на которых написана программа</title>
             <para>Text</para>
+            <screen><prompt>$</prompt> <userinput>test user-list</userinput>
+<computeroutput>+---------+---------+---------+-------------------+
+|    id   |  name   | enabled |       email       |
++---------+---------+---------+-------------------+
+|  alice  |  alice  |         | alice@example.com |
++---------+---------+---------+-------------------+</computeroutput></screen>
         </section>
     </chapter>
     <chapter>
         <title>Функциональное назначение</title>
+        <para>В разделе «Функциональное назначение» указаны классы решаемых задач, назначение программы и сведения о функциональных ограничениях на
+            применение.</para>
         <section>
             <title>Классы решаемых задач</title>
             <para>Text</para>
+            <orderedlist>
+                <listitem>
+                    <para>Раз</para>
+                </listitem>
+                <listitem>
+                    <para>Два</para>
+                </listitem>
+                <listitem>
+                    <para>Три</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>alpha</para>
+                        </listitem>
+                        <listitem>
+                            <para>beta</para>
+                        </listitem>
+                        <listitem>
+                            <para>gamma</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>Четыре </para>
+                </listitem>
+                <listitem>
+                    <para>Пять</para>
+                </listitem>
+            </orderedlist>
         </section>
         <section>
             <title>Назначение программы</title>
@@ -146,11 +98,43 @@
         </section>
         <section>
             <title>Сведения о функциональных ограничениях на применение</title>
-            <para>Text</para>
+            <para>Пример таблицы с различной высотой строк.</para>
+            <table>
+                <title>Таблицы с различной высотой строк.</title>
+                <tgroup cols="2">
+                    <colspec colnum="1" colwidth="1*"/>
+                    <colspec colnum="2" colwidth="6*"/>
+                    <thead>
+                        <row>
+                            <entry>№</entry>
+                            <entry align="center" valign="middle">Описание</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>1</entry>
+                            <entry>Высота строки по умолчанию</entry>
+                        </row>
+                        <row>
+                            <?dbfo row-height="15mm" ?>
+                            <entry>2</entry>
+                            <entry>Высота строки 15 мм</entry>
+                        </row>
+                        <row>
+                            <?dbfo row-height="75mm" ?>
+                            <entry>3</entry>
+                            <entry>Высота строки 75 мм</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
         </section>
     </chapter>
     <chapter>
         <title>Описание логической структуры</title>
+        <para>В разделе «Описание логической структуры» приведён алгоритм программы, перечислены используемые методы и приведена структура программы с описанием
+            функций составных частей и связей между ними. Также указаны связи программы с другими программами и указаны типы электронных вычислительных машин и
+            устройств, которые используются при работе программы.</para>
         <section>
             <title>Алгоритм программы</title>
             <para>Text</para>
@@ -158,6 +142,10 @@
         <section>
             <title>Используемые методы</title>
             <para>Text</para>
+            <note>
+                <para>Пример оформления примечания. Пример оформления примечания. Пример оформления примечания. Пример оформления примечания. Пример оформления
+                    примечания.</para>
+            </note>
         </section>
         <section>
             <title>Структура программы</title>
@@ -170,23 +158,89 @@
     </chapter>
     <chapter>
         <title>Используемые технические средства</title>
-        <para>Text</para>
+        <para>В разделе «Используемые технические средства» указаны типы электронных вычислительных машин и устройств, которые используются при работе
+            программы.</para>
     </chapter>
     <chapter>
         <title>Вызов и загрузка</title>
-        <para>Text</para>
+        <para>В разделе «Вызов и загрузка» указан способ вызова программы и входные точки в программу.</para>
     </chapter>
     <chapter>
         <title>Входные данные</title>
-        <para>Text</para>
+        <para>В разделе «Входные данные» указана организация и предварительная подготовка входных данных, а также формат, описание входных данных.</para>
+        <figure xml:id="figure_logo">
+            <title>Оформление рисунков</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="logo_lab50.png" width="80%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
     </chapter>
     <chapter>
         <title>Выходные данные</title>
-        <para>Text</para>
+        <para>В разделе «Выходные данные» указаны формат и описание выходных данных.</para>
     </chapter>
     <appendix xml:id="app_install_list">
         <title>Список файлов программы после установки</title>
+        <subtitle>Список файлов программы после установки</subtitle>
         <para>Файлы, входящие в состав программы.</para>
+        <itemizedlist>
+            <listitem>
+                <para>common/params.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/text.xsl</para>
+            </listitem>
+            <listitem>
+                <para>eskd/tables.xsl</para>
+            </listitem>
+            <listitem>
+                <para>eskd/appendix.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/titles.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/headings.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/list.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/object.xsl</para>
+            </listitem>
+            <listitem>
+                <para>eskd/l10n.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/titlepage.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/titlepage.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/lu.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/lri.xsl</para>
+            </listitem>
+            <listitem>
+                <para>espd/admonitions.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/lri.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/verbatim.xsl</para>
+            </listitem>
+            <listitem>
+                <para>eskd/toc.xsl</para>
+            </listitem>
+            <listitem>
+                <para>common/qandaset.xsl</para>
+            </listitem>
+        </itemizedlist>
         <?lastpage?>
     </appendix>
 </book>

@@ -1,77 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book [
-<!ENTITY % gentities SYSTEM "../project.entities" >
+<!ENTITY % gentities SYSTEM "project.entities" >
 %gentities;
 ]>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-stylesheet type="text/xsl" href="../../stylesheet/fo/modern.xsl"?>
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
     <info>
-        <title>&full_product;</title>
         <subtitle>&text_prog;</subtitle>
-        <author>
-            <orgname>&full_supplier;</orgname>
-            <address>
-                <city>Санкт-Петербург</city>
-                <country>Россия</country>
-            </address>
-            <email>&mailto;</email>
-        </author>
-        <authorgroup>
-            <author>
-                <personname>
-                    <firstname>Василий</firstname>
-                    <surname>Шлыков</surname>
-                    <othername>Александрович</othername>
-                </personname>
-                <personblurb><para>Исполнитель</para></personblurb>
-            </author>
-            <editor>
-                <personname>
-                    <firstname>Иоанн</firstname>
-                    <surname>Грозный</surname>
-                    <othername>Васильевич</othername>
-                </personname>
-                <personblurb><para>Царь</para></personblurb>
-            </editor>
-            <othercredit>
-                <personname>
-                    <firstname>Лев</firstname>
-                    <surname>Мышкин</surname>
-                    <othername>Николаевич</othername>
-                </personname>
-                <personblurb>
-                    <para>Руководитель разработки</para>
-                </personblurb>
-            </othercredit>
-        </authorgroup>
     </info>
-    <preface>
-        <info>
-            <title>Аннотация</title>
-        </info>
-        <para>В документе приведён текст программы продукта &product;.</para>
-        <para>Оформление программного документа &descr_prog; произведено по требованиям ЕСПД (ГОСТ
-            19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ 19.105-78, ГОСТ 19.106-78, ГОСТ
-            19.401-78, ГОСТ 19.604-78) </para>
-    </preface>
+    <xi:include href="info.xml"/>
+
     <chapter>
-        <title>Назначение программы</title>
-        <para>Text</para>
-    </chapter>
-    <chapter>
-        <title>Условия применения</title>
-        <para>Text</para>
-    </chapter>
-    <chapter>
-        <title>Описание задачи</title>
-        <para>Text</para>
-    </chapter>
-    <chapter>
-        <title>Входные и выходные данные</title>
-        <para>Text</para>
+        <title>Текст программы</title>
+        <para>Text.</para>
         <?lastpage?>
     </chapter>
 </book>

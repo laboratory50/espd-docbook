@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xml:lang="ru" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <subtitle>&tech_spec;</subtitle>
+    </info>
+    <xi:include href="info.xml"/>
+    <preface>
+        <title>Аннотация</title>
+        <para>Настоящие технические условия распространяются на программное изделие «&full_product; &decimal;.</para>
+    </preface>
+    <toc/>
+
+    <glossary>
+        <title>Перечень сокращений</title>
+        <informaltable frame="none">
+            <tgroup cols="3" colsep="0" rowsep="0">
+                <colspec colname="c1" colnum="1" colwidth="1.50cm"/>
+                <colspec colname="c2" colnum="2" colwidth="0.75cm"/>
+                <colspec colname="c3" colnum="3" colwidth="15cm"/>
+                <tbody>
+                    <row>
+                        <entry>Lab50</entry>
+                        <entry>—</entry>
+                        <entry>Лаборатория 50</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </glossary>
+    <bibliography>
+        <title>Нормативные ссылки</title>
+        <informaltable frame="none">
+            <tgroup cols="2" colsep="0" rowsep="0">
+                <colspec colname="c1" colnum="1" colwidth="1.2*"/>
+                <colspec colname="c2" colnum="2" colwidth="4.41*"/>
+                <tbody>
+                    <row>
+                        <entry>ГОСТ 12.3.019-80</entry>
+                        <entry>Система стандартов безопасности труда. Испытания и измерения электрические. Общие требования безопасности</entry>
+                    </row>
+                    <row>
+                        <entry>ГОСТ 7.83-2001</entry>
+                        <entry>СИБИД. Электронные издания. Основные виды и выходные сведения</entry>
+                    </row>
+                    <row>
+                        <entry>ГОСТ 15.309-98</entry>
+                        <entry>Система разработки и постановки продукции на производство. Испытания и приёмка выпускаемой продукции. Основные положения</entry>
+                    </row>
+                    <row>
+                        <entry>ГОСТ 21552-84</entry>
+                        <entry>Средства вычислительной техники. Общие технические требования, приёмка, методы испытаний, маркировка, упаковка, транспортирование
+                            и хранение</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </bibliography>
+
+    <chapter xml:id="chapter_tech_req">
+        <title>Технические требования</title>
+        <section>
+            <title>Основные параметры и характеристики</title>
+            <para role="statute">&full_product; должен соответствовать требованиям настоящих технических условий (ТУ) и комплекту документации согласно
+                спецификации &decimal;.</para>
+
+            <para role="statute">Text...</para>
+        </section>
+        <section xml:id="sect_func">
+            <title>Требования к функциональным возможностям</title>
+            <para role="statute">Text...</para>
+        </section>
+        <section xml:id="sect_doc">
+            <title>Требования к эксплуатационной документации на комплекс</title>
+            <para role="statute">Перечень эксплуатационной документации согласно документу «&full_product;. &ved;
+                &decimal;&nbsp;&ved_no;&nbsp;&full_product_no;» приведён в <xref linkend="table_doc"/>.</para>
+            <table frame="all" xml:id="table_doc">
+                <title>Перечень ЭД &full_prod;</title>
+                <tgroup cols="2">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="2.23*"/>
+                    <thead>
+                        <row>
+                            <entry>Обозначение документа </entry>
+                            <entry>Наименование </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>&decimal;&nbsp;&formular_no;&nbsp;&full_product_no;</entry>
+                            <entry>&product;. &formular;</entry>
+                        </row>
+                        <row>
+                            <entry>&decimal;&nbsp;&descr_use_no;&nbsp;&full_product_no;</entry>
+                            <entry>&product;. &descr_use;</entry>
+                        </row>
+                        <row>
+                            <entry>&decimal;&nbsp;&s_prog_guide_no;&nbsp;&full_product_no;</entry>
+                            <entry>&product;. &s_prog_guide;</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section xml:id="sect_compl">
+            <title>Комплектность</title>
+            <para role="statute">Комплект поставки &full_prod; должен соответствовать перечню, приведённому в <xref linkend="table_compl"/>.</para>
+            <table frame="all" xml:id="table_compl">
+                <title>Комплект поставки &full_prod;</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="3*"/>
+                    <colspec colname="c2" colnum="2" colwidth="3*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c4" colnum="4" colwidth="3*"/>
+                    <thead>
+                        <row>
+                            <entry>Наименование </entry>
+                            <entry><para>Обозначение в</para>
+                                <para>составе комплекса</para></entry>
+                            <entry>Кол-во</entry>
+                            <entry>Примечания</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Компакт-диск с программным изделием и документацией</entry>
+                            <entry>В соответствии с формуляром на образец</entry>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>&formular;</entry>
+                            <entry>&decimal;&nbsp;&formular_no;&nbsp;&full_product_no;</entry>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Эксплуатационная документация на &full_prod;</entry>
+                            <entry>В соответствии с формуляром на образец</entry>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Контрольные суммы файлов установленного ПК</entry>
+                            <entry/>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>...</entry>
+                            <entry/>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Упаковка</entry>
+                            <entry/>
+                            <entry align="center"/>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section xml:id="sect_mark">
+            <title>Маркировка</title>
+            <para role="statute">Text...</para>
+        </section>
+        <section xml:id="sect_tara">
+            <title>Упаковка</title>
+            <para role="statute">Text...</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Требования безопасности</title>
+        <para role="statute">При применении программного комплекса &product; специальных требований по безопасности не предъявляется.</para>
+    </chapter>
+    <chapter>
+        <title>Требования охраны окружающей среды</title>
+        <para role="statute">При применении программного комплекса &product; специальных требований по воздействиям на окружающую среду не предъявляется.</para>
+    </chapter>
+    <chapter>
+        <title>Правила приёмки</title>
+        <section>
+            <title>Общие положения</title>
+            <para role="statute">Для контроля качества и приёмки &product; устанавливаются следующие категории испытаний:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>приёмо-сдаточные;</para>
+                </listitem>
+                <listitem>
+                    <para>периодические. </para>
+                </listitem>
+            </itemizedlist>
+            <para>При внесении изменений в функции комплекса проводятся типовые испытания в объёме проверки реализации вновь вводимых функций.</para>
+            <para role="statute">Испытания проводятся силами и средствами предприятия-изготовителя.</para>
+            <para role="statute">Основным документом при проведении испытаний являются:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>периодические — настоящие ТУ;</para>
+                </listitem>
+                <listitem>
+                    <para>приёмо-сдаточные — настоящие ТУ и документ &decimal;&nbsp;&pm_no;&nbsp;&full_product_no; «&full_product;.&pm;».</para>
+                </listitem>
+            </itemizedlist>
+            <para role="statute">Каждый экземпляр &product;, предъявляемый на испытания, должен быть укомплектован в соответствии с требованиями настоящих ТУ.</para>
+            <para role="statute">Результаты испытаний &product; считают положительными, а комплекс — выдержавшим испытания, если он испытан в полном объёме и
+                последовательности, которые установлены в настоящих ТУ для проводимой категории испытаний и соответствует всем требованиям настоящих ТУ,
+                проверяемым при этих испытаниях.</para>
+            <para role="statute">Результаты испытаний считают отрицательными, а &product; не выдержавшим испытания, если установлено несоответствие комплекса хотя бы
+                одному требованию ТУ для данной категории испытаний.</para>
+            <para role="statute">Дефекты, выявленные в ходе приемосдаточных и периодических испытаний, а также обнаруженные при контроле качества изделий, их составных
+                частей и операций технологического процесса на любом этапе производства должны быть проанализированы изготовителем. Результаты анализа и
+                мероприятия по устранению и предупреждению выявленных недостатков должны быть оформлены документально.</para>
+        </section>
+        <section>
+            <title>Приёмо-сдаточные испытания</title>
+            <para role="statute">Приемо-сдаточные испытания проводятся с целью контроля соответствия &product; требованиям настоящих ТУ, установленным для данной
+                категории испытаний.</para>
+            <para role="statute">Приемо-сдаточные испытания &product; проводят силами и средствами предприятия-изготовителя.</para>
+            <para role="statute">Объем и последовательность испытаний приведены в <xref linkend="table-priem-sdat"/>.</para>
+            <table frame="all" xml:id="table-priem-sdat">
+                <title>Перечень приемо-сдаточных испытаний</title>
+                <tgroup cols="6">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="6.6*"/>
+                    <colspec colname="c3" colnum="3" colwidth="2.5*"/>
+                    <colspec colname="c4" colnum="4" colwidth="2.5*"/>
+                    <colspec colname="c5" colnum="5" colwidth="3*"/>
+                    <colspec colname="c6" colnum="6" colwidth="3*"/>
+                    <thead>
+                        <row>
+                            <entry align="center" valign="middle" morerows="1">№ пп.</entry>
+                            <entry align="center" valign="middle" morerows="1"><para>Наименование</para>
+                                <para>испытаний и проверок</para></entry>
+                            <entry align="center" namest="c3" nameend="c4">Вид испытаний</entry>
+                            <entry align="center" namest="c5" nameend="c6">Номер пункта</entry>
+                        </row>
+                        <row>
+                            <entry align="center"><para>Приемо-</para><para>сдаточные</para></entry>
+                            <entry align="center">Периодические</entry>
+                            <entry align="center"><para>Требования</para><para>ТУ</para></entry>
+                            <entry align="center"><para>Методы</para><para>испытаний</para></entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry align="center">1.</entry>
+                            <entry>Проверка...</entry>
+                            <entry align="center">+</entry>
+                            <entry align="center">-</entry>
+                            <entry align="center">пункт <xref linkend="chapter_tech_req"/></entry>
+                            <entry align="center">пункт <xref linkend="chapter_methods"/></entry>
+                        </row>
+                        <row>
+                            <entry align="center">2.</entry>
+                            <entry>...</entry>
+                            <entry align="center">...</entry>
+                            <entry align="center">...</entry>
+                            <entry align="center">...</entry>
+                            <entry align="center">...</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para role="statute">По результатам испытаний составляется Заключение о соответствии комплекса требованиям настоящих ТУ и заполняется формуляр на
+                &product;.</para>
+            <para role="statute">Если в процессе испытаний будет обнаружено несоответствие хотя бы одному требованию настоящих ТУ, то принимаемый &product; считается не
+                выдержавшим испытания и возвращается для выявления причин дефектов, а также для проведения мероприятий по их устранению и повторного
+                предъявления. В акте об анализе и устранении дефектов отражаются причины несоответствия требованиям ТУ и методы их исправления.</para>
+            <para role="statute">Повторное предъявление комплекса на приёмку производится в порядке, установленном в настоящих ТУ.</para>
+            <para role="statute">Повторные испытания проводятся в полном объёме, установленном для приемо-сдаточных испытаний в настоящих ТУ. В зависимости от
+                результатов анализа дефектов, обнаруженных при испытаниях, испытания возвращённых экземпляров допускается проводить только по требованиям,
+                которым комплекс не соответствовал и которые могут повлиять на возникновение дефектов, а также требованиям, по которым испытания не
+                проводились.</para>
+            <para role="statute">Принятым считается комплекс, который выдержал приемо-сдаточные испытания, укомплектован и упакован в соответствии с требованиями
+                настоящих ТУ и имеет оформленный формуляр. Принятый &product; подлежит отгрузке или сдаче на ответственное хранение на предприятии-изготовителе.
+            </para>
+        </section>
+        <section>
+            <title>Периодические испытания</title>
+            <para role="statute">Периодические испытания проводятся предприятием-изготовителем с целью периодической проверки соответствия &product; требованиям
+                настоящих ТУ и подтверждения уровня качества функционирования комплекса.</para>
+            <para role="statute">Периодические испытания проводят в соответствии с годовым графиком предприятия-изготовителя с указанием места, сроков проведения
+                испытаний, оформления документации по результатам испытаний и представления акта периодических испытаний на утверждение.</para>
+            <para role="statute">Периодическим испытаниям подвергается комплекс, прошедший приёмо-сдаточные испытания с оформлением заключения в формуляре.</para>
+            <para role="statute">Периодические испытания проводятся в объёме и последовательности, указанной в <xref linkend="table-priem-sdat"/>.</para>
+            <para role="statute">Если при периодических испытаниях будет обнаружено несоответствие любому требованию настоящих ТУ, то должен быть проведён анализ причин
+                и устранение обнаруженных дефектов.</para>
+            <para role="statute">После устранения причин несоответствия настоящим ТУ комплекс подвергают повторным испытаниям в полном объёме периодических испытаний. В
+                отдельных случаях по согласованию с Заказчиком допускается проводить повторные периодические испытания только для тех видов испытаний и
+                проверок:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>в которых обнаружены несоответствия модулей установленным требованиям;</para>
+                </listitem>
+                <listitem>
+                    <para>которые могли повлиять на возникновение дефектов;</para>
+                </listitem>
+                <listitem>
+                    <para>по которым испытания не проводились.</para>
+                </listitem>
+            </itemizedlist>
+            <para role="statute">Если при повторных периодических испытаниях будет обнаружено несоответствие требованиям настоящих ТУ, то решение о дальнейшем
+                изготовлении принимает предприятие-изготовитель.</para>
+        </section>
+    </chapter>
+    <chapter xml:id="chapter_methods">
+        <title>Методы контроля (испытаний)</title>
+        <section>
+            <title>Общие положения</title>
+            <para role="statute">Подготовка к испытаниям должна включать проверку исправности измерительной аппаратуры, проверку тестового программного обеспечения на
+                технологическом стенде, а также проверку обеспечения условий безопасности при испытаниях.</para>
+            <para role="statute">Все испытания проводят в нормальных климатических условиях:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>температура окружающего воздуха: от 15 до 35°С;</para>
+                </listitem>
+                <listitem>
+                    <para>относительная влажность окружающего воздуха: от 45 до 80%;</para>
+                </listitem>
+                <listitem>
+                    <para>атмосферное давление: от 84 до 106,7 кПа (от 630 до 800 мм рт. ст.).</para>
+                </listitem>
+            </itemizedlist>
+            <para role="statute">Общие требования безопасности при проведении испытаний — по ГОСТ 12.3.019-80.</para>
+        </section>
+        <section xml:id="check_disk">
+            <title>Проверка ...</title>
+            <para role="statute">Text...</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Указания по эксплуатации</title>
+        <section>
+            <title>Общие сведения</title>
+            <para role="statute">&product; предназначен для эксплуатации на ЭВМ в нормальных климатических условиях. Нормальными климатическими условиями эксплуатации
+                являются:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>температура окружающего воздуха: от 15 до 35°С;</para>
+                </listitem>
+                <listitem>
+                    <para>относительная влажность воздуха: от 45 до 80%;</para>
+                </listitem>
+                <listitem>
+                    <para>атмосферное давление: от 84 до 106,7 кПа (от 630 до 800 мм рт. ст.).</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Условия эксплуатации</title>
+            <para role="statute">Перед эксплуатацией &product; необходимо внимательно ознакомиться с комплектом ЭД на него.</para>
+            <para role="statute">Text...</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Гарантии изготовителя</title>
+        <para role="statute">Text...</para>
+    </chapter>
+    <appendix xml:id="app_A">
+        <title>Заголовок приложения</title>
+        <subtitle>(обязательное)</subtitle>
+        <para role="statute">Text...</para>
+        <?lastpage?>
+    </appendix>    
+</book>

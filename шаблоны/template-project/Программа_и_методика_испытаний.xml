@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % gentities SYSTEM "project.entities" >
+%gentities;
+]>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="ru" version="5.0">
+    <info>
+        <subtitle>&pm;</subtitle>
+    </info>
+    <xi:include href="info.xml"/>
+    <toc/>
+    <chapter>
+        <title>Объект испытаний</title>
+        <section>
+            <title>Наименование и обозначение</title>
+            <para>Наименование программы: &product;.</para>
+            <para>Обозначение программы: &decimal;.</para>
+        </section>
+        <section>
+            <title>Область применения</title>
+            <para>Text</para>
+        </section>
+    </chapter>
+
+    <chapter>
+        <title>Цель испытаний</title>
+        <section>
+            <title>Функциональные испытания</title>
+            <para>Целью функциональных испытаний является проверка надёжности функционирования программы, ее эффективности, корректности, удобства применения и
+                сопровождаемости.</para>
+        </section>
+        <section>
+            <title>Приёмочные испытания</title>
+            <para>Целью приёмочных испытаний является проверка готовности программного изделия к использованию по назначению.</para>
+        </section>
+    </chapter>
+
+    <chapter xml:id="soft_req_prog">
+        <title>Требования к программе</title>
+        <para>Text</para>
+    </chapter>
+    <chapter>
+        <title xml:id="doc_req">Требования к программной документации</title>
+        <section xml:id="sect_req_spec">
+            <title>Требования к составу программной документации</title>
+            <para>Устанавливается следующий состав программной документации:</para>
+            <orderedlist>
+                <listitem>
+                    <para>&decimal; «&full_product;. &spec;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&text_prog_no;&nbsp;&full_product_no; «&full_product;. &text_prog;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&descr_prog_no;&nbsp;&full_product_no; «&full_product;. &descr_prog;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&ved_no;&nbsp;&full_product_no; «&full_product;. &ved;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&formular_no;&nbsp;&full_product_no; «&full_product;. &formular;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&descr_use_no;&nbsp;&full_product_no; «&full_product;. &descr_use;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&s_prog_guide_no;&nbsp;&full_product_no; «&full_product;. &s_prog_guide;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&pm_no;&nbsp;&full_product_no; «&full_product;. &pm;»;</para>
+                </listitem>
+                <listitem>
+                    <para>&decimal;&nbsp;&expl_note_no;&nbsp;&full_product_no; «&full_product;. &expl_note;».</para>
+                </listitem>
+            </orderedlist>
+        </section>
+        <section xml:id="sect_req_corr_doc">
+            <title>Требования к корректности документации</title>
+            <para>Программная документация должна быть разработана в соответствии со стандартами ЕСПД (ГОСТ 19.101-77, ГОСТ 19.103-77, ГОСТ 19.104-78, ГОСТ
+                19.105-78, ГОСТ 19.106-78, ГОСТ 19.202-78, ГОСТ 19.301-78, ГОСТ 19.401-78, ГОСТ 19.402-78, ГОСТ 19.402-78, ГОСТ 19.404-79, ГОСТ 19.501-78, ГОСТ
+                19.502-78, ГОСТ 19.604-78).</para>
+            <para>Программная документация должна быть непротиворечива.</para>
+        </section>
+    </chapter>
+
+    <chapter>
+        <title>Средства и порядок испытаний</title>
+        <section xml:id="sect_software">
+            <title>Технические средства для проведения испытаний</title>
+            <para>Испытания программы проводятся на персональной электронно-вычислительной машине (ПЭВМ) следующей минимальной конфигурации:</para>
+            <orderedlist>
+                <listitem>
+                    <para>системный блок:</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>тип процессора — двухъядерный;</para>
+                        </listitem>
+                        <listitem>
+                            <para>тактовая частота процессора — 2,66 ГГц;</para>
+                        </listitem>
+                        <listitem>
+                            <para>объём оперативного запоминающего устройства — 4 Гбайт;</para>
+                        </listitem>
+                        <listitem>
+                            <para>объём накопителя на жёстких магнитных дисках — 200 Гбайт;</para>
+                        </listitem>
+                        <listitem>
+                            <para>устройство для чтения дисков — DVD-ROM;</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>клавиатура; </para>
+                </listitem>
+                <listitem>
+                    <para>манипулятор «мышь»; </para>
+                </listitem>
+                <listitem>
+                    <para>монитор – 19 дюймов, с разрешением экрана 1280×1024.</para>
+                </listitem>
+            </orderedlist>
+        </section>
+        <section>
+            <title>Функциональные испытания</title>
+            <para>На испытания предъявляется эталон программы.</para>
+            <section>
+                <title>Программные средства для проведения функциональных испытаний</title>
+                <para>Для проведения функциональных испытаний необходим дистрибутив программы &decimal; «&full_product;», состав которого приведён в таблице 2
+                    документа &decimal;&nbsp;&descr_use_no;&nbsp;&full_product_no; «&full_product;. &descr_use;».</para>
+                <para>Для проведения испытаний необходимо следующее общее программное обеспечение (ОПО):</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>операционная система специального назначения (ОС СН) «Astra Linux Special Edition» (релиз «Смоленск», версия 1.4 или выше);
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>программа «XXX-yyyy» версии 1.0.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section>
+                <title>Порядок проведения функциональных испытаний</title>
+                <para>Порядок проведения испытаний определён в ...</para>
+            </section>
+        </section>
+        <section>
+            <title>Приёмочные испытания</title>
+            <para>На испытания предъявляется каждый поставляемый экземпляр программного изделия.</para>
+
+            <section>
+                <title>Программные средства для проведения приёмочных испытаний</title>
+                <para>Для проведения испытаний необходимо следующее ОПО:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&os; (релиз «Смоленск», версия &osver; или выше);</para>
+                    </listitem>
+                    <listitem>
+                        <para>программа «XXX-yyyy» версии 1.0.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section>
+                <title>Порядок проведения приёмочных испытаний</title>
+                <para>Порядок проведения испытаний определён в ...</para>
+            </section>
+        </section>
+        <section>
+            <title>Состав и содержание документов по результатам испытаний</title>
+            <para>По результатам испытаний составляется протокол проведения испытаний. Форма протокола определена в ...</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Методы испытаний</title>
+        <para>Text</para>
+        <?lastpage?>
+    </chapter>
+</book>
