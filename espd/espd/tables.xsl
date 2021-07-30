@@ -22,7 +22,7 @@
                 <xsl:attribute name="border-after-style">double</xsl:attribute>
                 <xsl:attribute name="border-after-width">0.5mm</xsl:attribute>
             <!-- Центрирование в заголовке таблицы -->
-            <xsl:attribute name="text-align">center</xsl:attribute>
+            <xsl:attribute name="text-align">left</xsl:attribute>
             <xsl:attribute name="display-align">center</xsl:attribute>
             </xsl:when>
         </xsl:choose>

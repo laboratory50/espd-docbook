@@ -39,6 +39,8 @@
       <l:template name="note" text="Примечание. "/>
       <l:template name="important" text="Важно. "/>
       <l:template name="warning" text="Предупреждение. "/>
+    <!-- Слово таблица - разреженное ГОСТ 19.106-78 -> ГОСТ 1.5-2001 -->
+      <l:template name="table" text="Т а б л и ц а&#160;&#160;%n — %t"/>
     </l:context>
   </l:l10n>
 </l:i18n>

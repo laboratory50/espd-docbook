@@ -34,7 +34,6 @@
   <!-- Центрирование подписей рисунков и таблиц -->
   <xsl:attribute name="text-align">
     <xsl:choose>
-      <xsl:when test="self::d:table">center</xsl:when>
       <xsl:when test="self::d:figure">center</xsl:when>
       <xsl:otherwise>left</xsl:otherwise>
     </xsl:choose>
