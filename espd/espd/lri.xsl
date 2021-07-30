@@ -102,6 +102,7 @@
             <xsl:call-template name="lri-empty-row"/>
             <xsl:call-template name="lri-empty-row"/>
             <xsl:call-template name="lri-empty-row"/>
+            <xsl:call-template name="lri-empty-row"/>
         </fo:table-body>
     </fo:table>
 </xsl:template>

@@ -75,7 +75,7 @@
     </xsl:template>
 
     <xsl:template name="lri-empty-row">
-        <fo:table-row border-style="solid" height="250mm">
+        <fo:table-row border-style="solid" height="225mm">
             <fo:table-cell><fo:block>&#x00A0;</fo:block></fo:table-cell>
         </fo:table-row>
     </xsl:template>

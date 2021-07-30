@@ -15,7 +15,9 @@
     version="1.1">
 
     <xsl:template match="processing-instruction()[local-name()='lastpage']">
-        <fo:block id="END-OF-DOCUMENT"/>
+        <xsl:if test="$espd.lri = '0'">
+      <fo:block id="END-OF-DOCUMENT"/>
+    </xsl:if>
     </xsl:template>
 
     <xsl:template match="d:book">
@@ -90,7 +92,9 @@
     </xsl:template>
 
     <xsl:template name="lripage">
-        <xsl:variable name="master-reference">lripage</xsl:variable>
+        <xsl:variable name="master-reference">
+            <xsl:call-template name="select.pagemaster"/>
+        </xsl:variable>
         <fo:page-sequence master-reference="{$master-reference}">
             <xsl:attribute name="language">
                 <xsl:call-template name="l10n.language"/>
@@ -123,8 +127,16 @@
                 </xsl:call-template>
             </xsl:attribute>
 
+            <xsl:apply-templates select="." mode="running.head.mode">
+                <xsl:with-param name="master-reference" select="$master-reference"/>
+            </xsl:apply-templates>
+            <xsl:apply-templates select="." mode="running.foot.mode">
+                <xsl:with-param name="master-reference" select="$master-reference"/>
+            </xsl:apply-templates>
+
             <fo:flow flow-name="xsl-region-body">
-                <fo:block xsl:use-attribute-sets="espd.lri.style" break-before="page">
+              <fo:block id="END-OF-DOCUMENT" break-before="page"/>
+                <fo:block xsl:use-attribute-sets="espd.lri.style">
                     <xsl:call-template name="lri.table"/>
                 </fo:block>
             </fo:flow>
