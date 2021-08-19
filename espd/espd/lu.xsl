@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Стиль оформления ЕСПД документов в формате DocBook 5.
-  © Лаборатория 50, 2013-2018.
+  © Лаборатория 50, 2013.
   Распространяется на условиях лицензии GPL 3.
 
   http://lab50.net/
@@ -50,8 +50,66 @@
             <xsl:call-template name="espd.stamp"/>
 
             <!-- УТВЕРЖДАЮ (кто)-->
-                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:editor"/>
-                <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:authorgroup/d:othercredit"/>
+            <fo:block-container absolute-position="absolute"
+                                top="20mm"
+                                left="0cm"
+                                font-size="14pt"
+                                xsl:use-attribute-sets="lu.style">
+            <fo:table table-layout="fixed" width="100%" border-style="none"  text-align="center">
+                <fo:table-column column-width="33%"/>
+                <fo:table-column column-width="33%"/>
+                <fo:table-column column-width="33%"/>
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell padding-right="2mm">
+                            <xsl:apply-templates mode="lu.approvement.label" select="d:info/d:authorgroup/d:othercredit[1]"/>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                            <xsl:apply-templates mode="lu.approvement.label" select="d:info/d:authorgroup/d:othercredit[2]"/>
+                        </fo:table-cell>
+                        <fo:table-cell padding-left="2mm">
+                            <xsl:apply-templates mode="lu.approvement.label" select="d:info/d:authorgroup/d:editor"/>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell padding-right="1mm">
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:othercredit[1]/d:affiliation/d:jobtitle"/></fo:block>
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:othercredit[1]/d:affiliation/d:orgname"/></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:othercredit[2]/d:affiliation/d:jobtitle"/></fo:block>
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:othercredit[2]/d:affiliation/d:orgname"/></fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell padding-left="1mm">
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:editor/d:affiliation/d:jobtitle"/></fo:block>
+                            <fo:block><xsl:apply-templates select="d:info/d:authorgroup/d:editor/d:affiliation/d:orgname"/></fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell padding-right="2mm">
+                            <xsl:apply-templates mode="lu.approvement.person" select="d:info/d:authorgroup/d:othercredit[1]/d:personname"/>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                            <xsl:apply-templates mode="lu.approvement.person" select="d:info/d:authorgroup/d:othercredit[2]/d:personname"/>
+                        </fo:table-cell>
+                        <fo:table-cell padding-left="2mm">
+                            <xsl:apply-templates mode="lu.approvement.person" select="d:info/d:authorgroup/d:editor/d:personname"/>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell padding-right="2mm">
+                            <xsl:apply-templates mode="lu.approvement.signdate" select="d:info/d:authorgroup/d:othercredit[1]"/>
+                        </fo:table-cell>
+                        <fo:table-cell>
+                            <xsl:apply-templates mode="lu.approvement.signdate" select="d:info/d:authorgroup/d:othercredit[2]"/>
+                        </fo:table-cell>
+                        <fo:table-cell padding-left="2mm">
+                            <xsl:apply-templates mode="lu.approvement.signdate" select="d:info/d:authorgroup/d:editor"/>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
+            </fo:block-container>
 
             <!-- Название комплекса -->
             <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:info/d:title"/>
@@ -79,39 +137,41 @@
         </xsl:call-template>
     </xsl:template>
 
-    <xsl:template name="lu.approvement">
-        <xsl:param name="caption"/>
-        <xsl:param name="appointment">
-            <xsl:apply-templates select="d:affiliation/d:jobtitle"/>
-        </xsl:param>
-        <xsl:param name="organization">
-            <xsl:apply-templates select="d:affiliation/d:orgname"/>
-        </xsl:param>
+    <xsl:template match="d:personname" mode="lu.approvement.person">
         <xsl:param name="initials">
             <xsl:call-template name="person.name" mode="initials"/>
         </xsl:param>
 
-        <fo:block>
-            <xsl:if test="$caption != ''">
-                <fo:block text-align="center" line-height="2.5"><xsl:value-of select="$caption"/></fo:block>
-            </xsl:if>
-            <fo:block text-align="center"><xsl:value-of select="$appointment"/></fo:block>
-            <fo:block text-align="center"><xsl:value-of select="$organization"/></fo:block>
-            <fo:block text-align="right" line-height="2.5">
-                <fo:inline>
-                    <xsl:text>___________ </xsl:text>
+        <fo:block text-align="right" line-height="2.5">
+            <fo:inline>
+<!--             <xsl:text>___________ </xsl:text> -->
                     <xsl:value-of select="$initials"/>
-                </fo:inline></fo:block>
-            <fo:block text-align="center">
-                <fo:inline>
-                    <xsl:text>«__»___________</xsl:text>
-                    <xsl:call-template name="datetime.format">
-                        <xsl:with-param name="date" select="date:date-time()"/>
-                        <xsl:with-param name="format" select="'Y'"/>
-                    </xsl:call-template>
-                    <xsl:text> г.</xsl:text>
-                </fo:inline>
-            </fo:block>
+            </fo:inline>
+        </fo:block>
+    </xsl:template>
+
+    <xsl:template match="d:othercredit" mode="lu.approvement.label">
+        <fo:block line-height="2.5">СОГЛАСОВАНО</fo:block>
+    </xsl:template>
+
+    <xsl:template match="d:editor" mode="lu.approvement.label">
+        <fo:block line-height="2.5">УТВЕРЖДАЮ</fo:block>
+    </xsl:template>
+
+    <xsl:template match="d:othercredit|d:editor" mode="lu.approvement.signdate">
+        <xsl:param name="year">
+            <xsl:call-template name="datetime.format">
+                <xsl:with-param name="date" select="date:date-time()"/>
+                <xsl:with-param name="format" select="'Y'"/>
+            </xsl:call-template>
+        </xsl:param>
+
+        <fo:block>
+            <fo:inline>
+                <xsl:text>«__»_________</xsl:text>
+                <xsl:value-of select="$year"/>
+                <xsl:text> г.</xsl:text>
+            </fo:inline>
         </fo:block>
     </xsl:template>
 
@@ -128,32 +188,6 @@
             </xsl:call-template>
         </fo:block>
     </xsl:template>
-
-    <!-- утверждаю -->
-    <xsl:template name="lu.approvement.approve">
-        <fo:block-container absolute-position="absolute"
-                            top="20mm"
-                            right="0cm"
-                            width="40%"
-                            xsl:use-attribute-sets="lu.style">
-            <xsl:call-template name="lu.approvement">
-                <xsl:with-param name="caption" select="'УТВЕРЖДАЮ'"/>
-            </xsl:call-template>
-        </fo:block-container>
-    </xsl:template>
-
-    <xsl:template name="lu.approvement.custom">
-        <fo:block-container absolute-position="absolute"
-                            top="20mm"
-                            left="0cm"
-                            width="40%"
-                            xsl:use-attribute-sets="lu.style">
-            <xsl:call-template name="lu.approvement">
-                <xsl:with-param name="caption" select="'УТВЕРЖДАЮ'"/>
-            </xsl:call-template>
-        </fo:block-container>
-    </xsl:template>
-
 
     <!-- название комплекса -->
     <xsl:template match="d:title" mode="book.titlepage.recto.auto.mode">
@@ -175,18 +209,10 @@
         <xsl:call-template name="lu.approvement.entity"/>
     </xsl:template>
 
-    <xsl:template match="d:editor" mode="book.titlepage.recto.auto.mode">
-        <xsl:call-template name="lu.approvement.approve"/>
-    </xsl:template>
-
-    <xsl:template match="d:othercredit" mode="book.titlepage.recto.auto.mode">
-        <xsl:call-template name="lu.approvement.custom"/>
-    </xsl:template>
-
     <!-- дата публикации -->
     <xsl:template match="d:date" mode="book.titlepage.recto.auto.mode">
         <fo:block-container absolute-position="fixed"
-                            top="255mm"
+                            top="260mm"
                             left="25mm"
                             right="10mm">
             <fo:block xsl:use-attribute-sets="lu.style" space-before="5mm">
