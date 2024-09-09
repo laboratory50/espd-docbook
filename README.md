@@ -40,6 +40,8 @@ XSL-FO для создания PDF документов. Помимо требо
 
  *  DocBook XSL версии не менее 1.78.
 
+ *  cvstool, если вы плянируете использовать Makefile из нашего проекта.
+
  *  Для работы с русским языком крайне рекомендуется использовать FOP в
     связке с Saxon вместо штатного для многих дистрибутивов Xalan.
 
@@ -51,7 +53,7 @@ XSL-FO для создания PDF документов. Помимо требо
 
 Репозиторий расположен на [BitBucket](https://bitbucket.org/Lab50/espd-docbook5),
 склонируйте с помощью Git:
-    git clone git@bitbucket.org:Lab50/espd-docbook5.git
+    git clone https://bitbucket.org/Lab50/espd-docbook5.git
 
 Подключить стиль можно с помощью директивы *xml-stylesheet* непосредственно
 в вашем документе:
@@ -79,6 +81,7 @@ XSL-FO для создания PDF документов. Помимо требо
     fop -catalog -c ~/espd-docbook5/fop.xml -xml mybook.xml -xsl ~/espd-docbook5/espd/espd.xsl \
 	-param espd.decimal 'Децимальный номер' -pdf mybook.pdf
 
+`mybook.xml` — ваш документ. 
 Стилевые файлы располагаются по адресу http://lab50.net/xsl/espd/. Например, вы
 можете включить в ваше описание стиля:
 
