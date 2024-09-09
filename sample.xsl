@@ -5,12 +5,17 @@
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="1.1">
+
+    <!-- Оформление ЕСПД -->
     <xsl:import href="espd/espd.xsl"/>
     <!-- или -->
+    <!-- <xsl:import href="http://lab50.net/xsl/espd/espd.xsl"/>  -->
+    <!-- или ЕСПД с услрвными переменными-->
     <!-- <xsl:import href="espd/espd-profile.xsl"/> -->
 
+    <!-- Современное оформление -->
     <!-- <xsl:import href="espd/modern.xsl"/> -->
-    <!-- <xsl:import href="http://lab50.net/xsl/espd/espd.xsl"/>  -->
+    <!-- или -->
     <!-- <xsl:import href="http://lab50.net/xsl/espd/modern.xsl"/> -->
 
     <!-- Шрифт основного текста -->
