@@ -51,9 +51,9 @@ XSL-FO для создания PDF документов. Помимо требо
 набор XSL-FO. Генерировать документы можно распространенными XSLT и FO
 процессорами. У нас используются xsltproc и Apache FO.
 
-Репозиторий расположен на [BitBucket](https://bitbucket.org/Lab50/espd-docbook5),
+Репозиторий расположен на [GitHub](https://github.com/laboratory50/espd-docbook),
 склонируйте с помощью Git:
-    git clone https://bitbucket.org/Lab50/espd-docbook5.git
+    git clone https://github.com/laboratory50/espd-docbook.git
 
 Подключить стиль можно с помощью директивы *xml-stylesheet* непосредственно
 в вашем документе:
