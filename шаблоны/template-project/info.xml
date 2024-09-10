@@ -48,6 +48,17 @@
                 <orgname>ООО «Княжество»</orgname>
             </affiliation>
         </othercredit>
+        <othercredit>
+            <personname>
+                <firstname>Григорий</firstname>
+                <surname>Распутин</surname>
+                <othername>Ефимович</othername>
+            </personname>
+            <affiliation>
+                <jobtitle>Крестьянин</jobtitle>
+                <orgname>АО «Покровское»</orgname>
+            </affiliation>
+        </othercredit>
     </authorgroup>
     <copyright>
         <year><?dbtimestamp format="Y"?></year>
